@@ -1,0 +1,33 @@
+
+print("Hello world")
+
+# a = 3
+# print("the number here is ",a)
+
+# person = "Tony Stark"
+# age = 51
+# is_genius = True
+
+# print(person, "\n", age, "\n", is_genius)
+# print(type(person))
+# print(type(age))
+# print(type(is_genius))
+
+# names = input("What is the name?.: ")
+# print("Hello " + names)
+
+# for i in range (0,6):
+#     print("* " * i)
+
+older = int(input("Enter your age then: "))
+now = older + 3
+print("age now is " , now)
+print(type(older))
+print(type(now))
+# File "<main.py>", line 24, in <module> TypeError: can only concatenate str (not "int") to str
+
+
+one = int(input("enter first number "))
+two = int(input("Enter second number "))
+sum = one + two
+print(sum)
