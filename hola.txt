@@ -1,0 +1,52 @@
+https://github.com/gto76/python-cheatsheet
+
+
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imtld2hrZSIsInBhc3N3b3JkIjoicmFsaWFuMTIzIiwiaWF0IjoxNzM3MzY1NTk1fQ.gal8N5p7WSH95dHGeURmHuXL6ri8ERFbnpBR46MyGvs
+
+{
+    "title": "Maths Book",
+    "description": "Useful for school students and any entrance aspirants.",
+    "author": "R.D. Sharma",
+    "cost": 350
+}
+
+Mongoose.connect("mongodb://localhost:27017/booksdatabase")
+
+{
+  "title": "English Grammar Book",
+  "description": "For school students and all competitive exam aspirants.",
+  "author": "R. Vishakha",
+  "cost": 450
+}
+
+const BookModel = Moongoose.model("books", BookSchema)
+
+const f1 = req.body.title
+const f2 = req.body.description
+const f3 = req.body.author
+const f4 = req.body.cost
+
+
+app.get("/books/all", async function (req, res) {
+    const allBooks = await BookModel.find()
+    res.json(allBooks)
+})
+// app.get("/books/particle/:ids", async function(req, res){
+//   console.log(req.params.ids)
+// })
+// app.put("/books/update/:ids", async function(req, res){})
+// app.delete("/books/delete/:ids", async function(req, res){})
+
+
+6793c4deaf3191c2a5b1a862
+
+
+Example 1:
+Input: nums = [1,2,3,4,5,6] , k=1
+Output: 2
+Explanation:  After adding -5 to the subarray nums[2..5], 1 has a frequency of 2 in [1,2,-2,-1,0,1]
+
+Example 2:
+Input: nums = [10,2,3,4,5,5,4,3,2,2] , k=10
+Output: 4
+Explanation:  After adding 8 to the subarray nums[1..9], 1 has a frequency of 4 in [10, 10, 11, 12, 13, 13, 12, 11, 10, 10]
