@@ -1,4 +1,4 @@
-// C++ random code
+// C++ random code from leetcode
 //  https://leetcode.com/problems/redundant-connection/description/?envType=daily-question&envId=2025-01-29
 
 class Solution {
