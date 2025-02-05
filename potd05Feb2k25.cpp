@@ -1,4 +1,4 @@
-//Today's POTD
+//Today's POTD from Leetcode
 class Solution {
 public:
     bool areAlmostEqual(string s1, string s2) {
@@ -30,3 +30,4 @@ public:
         return true;
     }
 };
+// T.C = O(n), S.C = O(1)
