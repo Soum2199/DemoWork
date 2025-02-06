@@ -4,8 +4,7 @@
 using namespace std;
 
 int PowersofTwo(int num) {
-  
-  // code goes here  
+   
   // return num;
   if(num == 1) return true;
   if(num<=0 || num%2!=0) return false;
