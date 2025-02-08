@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+    <style type="text/css" media="all">
+      :root{
+  --primary-initial: #AC45c6;
+  --secondary-initial: black;
+  --backgrounding: white;
+}
+.dark-themes{
+   --primary-initial: #53ba39;
+  --secondary-initial: white;
+  --backgrounding: black;
+}
+body{
+  padding: 15px;
+  color: var(--secondary-initial);
+  background-color: var(--backgrounding);
+}
+.title {
+	color: var(--primary-initial);
+}
+#iconic{
+  font-size: 30px;
+  color: black;
+  /* Default icon color */
+}
+/* Color for the sun icon */
+#iconic.fa-sun {
+  color: var(--secondary-initial); /* Color for sun */
+}
+
+/* Color for the moon icon */
+#iconic.fa-moon {
+  color: var(--secondary-initial); /* Color for moon */
+}
+
+/* Dark theme styles */
+.dark-themes #iconic.fa-sun {
+  color: var(--secondary-initial); /* Change sun color in dark theme */
+}
+
+.dark-themes #iconic.fa-moon {
+  color: var(--secondary-initial); /* Change moon color in dark theme */
+}
+    </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+  <body>
+      <h1 class="title">Hello World! </h1>
+      <h4 id="currentTime"></h4>
+      <i class="fa-solid fa-moon" id="iconic"></i>
+      <script>
+        function showTime() {
+	document.getElementById('currentTime').innerHTML = new Date().toUTCString();
+}
+showTime();
+setInterval(function () {
+	showTime();
+}, 1000);
+
+const iconic = document.getElementById("iconic");
+iconic.onclick = function () {
+  document.body.classList.toggle("dark-themes");
+  
+  if (document.body.classList.contains("dark-themes")) {
+    iconic.classList.replace("fa-moon", "fa-sun");
+  } else {
+    iconic.classList.replace("fa-sun", "fa-moon");
+  }
+}
+      </script>
+  </body>
+</html>
