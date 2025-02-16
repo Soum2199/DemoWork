@@ -19,7 +19,6 @@ the only good numbers are nums[0]=2 because it is greater than nums[1].
 int sumOfGoodElements(const std::vector<int>& nums, int k) {
     int sum = 0;
     int n = nums.size();
-
     for (int i = 0; i < n; ++i) {
         bool isGood = true;
 
@@ -27,18 +26,15 @@ int sumOfGoodElements(const std::vector<int>& nums, int k) {
         if (i - k >= 0 && nums[i] <= nums[i - k]) {
             isGood = false;
         }
-
         // Check the right index (i + k)
         if (i + k < n && nums[i] <= nums[i + k]) {
             isGood = false;
         }
-
-        // If it's a good element, add to the sum
+        // If it is a good element, add to the sum
         if (isGood) {
             sum += nums[i];
         }
     }
-
     return sum;
 }
 
