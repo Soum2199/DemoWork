@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>Centered Card</title>
+    <style>
+        /* Full height for the body to center vertically */
+        body, html {
+            height: 100%;
+        }
+    </style>
+</head>
+<body class="d-flex justify-content-center align-items-center">
+
+    <div className='card w-50 mb-3'>
+        <div className="card-body row g-2 text-center">
+            <div className="col-auto">
+                <label for="inputPassword6" class="col-form-label"> Enter the task: </label>
+            </div>
+            <div className="col-auto">
+                <input type="text" class="form-control --bs-info-border-subtle" aria-describedby="passwordHelpInline"/>
+            </div>
+            <div className="col-auto">
+                <button type="button" class="btn btn-secondary">Add Task +</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
