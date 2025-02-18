@@ -1,17 +1,14 @@
-import * from package.util.*;
+import package.util.*;
    
  public static int complementNumber(int x) {
         String numStr = String.valueOf(x);
         StringBuilder complementStr = new StringBuilder();
-        
         for (char digit : numStr.toCharArray()) {
-            complementStr.append(9 - (digit - '0'));  // Compute complement
+            complementStr.append(9 - (digit - '0'));
         }
-        
-        return Integer.parseInt(complementStr.toString());  // Convert back to int to remove leading zeros
+        return Integer.parseInt(complementStr.toString());
     }
     
-    // Function to count valid pairs
     public static int countPairs(int[] arr) {
         int count = 0;
         int n = arr.length;
