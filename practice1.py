@@ -1,5 +1,4 @@
 # Some unnamed scenes from python be like:
-
 # print('result: ', 3>2)
 # a = 1976
 # b = "1976"
@@ -19,6 +18,7 @@ print("------------------------\n" , hie)
 print(type(hie))
 
 # ==================-------------------------------------------------
+
 #pov: studying python newly...
 
 a = 6
