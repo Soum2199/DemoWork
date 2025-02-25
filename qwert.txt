@@ -1,0 +1,19 @@
+------------------------------------------------------------------------------------------------------------------
+// Non working forms below here  s1646517887@gmail.com   https://www.scaler.com/topics/
+
+<div className="card text-center">
+        <form className="row g-3 justify-content-center" method='post'>
+          <div className='col-sm-5 col-md-6'>
+            Enter name:<input className="form-control" type="text" onChange={collectsUsername} name="username"/>
+            Enter email id:<input className="form-control" type="email" onChange={collectsEmail} name="email"/>
+            Password:<input className="form-control" type="password" onChange={collectsPassword} name="password"/>
+            Confirm password:<input className="form-control" type="password" onChange={collectsConfirmPassword} name="confirmpassword"/>
+            <br/>
+            <button onClick={sendSignups} className='btn btn-outline-primary'>Sign in</button>
+          </div>
+          <br/>
+          <button onClick={plzSigning} type="button" className="btn btn-primary">Sign in with Google</button>
+          <br/>
+          <p>Already have an account? <a href="#" className="stretched-link text-primary">Kindly <strong>Login</strong> here</a></p>
+        </form>
+      </div>
