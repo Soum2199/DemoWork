@@ -1,29 +1,36 @@
 Programming Languages:
+
 JavaScript (ES6+), TypeScript, Python, Java, C#
 🔹 Frontend Development:
 Frameworks & Libraries: React.js, Next.js, Angular, Vue.js
 Styling & UI: HTML5, CSS3, SCSS, Tailwind CSS, Bootstrap, Material UI
 State Management: Redux, Context API, Zustand, Vuex
 Performance Optimization: Lazy loading, Code splitting, Virtual DOM
+--------------------------------------------------------------------------
 🔹 Backend Development:
 Languages & Frameworks: Node.js (Express.js, NestJS), Django, Flask, Spring Boot, .NET Core
 Authentication & Security: JWT, OAuth, Passport.js, Firebase Auth, Role-Based Access Control (RBAC)
 API Development: RESTful APIs, GraphQL, gRPC, WebSockets
+------------------------------------------------------------------------
 🔹 Database Management:
 SQL Databases: PostgreSQL, MySQL, Microsoft SQL Server
 NoSQL Databases: MongoDB, Firebase, Redis
 ORMs & Query Builders: Sequelize, TypeORM, Mongoose, Prisma
+--------------------------------------------------------------------------
 🔹 DevOps & Cloud:
 Cloud Platforms: AWS (EC2, S3, Lambda, RDS), Azure, Google Cloud
 CI/CD: GitHub Actions, GitLab CI/CD, Jenkins, CircleCI
 Containerization & Orchestration: Docker, Kubernetes
 Monitoring & Logging: Prometheus, Grafana, ELK Stack (Elasticsearch, Logstash, Kibana)
+----------------------------------------------------------------------------
 🔹 Version Control & Collaboration:
 Git, GitHub, GitLab, Bitbucket
 Agile (Scrum, Kanban), Jira, Trello
+-----------------------------------------------------------------------------
 🔹 Testing & Debugging:
 Unit & Integration Testing: Jest, Mocha, Chai, Cypress, Selenium
 Debugging Tools: Chrome DevTools, Postman, Insomnia
+-----------------------------------------------------------------------------
 🔹 Additional Skills:
 WebSockets for real-time applications
 Microservices architecture
