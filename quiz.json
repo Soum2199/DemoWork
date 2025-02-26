@@ -1,0 +1,51 @@
+const question = [
+{
+      title: "What is the capital of France?",
+      A: "Mexico",
+      B: "Paris",
+      C: "Rome",
+      D: "Persia",
+      Answer: "B"   // "Paris"
+    },
+{
+      title: "What is hexagonal pyramid?",
+      A: "A pyramid with a hexagonal base upon six triangular faces are erected at a point",
+      B: "A square box filled with gift",
+      C: "The tower like structure with 100s of floors",
+      D: "A pyramid with cubic like structure that has no end points",
+      Answer: "A"   // "A pyramid with a hexagonal base upon which are erected six triangular faces that meet at a point"
+},
+{
+      title: "What is the Ocean colour?",
+      A: "Green",
+      B: "Blue",
+      C: "Yellow",
+      D: "Red",
+      Answer: "B"
+    },
+    {
+      title: "What is the capital of France?",
+      A: "Mexico",
+      B: "Paris",
+      C: "Rome",
+      D: "Persia",
+      Answer: "B"   // "Paris"
+    },
+    {
+      title: "What is hexagonal pyramid?",
+      A: "A pyramid with a hexagonal base upon six triangular faces are erected at a point",
+      B: "A square box filled with gift",
+      C: "The tower like structure with 100s of floors",
+      D: "A pyramid with cubic like structure that has no end points",
+      Answer: "A"   // "A pyramid with a hexagonal base upon which are erected six triangular faces that meet at a point"
+},
+    {
+      title: "Who is APJ Abdul Kalam?",
+      A: "Former Prime minister",
+      B: "Former President",
+      C: "Thiest",
+      D: "Veteran Actor",
+      Answer: "B"   // "Actress"
+    }
+
+]
