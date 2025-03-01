@@ -1,0 +1,1703 @@
+function handleUpdate() {
+    if (todoText.trim()) {
+      db.collection('todos').doc(id).update({
+        todoText: todoText,
+        completed: completed,
+      }).then(() => {
+        navigate('/');
+      }).catch(function(error) {
+        alert('Error updating todo: ' + error.message);
+      });
+    } else {
+      alert('Please enter a todo!');
+    }
+  }
+
+if (contName.trim()){
+db.collection("demo-contacting-app").doc(id).update({
+	contName: contName,
+	contNos: contNos,
+	contMailId: contMailId,
+})
+.then(() => navigator("/");)
+.catch(function(error) {
+        alert('Error updating todo: ' + error.message);
+      });
+    }
+else {
+      alert('Please enter a todo!');
+    }
+
+
+function handleUpdate(){
+	if (contName.trim()){
+db.collection("demo-contacting-app").doc(id).update({
+	contName: contName,
+	contNos: contNos,
+	contMailId: contMailId,
+})
+.then(() => navigator("/");)
+.catch(function(error) {
+        alert('Error updating todo: ' + error.message);
+      });
+    }
+else {
+      alert('Please enter a todo!');
+    }
+}
+
+
+
+=====================================================================
+ useEffect(function(){
+        db.collection("demo-contacting-app").orderBy("contName", "asc").onSnapshot(function(snap){
+              setContactsData( snap.docs.map(function(i){
+              return {docId:i.id, docData:i.data()}
+              // console.log({docId:i.id, docData:i.data()})
+              })
+              )
+              })
+      },[])
+disabled
+        <button className="btn btn-primary" onClick={gotoPreviousQues}>Previous</button>
+
+        {indices === questionData.length-1? <button className="btn btn-warning" onClick={gotoResults}>Submit</button> : <button className="btn btn-primary" onClick={gotoNextQues}>Next</button>}
+
+        {indices === 0? <button className="btn btn-primary" onClick={gotoPreviousQues} disabled>Previous</button> : <button className="btn btn-primary" onClick={gotoPreviousQues}>Previous</button>}
+
+
+<div className='option'>
+          <input name='select' type='radio' onChange={handleInput} className='checkedValue' value={questionData[indices].A} />
+          <p> {questionData[indices].A}</p>
+         </div>
+<div className='option'>
+          <input name='select' type='radio' onChange={handleInput} className='checkedValue' value={questionData[indices].B}  />
+          <p>{questionData[indices].B}</p>
+         </div>
+<div className='option'>
+          <input name='select' type='radio' onChange={handleInput} className='checkedValue' value={questionData[indices].C} />
+          <p> {questionData[indices].C}</p>
+         </div>
+<div className='option'>
+          <input name='select' type='radio' onChange={handleInput} className='checkedValue' value={questionData[indices].D}  />
+          <p>{questionData[indices].D}</p>
+         </div>
+
+{questionData[indices]+1}
+
+function checkInput(params) {
+  let choseValue = params.target.value;
+console.log(choseValue)
+//if(choseValue == questionData[indices].Answer)
+//{setScore(score+1)}
+}
+
+name='select' type='radio' className='checkedValue' value={questionData[indices].A}
+function(){ checkInput("A") }
+
+function(){ checkInput("A") }console.log(score)
+className="btn btn-outline-primary"
+
+
+function resetAgain(){
+	stage("/")
+}
+
+ if (ansStatus == true) {
+      setAnsStatus(false)
+    stage("/result")}
+  else{
+    alert("please select atleast one option")
+  }
+
+myScore, mySetScore
+
+
+
+function pleaseSignIn(){
+	
+}
+
+import { Link, Router, Route, BrowserRouter } from "react-router-dom";
+<BrowserRouter></BrowserRouter>
+
+<Route path="/"></Route>
+<Routes></Routes>
+
+<div className="linkcontainer"></div>
+link 1:
+https://api.themoviedb.org/3/movie/popular?language=en-US&page=1
+
+link 2:   https://api.themoviedb.org/3/trending/movie/day?language=en-US
+
+but i want in week
+https://api.themoviedb.org/3/trending/movie/{time_window}
+convert time_window to either day or week
+
+my real reqd url:
+
+https://api.themoviedb.org/3/trending/movie/week?language=en-US&api_key=37d1ccac293a31d9400f0cfa827295f9
+
+const [movies, setMovies] = useState([])
+
+ // console.log(output)
+      console.log(output.data.results)
+now what after that?
+
+output.data.results[0 or 1 or 2, etc].backdrop_path, media_type, original_language, original_title or even title is also ok, overview, popularity, poster_path, release_date, vote_average, vote_count,
+
+const base_url= "https://image.tmdb.org/t/p/original/";
+
+URL Access:   https://image.tmdb.org/t/p/original/63xYQj1BwRFielxsBDXvHIJyXVm.jpg
+https://image.tmdb.org/t/p/original/5yPy1HAPsH7pfEQFqBMhH3ZFBdX.jpg
+
+https://image.tmdb.org/t/p/original/${i.poster_path}
+className="text-body-success"
+===========================================================================================================================
+curl --request GET \
+     --url 'https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1' \
+     --header 'accept: application/json'
+
+     --url:  'https://api.themoviedb.org/3/movie/top_rated?language=en-US&api_key=37d1ccac293a31d9400f0cfa827295f9'
+
+37d1ccac293a31d9400f0cfa827295f9 = my TMDB's API Key
+
+https://api.themoviedb.org/3/genre/movie/list?api_key=[MY_KEY]&language=en-US
+
+https://api.themoviedb.org/3/genre/movie/list?api_key=37d1ccac293a31d9400f0cfa827295f9&language=en-US
+
+https://api.themoviedb.org/3/genre/movie/list?language=en&api_key=37d1ccac293a31d9400f0cfa827295f9
+<TrendingMovies url=/>
+now to discovery section:
+
+curl --request GET \
+     --url 'https://api.themoviedb.org/3/discover/movie?api_key=37d1ccac293a31d9400f0cfa827295f9&include_video=false&language=en-US&with_geners=27&sort_by=popularity.desc' \
+     --header 'accept: application/json'
+
+Horror:
+https://api.themoviedb.org/3/discover/movie?api_key=37d1ccac293a31d9400f0cfa827295f9&include_video=false&language=en-US&with_geners=27&sort_by=popularity.desc
+
+Adventure:
+https://api.themoviedb.org/3/discover/movie?api_key=37d1ccac293a31d9400f0cfa827295f9&include_video=false&language=en-US&with_geners=12&sort_by=popularity.desc
+
+Romance:
+https://api.themoviedb.org/3/discover/movie?api_key=37d1ccac293a31d9400f0cfa827295f9&include_video=false&language=en-US&with_geners=10749&sort_by=popularity.desc
+
+Action:
+https://api.themoviedb.org/3/discover/movie?api_key=37d1ccac293a31d9400f0cfa827295f9&include_video=false&language=en-US&with_geners=28&sort_by=popularity.desc
+
+Comedy:
+https://api.themoviedb.org/3/discover/movie?api_key=37d1ccac293a31d9400f0cfa827295f9&include_video=false&language=en-US&with_geners=35&sort_by=popularity.desc
+
+Thriller:
+https://api.themoviedb.org/3/discover/movie?api_key=37d1ccac293a31d9400f0cfa827295f9&include_video=false&language=en-US&with_geners=53&sort_by=popularity.desc
+
+Documentary:
+https://api.themoviedb.org/3/discover/movie?api_key=37d1ccac293a31d9400f0cfa827295f9&include_video=false&language=en-US&with_geners=99&sort_by=popularity.desc
+================================================================================--------------------------------------------------------------------
+
+output.data.results can further store details like
+title, overview, backdrop_path
+<button>Play</button>
+<button>My List</button>
+
+function (imhppy){
+return <Homepage info={imhppy.name} url={imhppy.theUrl}/>
+}
+<Homepage/>
+<Homepage info={imhppy.name} url={imhppy.theUrl}/>
+<Homepage/><Homepage/><Homepage/><Homepage/>
+
+<Homepage url={moviesData[0].theUrl}/>
+
+https://image.tmdb.org/t/p/original/${i.poster_path}
+
+https://image.tmdb.org/t/p/original/${movies[randomIndex].backdrop_path}
+
+mo
+movies[Math.floor(Math.random() * movies.length)].backdrop_path
+
+movies[Math.floor(Math.random() * movies.length)].title
+
+movies[Math.floor(Math.random() * movies.length)].overview
+movies[Math.floor(Math.random() * movies.length)].release_date
+movies[Math.floor(Math.random() * movies.length)].video
+
+
+const [randomIndex, setRandomIndex] = useState([]);
+randomIndex = Math.floor(Math.random() * movies.length)
+
+ useEffect(function()
+    {
+        setRandomIndex(Math.floor(Math.random() * movies.length))
+    }, [movies])
+
+movies[randomIndex]
+
+<img src={`https://image.tmdb.org/t/p/original/${movies[randomIndex].backdrop_path}`} style={{width: "80%", height: "300px"}}/>
+
+
+.particularimagecontainer{
+    display: grid;
+    grid-template-areas: "content image";
+}
+
+h1{
+    grid-area: "content";
+}
+
+#particularimage{
+    grid-area: "image";
+    height: 60vh;
+    width: 60vw;
+}
+
+<div className="cards" style={{width: "18rem"}}>
+  <img id="particularimage" src={`https://image.tmdb.org/t/p/original/${movies[randomIndex].backdrop_path}`} style={{width: "80%", height: "300px"}}/>
+  <div className="card-body">
+    <h5 className="card-title">{movies[randomIndex].title}</h5>
+    <p className="card-text">{movies[randomIndex].overview}</p>
+    <button className="btn btn-secondary">Play</button>
+    <button className="btn btn-primary">Add to list</button>
+  </div>
+</div>
+
+{movies.length == 0 ?  <div className="cards" style={{width: "18rem"}}>
+  <img id="particularimage" src={`https://image.tmdb.org/t/p/original/${movies[randomIndex].backdrop_path}`} style={{width: "80%", height: "300px"}}/>
+  <div className="card-body">
+    <h5 className="card-title">{movies[randomIndex].title}</h5>
+    <p className="card-text">{movies[randomIndex].overview}</p>
+    <button className="btn btn-secondary">Play</button>
+    <button className="btn btn-primary">Add to list</button>
+  </div>
+</div>  : null}
+
+<ParticularMovie url={moviesData[0].theUrl} />
+
+		v/s
+ <img id="particularimage" src={`https://image.tmdb.org/t/p/original/${movies[randomIndex].backdrop_path}`} style={{width: "80%", height: "300px"}}/>
+console.log(movies[randomIndex].backdrop_path)
+
+import movieTrailer from "movie-trailer"
+import Youtube from "react-youtube"
+
+const [vId, setVId] = useState("")
+function playTheTrailer(movName) {
+  movieTrailer(movName)
+  .then(function (res) {
+      console.log(res)
+    })
+  .catch(function (error) {
+      console.log(error)
+    })
+}
+
+
+let mahVid = new URLSearchParams(new URL(res).search).get("v")
+console.log(mahVid);
+setVId = mahVid;
+
+{ vId ? <Youtube videoId={vId} opts={ { width: "100%", height: "400px" } }/> : null }
+{ vId ? <Youtube videoId={vId}/> : null }
+
+function{ playTheTrailer(movies[randomIndex].title) }
+
+style={{width: "10rem"}} not reqd
+
+// function increaseBtn() {
+    //     setNumber(number + 1)
+    // }
+    // function decreaseBtn() {
+    //     setNumber(number - 1)
+    // }
+
+  <button>Login</button>
+  <button>Register</button>
+<input type="email"/>
+<input type="password"/>
+
+<button onClick={increaseBtn}>increase it</button>
+      <button onClick={decreaseBtn}>decrease it</button>
+<h1>Welcome to chat application</h1>
+
+className="form-control"
+
+<div className="card">
+  <div className="card-header">
+    Welcome to chat application
+  </div>
+  <div className="card-body">
+      <input className="form-control" placeholder="Enter Email id" type="email"/>
+      <input className="form-control" placeholder="Enter Password" type="password"/>
+	<div class="card-body">
+ 	    <a href="#" class="btn btn-primary">Login</a>
+	    <a href="#" class="btn btn-primary">Register</a>
+	</div>
+  </div>
+</div>
+
+<Link to="/mobile">To Mobile</Link>
+<Link to="/books">To Books</Link>
+
+<Link to="/mobile">To Mobile</Link>
+<Link to="/books">To Books</Link>
+
+<Link to="/mobile">To Mobile</Link>
+    <NavLink to="/books/:bookId">Your books here</NavLink>
+
+    <Route path="/books/:bookId"></Route>
+
+		<h2>Sr No.: {i.id}</h2>
+		<h2>Name: {i.title}</h2>
+                <h3>Price: Rs.{i.cost} /-</h3>
+
+		<h2>Mobile company Name: {i.id}</h2>
+		<h2>Popularity: {i.title}</h2>
+                <h3>Price: Rs.{i.cost} /-</h3>
+
+<>
+            <h2>Mobile company Name: {j.brandName}</h2>
+		    <h2>Popularity:{j.popularity}</h2>
+            <h3>Price: Rs.{j.cost} /-</h3>
+            </>
+--------------------------------------------------------------------
+
+ const confirmationOutput = mobileDetails.filter(function(i)
+//     {
+//         if(j.brandName.toLowerCase() == brand && j.cost == cost)   
+//             {
+//                 return j
+//             }     
+//     })
+
+//     if(confirmationOutput.length == 0)
+//         {
+//             return (
+//                 <div>
+//                     <h2>Requested item is not found. <br/>Sorry for the inconvinience.</h2>
+//                 </div>
+//             )
+//         }
+//     else
+//     {
+//         // confirmationOutput = [ {}, {}, ... ]
+//         return (
+//             <div>
+//                 {
+//                     confirmationOutput.map(function(j)
+//                     {
+//                         return <div>
+//                             <h1>{j.brandName}</h1>
+//                             <h2>{j.cost}</h2>
+//                             <h2>{j.popularity}</h2>
+//                         </div>                       
+//                     })
+//                 }
+//             </div>
+//         )
+//     }
+// }
+
+
+confirmationOutput[mobinfo.length].
+Now,  same for the books also
+
+const bookish = .filter()
+
+ <h2>Sr No.: {i.id}</h2>
+<h2>Name: {i.title}</h2>
+<h3>Price: Rs.{i.cost} /-</h3>
+
+<nav>
+      <ul>
+        <li><Link to="/about">About</Link></li>
+        <li><Link to="/search">Search</Link></li>
+        <li><Link to="/user">User</Link></li>
+	<li><Link to="/login">Login</Link></li>
+      </ul>
+   </nav>
+
+<Routes>
+<Route path="/about"></Route>
+<Route path="/search"></Route>
+<Route path="/user"></Route>
+<Route path="/login"></Route>
+</Routes>
+
+<NavLink to="/login">Login</NavLink>
+<NavLink to="/about">About</NavLink>
+<NavLink to="/search">Search</NavLink>
+<NavLink to="/user">User</NavLink>
+<NavLink to="/login">Login</NavLink>
+
+		v/s
+
+<Link to="/about">About</Link>
+<Link to="/search">Search</Link>
+<Link to="/user">User</Link>
+<Link to="/login">Login</Link>
+
+	along with router
+
+<NavLink to="/user/:userId"></NavLink>
+
+    <Routes>
+      <Route path="/user/:userId" element={<fg/>}></Route>
+    </Routes>
+
+userId: "1"
+.....
+
+const xyz = userInfo.filter(function(i) {
+    if (i.id == userId) {
+        return i;
+    }    
+})
+
+
+if (xyz.length == 0) {
+    return <><h2>Sorry, the page is not available.<br />Error: 404 found</h2></>
+}
+else{
+return(
+    <>
+    {
+        xyz.map(function (i) {
+            return <> <h2>{i.id}</h2>
+    	<h2>{i.Name}</h2>
+    	<h2>{i.Age}</h2>
+   	 <h2>{i.City}</h2>
+   	<pre>--------------------</pre>
+    </>
+        })
+    }
+    </>
+)
+}
+
+
+<Route path="/search?query=react" element={<SearchResults/>}></Route>
+
+<Route path="/search/:query" element={<SearchResults/>}></Route>
+
+<Route path="/user/:userId" element={<UserProfile/>}></Route>
+
+<Route path="/user?userId=123" element={<UserProfile2/>}></Route>
+---------------------------------------------------------------------------------------------------------------------------
+
+
+<NavLink to="/user/:userId">Show Users</NavLink>
+
+      <Routes>
+        <Route path="/user/:userId" element={<UserProfile2/>}></Route>
+      </Routes>
+
+      {
+        userInfo.map(function (i) {
+          if (i.id === userId) {
+            return <> <h2>{i.id}</h2>
+            <h2>{i.Name}</h2>
+            <h2>{i.Age}</h2>
+            <h2>{i.City}</h2>
+            <pre>--------------------</pre>
+            </>
+          }
+          
+        })
+      }
+....................................
+
+
+<h1>Hello world</h1>
+     <p>this is a complex code</p>
+     <ul>
+      {
+        ['apple', 'banana', 'orange'].map(function(fruit, index) {
+          <li key={index}>{fruit}</li>
+        })
+      }
+     </ul>
+
+
+----------------------------------------------------------------------------------------------------------
+
+
+<Route element={<ViewStudent/>} path="view"></Route>
+
+<Route element={<ViewStudent/>} path="/logout"></Route>
+
+<Link to="/home">Home</Link>
+
+<Link to="/logout">Logout</Link>
+<button to="/logout" onClick={}>Logout</button>
+
+button, p{
+padding: 3px;
+}
+
+   <NavLink to="/logout">Logout</NavLink>
+
+<NavLink onClick={pleaseLogout}>Logout</NavLink>
+
+
+export class App extends Component{
+render(){
+
+ }
+}
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Task Name</th>
+      <th scope="col">Status</th>
+      <th scope="col">Edit</th>
+	<th scope="col">Remove</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+      <td>Marks</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+      <td>Marks</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td colspan="2">Larry the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+
+		v/s
+
+
+<tr>
+<th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+      <td>Marks</td>
+</tr>
+
+const myImage = document.createElement("img")
+       myImage.src = i.image
+  
+      const myH2 = document.createElement("h2")
+      myH2.textContent = i.title
+
+
+       const myPara = document.createElement("p")
+       myPara.textContent = i.description
+
+  
+        const myH4 = document.createElement("h4")
+        myH4.textContent = Math.floor(i.price *83)
+
+  const myButton = document.createElement("button")
+       myButton.textContent = "Add to Cart"
+//i.image
+  
+
+ myDiv.append(myImage)
+//         myDiv.append(myH2)
+//         myDiv.append(myPara)
+//         myDiv.append(myH3)
+//         myDiv.append(myButton)
+
+//         myContainer.append(myDiv)
+
+
+
+
+//         myButton.addEventListener("click", function()
+//         {
+//             // Logic to get the details of that particular product
+//             const storeProducts = { 
+//                 imageUrl: myImage.src, 
+//                 title: myH2.textContent, 
+//                 description: myPara.textContent,
+//                 price: myH3.textContent
+//             }
+
+//             productsArr.push(storeProducts)
+
+//             localStorage.setItem(i.id, JSON.stringify(productsArr))
+
+//             alert("Your item is successfully saved!")
+//         })      
+//     })
+.................................................................,,,,,,,,,,,,,,,,,,,,,,,,,,,.......................
+
+
+
+export const updateProduct = (product) => ({
+  type: UPDATE_PRODUCT,
+  payload: product,
+});
+
+const buyIcecream = (iceCreamCount) => ({
+  return {
+        type: "BUY_ICECREAMS", 
+       payload: iceCreamCount
+     }
+})
+
+state = cakeData, action
+
+state = icecreamData, action
+bd8353c196ef874c413b73f20e5f95d3e147bfbbcc4c31e0981f1f243620b6f7.json
+<i class="fa-solid fa-address-book"></i>
+
+*{
+  padding: 3px;
+  margin: 4px;
+}
+
+
+<Routes>
+      <Route element={<ProtectedRoutes isLogged={isLogged}/>}>
+        <Route path='/home' element={<Home/>}></Route>
+        <Route element={<About/>} path="/about"></Route>
+        <Route element={<Student/>} path="/student">
+          <Route element={<AddStudentForm/>} path="add"></Route>
+          <Route element={<ViewStudent/>} path="view"></Route>
+        </Route>
+
+      </Route>
+      
+      <Route element={<Login setIsLogged={setIsLogged}/>} path="/login"></Route>
+    </Routes>
+
+
+<NavLink to="/about">About</NavLink>
+      <NavLink to="/student">Students</NavLink>
+      <NavLink to="/home"><i class="fa-solid fa-house-user"></i> Home</NavLink>
+
+
+<ul>
+<li><NavLink to="/home"><i className="fa-solid fa-house-user"></i> Home</NavLink></li>
+<li><NavLink to="/about"><i className="fa-solid fa-circle-info"></i> About</NavLink></li>
+<li><NavLink to="/service"><i className="fa-solid fa-briefcase"></i> Services</NavLink></li>
+<li><NavLink to="/contact"><i className="fa-solid fa-address-book"></i> Contact</NavLink></li>
+<button>Sign Up</button>
+</ul>
+
+OR
+
+<ul>
+{
+menulist.map(function(element, index){
+return(
+<li key={index}><NavLink to={element.url}><i className={elemens.icon}></i>{element.title}</NavLink></li>
+)
+})
+}
+</ul>
+
+url: "/",
+title: "Home",
+font: "fa-solid fa-house-user"
+
+url: "/service",
+title: "Service",
+font: "fa-solid fa-briefcase"
+
+state.products.map(function(product){
+	product.id == action.payload.id ? action.payload :product
+})
+
+state.products.filter(function(product){
+	product.id != action.payload
+})
+
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addProduct, updateProduct } from "../actions";
+
+const AddProduct = ({ productToEdit, clearEdit }) => {
+  const [product, setProduct] = useState(
+    productToEdit || { id: "", name: "", quantity: "", price: "" }
+  );
+  const dispatch = useDispatch();
+
+  const handleChange = (e) => {
+    setProduct({ ...product, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (productToEdit) {
+      dispatch(updateProduct(product));
+      clearEdit();
+    } else {
+      dispatch(addProduct({ ...product, id: Date.now() }));
+    }
+    setProduct({ id: "", name: "", quantity: "", price: "" });
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <h2>{productToEdit ? "Edit Product" : "Add Product"}</h2>
+      <input name="name"
+        value={product.name}
+        onChange={handleChange}
+        placeholder="Product Name"
+        required
+      />
+      <input
+        name="quantity"
+        value={product.quantity}
+        onChange={handleChange}
+        placeholder="Quantity"
+        type="number"
+        required
+      />
+      <input
+        name="price"
+        value={product.price}
+        onChange={handleChange}
+        placeholder="Price"
+        type="number"
+        required
+      />
+      <button type="submit">{productToEdit ? "Update" : "Add"}</button>
+    </form>
+  );
+};
+
+export default AddProduct;
+
+============================================================================================================================================
+
+import { ADD_PRODUCT, UPDATE_PRODUCT, DELETE_PRODUCT, GET_PRODUCTS } from "./actions";
+
+const initialState = {
+  products: [],
+};
+
+const inventoryReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case ADD_PRODUCT:
+      return {
+        ...state,
+        products: [...state.products, action.payload],
+      };
+
+    case UPDATE_PRODUCT:
+      return {
+        ...state,
+        products: state.products.map((product) =>
+          product.id === action.payload.id ? action.payload : product
+        ),
+      };
+
+    case DELETE_PRODUCT:
+      return {
+        ...state,
+        products: state.products.filter((product) => product.id !== action.payload),
+      };
+
+    case GET_PRODUCTS:
+      return state;
+
+    default:
+      return state;
+  }
+};
+
+export default inventoryReducer;
+
+<Provider>
+
+</Provider>
+
+<AddProduct />
+
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addProduct, updateProduct } from "../actions";
+
+const AddProduct = ({ productToEdit, clearEdit }) => {
+  const [product, setProduct] = useState(
+    productToEdit || { id: "", name: "", quantity: "", price: "" }
+  );
+  const dispatch = useDispatch();
+
+  const handleChange = (e) => {
+    setProduct({ ...product, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (productToEdit) {
+      dispatch(updateProduct(product));
+      clearEdit();
+    } else {
+      dispatch(addProduct({ ...product, id: Date.now() }));
+    }
+    setProduct({ id: "", name: "", quantity: "", price: "" });
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <h2>{productToEdit ? "Edit Product" : "Add Product"}</h2>
+      <input name="name" value={product.name} onChange={handleChange}
+        placeholder="Product Name" required/>
+      <input name="quantity"
+        value={product.quantity} onChange={handleChange} placeholder="Quantity" type="number" required />
+      <input name="price" value={product.price} onChange={handleChange}
+        placeholder="Price" type="number" required/>
+      <button type="submit">{productToEdit ? "Update" : "Add"}</button>
+    </form>
+  );
+};
+
+export default AddProduct;
+
+async (params) => {
+    
+}
+
+const proDucting = useSelector((stateful) => 
+     stateful.proDucting;
+)
+
+================================================================================
+import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { deleteProduct } from "../actions";
+
+const ProductList = ({ onEdit }) => {
+  const proDucting = useSelector((stateful) => 
+     stateful.proDucting;
+)
+  const dispatch = useDispatch();
+
+  const handleDelete = (id) => {
+    dispatch(deleteProduct(id));
+  };
+
+  return (
+    <div>
+      <h2>Product List</h2>
+      <ul>
+        {products.map((product) => (
+          <li key={product.id}>
+            {product.name} - {product.quantity} units @ ${product.price}
+            <button onClick={() => onEdit(product)}>Edit</button>
+            <button onClick={() => handleDelete(product.id)}>Delete</button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+export default ProductList;
+
+
+<nav class="bg-gray-800">
+  <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+    <div class="relative flex h-16 items-center justify-between">
+      <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+       
+        <button type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+          <span class="absolute -inset-0.5"></span>
+          <span class="sr-only">Open main menu</span>
+          
+          <svg class="block size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+          
+          <svg class="hidden size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+        <div class="flex shrink-0 items-center">
+          <img class="h-8 w-auto" src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company"/>
+        </div>
+        <div class="hidden sm:ml-6 sm:block">
+          <div class="flex space-x-4">
+            <a href="#" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white" aria-current="page">Dashboard</a>
+            <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Team</a>
+            <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Projects</a>
+            <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Calendar</a>
+          </div>
+        </div>
+      </div>
+      <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+        <button type="button" class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+          <span class="absolute -inset-1.5"></span>
+          <span class="sr-only">View notifications</span>
+          <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0" />
+          </svg>
+        </button>
+
+        <div class="relative ml-3">
+          <div>
+            <button type="button" class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+              <span class="absolute -inset-1.5"></span>
+              <span class="sr-only">Open user menu</span>
+              <img class="size-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="hello"/>
+            </button>
+          </div>
+
+          <div class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black/5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
+            
+            <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</a>
+            <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
+            <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sm:hidden" id="mobile-menu">
+    <div class="space-y-1 px-2 pb-3 pt-2">
+      <a href="#" class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white" aria-current="page">Dashboard</a>
+      <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Team</a>
+      <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Projects</a>
+      <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Calendar</a>
+    </div>
+  </div>
+</nav>
+------------------------------------------------------------------------------------------------------------
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Developing music player Again</title>
+    <link rel="stylesheet" href="music2.css">
+</head>
+<body>
+    <div class="App">
+        <img src="Picture1.png" alt="hey"/>
+        <h1>Hello CodeSandbox</h1>
+        <h2>Start editing to see some magic happen!</h2>
+        <progress value="24" max="100">I</progress>
+        <br/>
+        <span class="timings"><h6>0:00</h6> <h6>2:10</h6></span>
+        <br/>
+        <span class="icons">
+            <i id="shuffle" class="fa-solid fa-shuffle"></i>
+            <i id="back" class="fa-solid fa-backward"></i>
+            <i id="play" class="fa-solid fa-play"></i>
+            <i id="fwd" class="fa-solid fa-forward"></i>
+            <i id="heart" class="fa-solid fa-heart"></i>
+        </span>
+      </div>
+      <center>hello world</center>
+       <abbr title="Music">Musics</abbr>
+      <script src="music2.js"></script>
+</body>
+</html>
+
+height: 360px;
+   width: 26vw;
+
+
+input[type="range"] {
+    -webkit-appearance: none; /* Remove default styling in WebKit browsers */
+    width: 100%;
+    height: 8px; /* Height of the track */
+    background: #ddd; /* Background color of the track */
+    border-radius: 5px; /* Rounded corners for the track */
+    outline: none; /* Remove outline */
+    margin-left: 10px;
+}
+
+/* Style the thumb (the draggable part) */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Remove default styling */
+    appearance: none; /* Remove default styling */
+    width: 16px; /* Width of the thumb */
+    height: 16px; /* Height of the thumb */
+    border-radius: 50%; /* Make it circular */
+    background: #007bff; /* Color of the thumb */
+    cursor: pointer; /* Change cursor on hover */
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 16px; /* Width of the thumb */
+    height: 16px; /* Height of the thumb */
+     /*  border-radius: 5px;   Make it circular */
+    background: red; /* Color of the thumb was #007bff */
+    cursor: pointer; /* Change cursor on hover */
+}
+
+/* Style the track for Firefox */
+input[type="range"]::-moz-range-track {
+    background: #dcd; /* Background color of the track */
+    border-radius: 5px; /* Rounded corners for the track */
+}
+
+===================================================================================
+
+const myExpress = require("express")
+const app = myExpress();
+
+app.listen(5000, function(){
+console.log("Node js i running on port 5k");
+})
+
+app.get("/", function(req, res){
+res.sendFile(__dirname+"\\.html")
+})
+
+Leverage The Power Of Manifestation And Discover The Ultimate Formula For Rapid Growth In Health, Relationships, and Career!
+
+The soul-mind. The reptilian mind/brain: the body-mind. The limbic mind/brain: the emotional mind. The neocortex mind/brain: the rational mind.
+
+
+Given an integer array nums and an integer k, find three non-overlapping subarrays of length k with maximum sum and return them.
+
+Return the result as a list of indices representing the starting position of each interval (0-indexed). If there are multiple answers, return the lexicographically smallest one.
+
+  const [count, setCount] = useState(0);
+
+     const increment = () => {
+       setCount(count + 1);
+     };
+
+     return (
+       <div>
+         <p>Count: {count}</p>
+         <button onClick={increment}>Increment</button>
+       </div>
+     );
+
+ alert("Successfully uploaded")
+-----------------------------------------------------------------------------------------------------------
+
+def find_lexicographically_largest_string(word, numFriends):
+    def backtrack(start, path):
+        # If we have enough parts and we are at the end of the string
+        if len(path) == numFriends:
+            if start == len(word):
+                # Join the parts and add to the set of unique strings
+                combined_string = ''.join(path)
+                unique_splits.add(combined_string)
+            return
+        
+        # If we have enough parts but not at the end, we can't proceed
+        if len(path) > numFriends:
+            return
+        
+        # Try to create the next part
+        for end in range(start + 1, len(word) + 1):
+            backtrack(end, path + [word[start:end]])
+
+    unique_splits = set()
+    backtrack(0, [])
+    
+    # Find the lexicographically largest string from the unique splits
+    largest_string = max(unique_splits) if unique_splits else ""
+    
+    return largest_string
+
+# Example usage:
+word1 = "dbca"
+numFriends1 = 2
+print(find_lexicographically_largest_string(word1, numFriends1))  # Output: "dbc"
+
+word2 = "gggg"
+numFriends2 = 4
+print(find_lexicographically_largest_string(word2, numFriends2))  # Output: "g"
+
+
+const [cart, setCart] = React.useState([])
+
+function increasing(params) {
+  // console.log(params)
+  setfirst(function(prevProduct) {
+    // console.log(i)  //will show undefined
+ 	const existing = prevProduct.find((j) => j.menuId == params.menuId)
+	if(existing){
+	    return prevProduct.map(function(i){
+			return i.menuId == params.menuId ? {...i, quantity: i.quantity + 1} : i
+		})
+	}
+	else{
+		return [...prevProduct,{...params, quantity: 1}]
+	}
+  })
+}
+______________________________________________________________________________________________________________________________________________________
+
+
+<div class="relative z-10" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
+ 
+  <div class="fixed inset-0 bg-gray-500/75 transition-opacity" aria-hidden="true"></div>
+
+  <div class="fixed inset-0 overflow-hidden">
+    <div class="absolute inset-0 overflow-hidden">
+      <div class="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
+       
+        <div class="pointer-events-auto w-screen max-w-md">
+          <div class="flex h-full flex-col overflow-y-scroll bg-white shadow-xl">
+            <div class="flex-1 overflow-y-auto px-4 py-6 sm:px-6">
+              <div class="flex items-start justify-between">
+                <h2 class="text-lg font-medium text-gray-900" id="slide-over-title">Shopping cart</h2>
+                <div class="ml-3 flex h-7 items-center">
+                  <button type="button" class="relative -m-2 p-2 text-gray-400 hover:text-gray-500">
+                    <span class="absolute -inset-0.5"></span>
+                    <span class="sr-only">Close panel</span>
+                    <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              <div class="mt-8">
+                <div class="flow-root">
+                  <ul role="list" class="-my-6 divide-y divide-gray-200">
+                    <li class="flex py-6">
+                      <div class="size-24 shrink-0 overflow-hidden rounded-md border border-gray-200">
+                        <img src="https://tailwindui.com/plus/img/ecommerce-images/shopping-cart-page-04-product-01.jpg" alt="Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt." class="size-full object-cover"/>
+                      </div>
+
+                      <div class="ml-4 flex flex-1 flex-col">
+                        <div>
+                          <div class="flex justify-between text-base font-medium text-gray-900">
+                            <h3>
+                              <a href="#">Throwback Hip Bag</a>
+                            </h3>
+                            <p class="ml-4">$90.00</p>
+                          </div>
+                          <p class="mt-1 text-sm text-gray-500">Salmon</p>
+                        </div>
+                        <div class="flex flex-1 items-end justify-between text-sm">
+                          <p class="text-gray-500">Qty 1</p>
+
+                          <div class="flex">
+                            <button type="button" class="font-medium text-indigo-600 hover:text-indigo-500">Remove</button>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="flex py-6">
+                      <div class="size-24 shrink-0 overflow-hidden rounded-md border border-gray-200">
+                        <img src="https://tailwindui.com/plus/img/ecommerce-images/shopping-cart-page-04-product-02.jpg" alt="Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch." class="size-full object-cover"/>
+                      </div>
+
+                      <div class="ml-4 flex flex-1 flex-col">
+                        <div>
+                          <div class="flex justify-between text-base font-medium text-gray-900">
+                            <h3>
+                              <a href="#">Medium Stuff Satchel</a>
+                            </h3>
+                            <p class="ml-4">$32.00</p>
+                          </div>
+                          <p class="mt-1 text-sm text-gray-500">Blue</p>
+                        </div>
+                        <div class="flex flex-1 items-end justify-between text-sm">
+                          <p class="text-gray-500">Qty 1</p>
+
+                          <div class="flex">
+                            <button type="button" class="font-medium text-indigo-600 hover:text-indigo-500">Remove</button>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+
+                    
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="border-t border-gray-200 px-4 py-6 sm:px-6">
+              <div class="flex justify-between text-base font-medium text-gray-900">
+                <p>Subtotal</p>
+                <p>$262.00</p>
+              </div>
+              <p class="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at checkout.</p>
+              <div class="mt-6">
+                <a href="#" class="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700">Checkout</a>
+              </div>
+              <div class="mt-6 flex justify-center text-center text-sm text-gray-500">
+                <p>
+                  or
+                  <button type="button" class="font-medium text-indigo-600 hover:text-indigo-500">
+                    Continue Shopping
+                    <span aria-hidden="true"> &rarr;</span>
+                  </button>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+--------------------------------------------------------------------------------------
+
+
+productsInfo.map(function (s) {
+                                                            return <li class="flex py-6">
+                                                                <div class="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
+                                                                    <img src={s.menuImg} alt="Food pics" />
+                                                                </div>
+
+                                                                <div class="ml-4 flex flex-1 flex-col">
+                                                                    <div>
+                                                                        <div class="flex justify-between text-base font-medium text-gray-900">
+                                                                            <h3>
+                                                                                <a href="#">{s.menusName}</a>
+                                                                            </h3>
+                                                                            <p class="ml-4">$ {s.menuPrice * s.quantity}</p>
+                                                                        </div>
+                                                                        <p class="mt-1 text-sm text-gray-500">{s.menuDescript}</p>
+                                                                    </div>
+                                                                    <div class="flex flex-1 items-end justify-between text-sm">
+                                                                        <h6 class="text-black-500">Qty {s.quantity}</h6>
+
+                                                                        <div class="flex">
+                                                                            <button type="button" class="font-medium text-indigo-600 hover:text-indigo-500">Remove</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                        })
+___________________________________________________________________________________________________________________
+
+function decreasing(params) {
+  // console.log(params)
+  setfirst(function(prevProduct) {
+    const existing = prevProduct.find((j) => j.menuId == params.menuId)
+	if(existing){
+	   return prevProduct.map(function(i){
+
+ 		if(i.quantity == 0)
+                        {
+                           return { ...i, quantity: 0 }
+                        }
+		else if(i.quantity > 0)
+                        {
+                            return i.menuId == params.menuId ? { ...i, quantity: i.quantity - 1 } : i
+                        }
+		})
+	}
+	else{
+		return [...prevProduct,{...params, quantity: 1}]
+	}
+
+  })
+}
+
+______________________________________________________________________________________________________________________________________
+
+// actions.js
+export const REMOVE_ITEM = 'REMOVE_ITEM';
+
+export const removeItem = (itemId) => ({
+    type: REMOVE_ITEM,
+    payload: itemId,
+});
+-------------------------------------------------------------------------------------
+// reducer.js
+import { REMOVE_ITEM } from './actions';
+
+const initialState = {
+    productDatas: [],
+};
+
+const foodReducer = (state = initialState, action) => {
+    switch (action.type) {
+        case REMOVE_ITEM:
+            return {
+                ...state,
+                productDatas: state.productDatas.filter(item => item.id !== action.payload),
+            };
+        default:
+            return state;
+    }
+};
+
+export default foodReducer;
+-------------------------------------------------------------------------------------
+
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { removeItem } from './actions'; // Import the action
+
+function Shopping() {
+    const navigate = useNavigate();
+    const dispatch = useDispatch(); // Get the dispatch function
+
+    function closeCartTab() {
+        navigate("/");
+    }
+
+    const productInfos = useSelector((res) => res.foods.productDatas);
+
+    const costTotal = productInfos.reduce((accumulator, currValue) => {
+        return Number(accumulator) + Number(currValue.menuPrice) * Number(currValue.quantity);
+    }, 0);
+
+    const handleRemove = (itemId) => {
+        dispatch(removeItem(itemId)); // Dispatch the remove action
+    };
+
+    return (
+        <>
+            <div className="relative z-10" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
+                <div className="fixed inset-0 bg-gray-500/75 transition-opacity" aria-hidden="true"></div>
+                <div className="fixed inset-0 overflow-hidden">
+                    <div className="absolute inset-0 overflow-hidden">
+                        <div className="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
+                            <div className="pointer-events-auto w-screen max-w-md">
+                                <div className="flex h-full flex-col overflow-y-scroll bg-white shadow-xl">
+                                    <div className="flex-1 overflow-y-auto px-4 py-6 sm:px-6">
+                                        <div className="flex items-start justify-between">
+                                            <h2 className="text-lg font-medium text-gray-900" id="slide-over-title">Shopping cart</h2>
+                                            <div className="ml-3 flex h-7 items-center">
+                                                <button type="button" className="relative -m-2 p-2 text-rose-400 hover:text-lime-500">
+                                                    <span className="absolute -inset-0.5" onClick={closeCartTab}></span>
+                                                    <span className="sr-only">Close panel</span>
+                                                    <svg className="size-6" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+                                                        <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                        <div className="mt-8">
+                                            <div className="flow-root">
+                                                <ul role="list" className="-my-6 divide-y divide-gray-200">
+                                                    {productInfos.map((s) => (
+                                                        <li className="flex py-6" key={s.id}>
+                                                            <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
+                                                                <img src={s.menuImg} alt="Food pics" />
+                                                            </div>
+
+                                                            <div className="ml-4 flex flex-1 flex-col">
+                                                                <div>
+                                                                    <div className="flex justify-between text-base font-medium text-gray-900">
+                                                                        <h3>
+                                                                            <a href="#">{s.menusName}</a>
+                                                                        </h3>
+                                                                        <p className="ml-4">$ {s.menuPrice * s.quantity}</p>
+                                                                    </div>
+                                                                    <p className="mt-1 text-sm text-gray-500">{s.menuDescript}</p>
+                                                                </div>
+                                                                <div className="flex flex-1 items-end justify-between text-sm">
+                                                                    <h6 className="text-black-500">Qty {s.quantity}</h6>
+
+                                                                    <div className="flex">
+                                                                        <button 
+                                                                            type="button" 
+                                                                            className="font-medium text-indigo-300 hover:text-slate-600" 
+                                                                            onClick={() => handleRemove(s.id)} // Call handleRemove with the item's id
+                                                                        >
+                                                                            Remove
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="border-t border-gray-200 px-4 py-6 sm:px-6">
+                                        <div className="flex justify-between text-base font-medium text-gray-900">
+                                            <p>Subtotal</p>
+                                            <p>$ {costTotal}</p>
+                                        </div>
+                                        <p className="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at checkout.</p>
+                                        <div className="mt-6">
+                                            <a href="#" className="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700">Checkout</a>
+                                        </div>
+                                        <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
+                                            <p>
+                                                OR <br />
+                                                <button type="button" className="font-medium text-zinc-600 hover:text-slate-800">
+                                                    Continue Shopping
+                                                    <span aria-hidden="true"> &rarr;</span>
+                                                </button>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </>
+    );
+}
+
+export default Shopping;
+
+
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { removeItem } from './actions'; // Import the action
+
+function Shopping() {
+    const navigate = useNavigate();
+    const dispatch = useDispatch(); // Get the dispatch function
+
+    const closeCartTab = () => {
+        navigate("/");
+    };
+
+    const productInfos = useSelector((res) => res.foods.productDatas);
+
+    const costTotal = productInfos.reduce((accumulator, currValue) => {
+        return Number(accumulator) + Number(currValue.menuPrice) * Number(currValue.quantity);
+    }, 0);
+
+    return (
+        <>
+            <div className="relative z-10" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
+                <div className="fixed inset-0 bg-gray-500/75 transition-opacity" aria-hidden="true"></div>
+                <div className="fixed inset-0 overflow-hidden">
+                    <div className="absolute inset-0 overflow-hidden">
+                        <div className="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
+                            <div className="pointer-events-auto w-screen max-w-md">
+                                <div className="flex h-full flex-col overflow-y-scroll bg-white shadow-xl">
+                                    <div className="flex-1 overflow-y-auto px-4 py-6 sm:px-6">
+                                        <div className="flex items-start justify-between">
+                                            <h2 className="text-lg font-medium text-gray-900" id="slide-over-title">Shopping cart</h2>
+                                            <div className="ml-3 flex h-7 items-center">
+                                                <button type="button" className="relative -m-2 p-2 text-rose-400 hover:text-lime-500">
+                                                    <span className="absolute -inset-0.5" onClick={closeCartTab}></span>
+                                                    <span className="sr-only">Close panel</span>
+                                                    <svg className="size-6" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+                                                        <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                        <div className="mt-8">
+                                            <div className="flow-root">
+                                                <ul role="list" className="-my-6 divide-y divide-gray-200">
+                                                    {productInfos.map((s) => (
+                                                        <li className="flex py-6" key={s.id}>
+                                                            <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
+                                                                <img src={s.menuImg} alt="Food pics" />
+                                                            </div>
+
+                                                            <div className="ml-4 flex flex-1 flex-col">
+                                                                <div>
+                                                                    <div className="flex justify-between text-base font-medium text-gray-900">
+                                                                        <h3>
+                                                                            <a href="#">{s.menusName}</a>
+                                                                        </h3>
+                                                                        <p className="ml-4">$ {s.menuPrice * s.quantity}</p>
+                                                                    </div>
+                                                                    <p className="mt-1 text-sm text-gray-500">{s.menuDescript}</p>
+                                                                </div>
+                                                                <div className="flex flex-1 items-end justify-between text-sm">
+                                                                    <h6 className="text-black-500">Qty {s.quantity}</h6>
+
+                                                                    <div className="flex">
+                                                                        <button 
+                                                                            type="button" 
+                                                                            className="font-medium text-indigo-300 hover:text-slate-600" 
+                                                                            onClick={() => dispatch(removeItem(s.id))} // Dispatch the remove action directly
+                                                                        >
+                                                                            Remove
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="border-t border-gray-200 px-4 py-6 sm:px-6">
+                                        <div className="flex justify-between text-base font-medium text-gray-900">
+                                            <p>Subtotal</p>
+                                            <p>$ {costTotal}</p>
+                                        </div>
+                                        <p className="mt-0.5 text sm text-gray-500">Shipping and taxes calculated at checkout.</p>
+                                        <div className="mt-6">
+                                            <a href="#" className="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700">Checkout</a>
+                                        </div>
+                                        <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
+                                            <p>
+                                                OR <br />
+                                                <button type="button" className="font-medium text-zinc-600 hover:text-slate-800">
+                                                    Continue Shopping
+                                                    <span aria-hidden="true"> &rarr;</span>
+                                                </button>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </>
+    );
+}
+
+export default Shopping;
+________________________________________________________________________________________________________________________________________________________
+
+Write a regex in JavaScript that validates email addresses.
+
+function validateEmail(email) {
+  // Regular expression for validating an email address
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  
+  // Test the email against the regex
+  return emailRegex.test(email);
+}
+
+// Example usage
+const email = "example@example.com";
+console.log(validateEmail(email));  // Output: true or false
+
+Explanations:
+
+^ asserts the position at the start of the string.
+[a-zA-Z0-9._%+-]+ matches one or more of the allowed characters in the local part of the email.
+@ matches the "@" symbol.
+[a-zA-Z0-9.-]+ matches one or more of the allowed characters in the domain part of the email.
+\. matches the dot (".") symbol.
+[a-zA-Z]{2,} matches the top-level domain (TLD) with at least two characters.
+$ asserts the position at the end of the string.
+This regex covers most common email formats but may not cover all possible valid email addresses according to the full specification. For most practical purposes, this regex should work well.
+_________________________________________________________________________________________________________________________________________________________
+
+
+<h2>Here are the list of some students</h2>
+    <!-- <%  for (let i in studentDetails){ %>
+        <h2> <%= i.studName %> </h2>
+        <code> <%= i.studAge %> </code>
+        <h3> <%= i.studCity %> </h3>
+        <hr/>
+   <% } %> -->
+
+
+  <%  studentDetails.map(function(i) { %>
+     <a href="/students/<%= i.studName %>"><%= i.studName %></a>
+     <p> <%= i.studAge %> </p>
+        <h6> <%= i.studCity %> </h6>
+         <hr/>
+ <%  }) %>
+
+_______________________________________________________________________________________________________
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #4cae4c;
+        }
+
+        p {
+            text-align: center;
+            color: #666;
+        }
+
+        a {
+            text-align: center;
+            display: block;
+            color: #007bff;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+
+
+
+ body: {
+    username: 'Sweety',
+    emailId: 'spani@gmail.com',
+    passwords: 'Sweety99',
+    confirmPasswords: 'Sweety99'
+  },
+
+//my first registration details, password is clearly visible
