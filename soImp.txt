@@ -1,0 +1,170 @@
+
+useEffect(function(){
+//my code
+}, [])
+
+const [ok, setOk] = useState(0, false, "")
+
+npm install react-router-dom
+
+useMemo(function(){
+
+})
+
+what is JavaScript promises?
+----------------------------------------------------------------------------------------------------------------------------------
+
+    {
+
+        "id": 2,
+
+        "title": "Schedule team meeting",
+
+        "description": "Set agenda and invite team members",
+
+        "status": "In Progress",
+
+        "due_date": "2023-12-12"
+
+    },
+    {
+
+        "id": 1,
+
+        "title": "Playing",
+
+        "description": "To play video games with friends",
+
+        "status": "Pending",
+
+        "due_date": "2025-02-17"
+
+    },
+    {
+
+        "id": 2,
+
+        "title": "Schedule team meeting",
+
+        "description": "Set agenda and invite team members",
+
+        "status": "in progress",
+
+        "due_date": "2023-12-12"
+
+    },
+http://localhost:3000/
+    {
+
+        "id": 3,
+
+        "title": "Shopping for easter",
+
+        "description": "Shop for the easter eggs for your loved ones and buy chocolates, ",
+
+        "status": "Pending",
+
+        "due_date": "2024-12-25"
+
+    },
+    {
+
+        "id": 4,
+
+        "title": "Improve documents",
+        "description": "Set strategies to make changes in the part of the document you want to change",
+        "status": "Completed",
+        "due_date": "2024-10-22"
+
+    },
+    {
+
+        "id": 5,
+
+        "title": "Urgent task",
+
+        "description": "Set agenda and invite team members",
+
+        "status": "In Progress",
+
+        "due_date": "2024-11-01"
+
+    },
+
+
+mongodb+srv://<db_username>:<db_password>@cluster0.pk8r1.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+
+npm install mongodb
+
+<db_username> Sweety
+<db_password> spani99
+
+taskdatabase
+
+mongodb+srv://Sweety:spani99@cluster0.pk8r1.mongodb.net/taskdatabase?retryWrites=true&w=majority&appName=Cluster0
+
+
+{"_id":{"$oid":"679e35003c24eba0031ada63"},"id":{"$numberInt":"1"},"title":"Playing","description":"To play video games with friends","status":"Pending","due_date":"2025-02-17"}
+
+
+
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ["./src/*.js"],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+
+
+
+description
+: 
+"Set agenda and invite team members"
+
+due_date
+: 
+"2023-12-12"
+
+id
+: 
+2
+
+status
+: 
+"In Progress"
+
+title
+: 
+"Schedule team meeting"
+
+__v
+: 
+0
+
+_id
+: 
+"67a4efae4a9b4cae9d1999e2"
+
+-----------------------------------------------------------
+
+np : The term 'np' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling 
+of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ np i react redux rreact-redux react-router-dom axios
++ ~~
+    + CategoryInfo          : ObjectNotFound: (np:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+
+............................................................................
+
+// for fullstack registration
+
+{
+  myUsername: 'Sweety',
+  myEmail: 'spani@gmail.com',
+  myPassword: 'Sweety99',
+  myConfirmPassword: 'Sweety99'
+}
