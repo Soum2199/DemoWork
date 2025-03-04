@@ -1,0 +1,245 @@
+import React from 'react'
+import { auth, provider } from '../firebase';
+import { signInWithPopup } from 'firebase/auth';
+
+function Login() {
+
+    function pleaseSignIn(){
+        signInWithPopup(auth, provider)
+    .then(function(){
+        console.log("Successfully logged in.!")
+    })
+    .catch(function(){
+        console.log("Failed to login.")
+    })
+  }  
+
+  return (
+    <div>
+        <h1> Sign in below!.</h1>
+        <form>
+          <h3>Sign in</h3>
+          Enter username: <input type="text" name="Johnny Doe"/>
+          Enter password: <input type="password" />
+          <button>Sign in</button>
+        </form>
+        <h1>OR</h1>
+        <button onClick={pleaseSignIn} className="btn btn-primary">Sign in here</button>
+        
+    </div>
+  )
+}
+
+export default Login
+-----------------------------------------------------------------------------------
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAuth, GoogleAuthProvider } from "firebase/auth";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyAX0QNsrP2yw2mvnHwobKgwbD4jHDlYqBw",
+  authDomain: "fir-netflix-5bc7b.firebaseapp.com",
+  projectId: "fir-netflix-5bc7b",
+  storageBucket: "fir-netflix-5bc7b.firebasestorage.app",
+  messagingSenderId: "364219053477",
+  appId: "1:364219053477:web:f3cb607b1e091ce668244c"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+export const auth = getAuth(app)
+export const provider = new GoogleAuthProvider();
+
+------------------------------------------------------------------------------------------------------------------------------
+
+<div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+  <button type="button" class="btn btn-success">Update</button>
+  <button type="button" class="btn btn-danger">Delete</button>
+
+  <div class="btn-group" role="group">
+    <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+      Dropdown
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+      <li><a class="dropdown-item" href="#">Dropdown link</a></li>
+      <li><a class="dropdown-item" href="#">Dropdown link</a></li>
+    </ul>
+  </div>
+</div>
+
+
+<div class="btn-group dropup">
+  <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+    Dropup
+  </button>
+  <ul class="dropdown-menu">
+  </ul>
+</div>
+-------------------------------------------------------------------------------------------------------------------
+
+    <div class="container d-flex justify-content-center align-items-center min-vh-100">
+  <div class="card text-end" style={{width:'55em'}}>
+    <div class="card-body justify-content-center">
+      <h5 class="card-title text-start">Special title treatment</h5>
+      <p class="card-text text-start">With supporting text below as a natural lead-in to additional content.</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+      
+      <br/>
+      <p class="fw-normal text-center card-footer " style={{marginBottom: "2px"}}>hey there</p>
+    </div>
+  </div>
+</div>
+
+==============================================================
+
+<div className="d-flex justify-content-center align-items-center">
+  <div className='card w-40 mb-3'>
+        <div className="card-body row g-2 text-center">
+            <div className="col-auto">
+                <label for="inputPassword6" class="col-form-label"> Enter Task: </label>
+            </div>
+            <div className="col-auto">
+                <input type="text" class="form-control --bs-info-border-subtle" aria-describedby="passwordHelpInline"/>
+            </div>
+            <div className="col-auto">
+                <button type="button" class="btn btn-secondary">Add Task +</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+...........................................................,,,.......
+
+<form class="row g-3 justify-content-center" method='post'>
+<div className='col-sm-5 col-md-6'>
+  Enter name:<input class="form-control" type="text" name="username"/>
+  Enter email id:<input class="form-control" type="email" name="email"/>
+  Password:<input class="form-control" type="password" name="password"/>
+  Confirm password:<input class="form-control" type="password" name="confirmpassword"/>
+<br/>
+  <button className='btn btn-outline-primary'>Sign in</button>
+</div>
+<br/>
+ <button onClick={plzSigning} type="button" class="btn btn-primary">Sign in with Google</button>
+<br/>
+<p>Already have an account? <a href="/login" class="stretched-link text-primary">Kindly <strong>Login</strong> here</a></p>
+</form>
+
+====------------------------------------------------------------========-----------------
+
+<button type="button" class="btn btn-primary" id="liveToastBtn">Show live toast</button>
+
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+  <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+      <img src="..." class="rounded me-2" alt="..."/>
+      <strong class="me-auto">Bootstrap</strong>
+      <small>11 mins ago</small>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+      Hello, world! This is a toast message.
+    </div>
+  </div>
+</div>
+
+..............................................,,,,,,,,...........,,,,,,,,,,......
+<div className="card text-center">
+<form method='post'>
+        <div className="card-body">
+          <h5 className="card-title">Enter your name:</h5>
+          <input type="text" class=" form-control" placeholder="Mark" required></input>
+          <h5 class="card-title">Enter password:</h5>
+          <input type="password" class=" form-control" required></input>
+          <a href="#" class="btn btn-primary">Sign in</a>
+        </div>
+        <div class="card-footer text-body-secondary">
+          OR <br/>
+          <button  type="button" class="btn btn-outline-primary">Sign in with Google</button>
+          <br/>
+          <p>Dont have an account? <a href="#" class="stretched-link text-primary">Kindly <strong>Sign in</strong> here</a></p>
+        </div>
+      </form>
+</div>
+-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
+
+public class ShortestSubstringMatcher {
+    public static int shortestSubstringLength(String s, String p) {
+        // Split the pattern into parts
+        String[] parts = p.split("\\*");
+        String prefix = parts[0];
+        String suffix = parts[1];
+
+        int prefixLength = prefix.length();
+        int suffixLength = suffix.length();
+        int minLength = Integer.MAX_VALUE;
+
+        // Find the first occurrence of the prefix
+        int prefixIndex = s.indexOf(prefix);
+        while (prefixIndex != -1) {
+            // Find the next occurrence of the suffix starting after the prefix
+            int suffixIndex = s.indexOf(suffix, prefixIndex + prefixLength);
+            while (suffixIndex != -1) {
+                // Calculate the length of the substring
+                int length = (suffixIndex + suffixLength) - prefixIndex;
+                minLength = Math.min(minLength, length);
+                // Move to the next occurrence of the suffix
+                suffixIndex = s.indexOf(suffix, suffixIndex + 1);
+            }
+            // Move to the next occurrence of the prefix
+            prefixIndex = s.indexOf(prefix, prefixIndex + 1);
+        }
+
+        // If minLength was updated, return it; otherwise, return -1
+        return minLength == Integer.MAX_VALUE ? -1 : minLength;
+    }
+
+if (p == null || p.length() < 3 || p.chars().filter(ch -> ch == '*').count() != 2) {
+            return -1; // Invalid pattern
+        }
+
+
+=======================================================
+
+
+myUsername: username,
+myEmail: email,
+myPassword: password,
+myConfirmPassword: confirmPassword
+
+(error) => console.log('Error connecting to MongoDB:', error)
+(output) => console.log(output)
+
+app.post("/signin", function (req, res) {
+    console.log(req.body)
+const signupDetails = req.body
+const SigninData = new sing2({
+ username: signupDetails.myUsername,
+ email: signupDetails.myEmail,
+ password: signupDetails.myPassword
+})
+if(signupDetails.myPassword == signupDetails.myConfirmPassword){
+ SigninData.save()
+ res.send("Successfully registered!")
+}
+else{
+ res.send("passwords dont match")
+}
+})
+
+
+Current IP Address (114.79.178.184/32) added! always changes.
+<div class="d-grid gap-2 col-6 mx-auto">
+        <p class="text-center text-secondary">Price: 200</p>
+        <small class="text-success">Available</small>
+        <button type="button" class="btn btn-success" onClick={chooseSeats}>Select seats</button>
+</div>
+
+
+req.body.title
+req.body.description
+req.body.status
+req.body.due_date
