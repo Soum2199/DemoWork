@@ -51,11 +51,22 @@ app.post("/collections", async function (req,res) {
 })
 
 app.put("/food/updates", async function(req, res) {
+       const deb = await makeCollection()
+
+await deb.collection("foodscollection").updateOne(
+        { foodname: "Chickoo shakes", foodcost: "65" }, 
+        { $set: { foodname: "Chocolate Milkshake", foodcost: "70" }}
+    );
+    res.send("Updated Successfully");
 
 });
 
 app.delete("/food/delete", async function(req, res) {
-    
+          const deb = await makeCollection()
+
+await deb.collection("foodscollection").deleteOne({foodcost: "105"})
+    res.send("Deleted Successfully")
+
 })
 
 app.listen(5000, () => console.log("This server shall run on port 5k"))
