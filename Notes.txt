@@ -1,5 +1,8 @@
 Hello World
 
+varia = "Frooti"
+print("Hey there, whats up "+varia+", How are you?")
+
 Which of the following is a valid way to comment in Python? Ans:. # is valid way
 The result of the expression in Python: 5 + 2 * 3 is equals 11.
 a = 5 
@@ -29,6 +32,10 @@ print(~(~2)) #gives 2
 Reason:
 Negation of negation is positive, hence correct answer is 2.
 What is the result of 10 > 5 and 5 < 3? Ans:. False
+
+print("list of even numbers")
+for i in range(0,101,2):
+       print(i)
 
 
 When a function is defined inside a class then it is called Method.
