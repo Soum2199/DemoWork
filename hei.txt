@@ -30,3 +30,20 @@ one = int(input("enter first number "))
 two = int(input("Enter second number "))
 sum = one + two
 print(sum)
+
+
+a = 'Hello World'
+print(a) #output will be whole string. Hello World
+print(a[0]) #output will be first character. H
+print(a[0:5]) #output will be first five characters. Hello
+print(a[:3]) # gives Hel
+print(a[:-1]) #gives Hello Worl
+print(a[-1:]) #gives d only
+print(a[3:6]) #gives lo and some space
+print(a[3:10]) #gives lo Worl as output
+
+int_num = 10 # class int value
+float_num = 10.2 #class float value
+complex_num = 3.14j #class complex value
+long_num = 1234567 #its a long value but gives class int
+print(type(int_num), type(float_num), type(complex_num), type(long_num))
