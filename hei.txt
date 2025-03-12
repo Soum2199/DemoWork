@@ -47,3 +47,13 @@ float_num = 10.2 #class float value
 complex_num = 3.14j #class complex value
 long_num = 1234567 #its a long value but gives class int
 print(type(int_num), type(float_num), type(complex_num), type(long_num))
+
+#Printing Even numbers
+def isEven(a):
+    if a%2 ==0:
+        return True
+    #this next line should be even with the if
+    return False
+
+print(isEven(7))
+print(isEven(6))
