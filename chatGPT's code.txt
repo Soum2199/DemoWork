@@ -29,8 +29,7 @@ const reducer = combineReducers({
 
 // If you want to prepopulate the cart state from localStorage
 const cartItemsInLocalStorage = localStorage.getItem('cart')
-  ? JSON.parse(localStorage.getItem('cart'))
-  : [];
+  ? JSON.parse(localStorage.getItem('cart')) : [];
 
 const INITIAL_STATE = {
   cart: {
@@ -52,7 +51,6 @@ We can modify the `cartReducer` to just handle the cart actions like adding/remo
 ```javascript
 // cartReducers.js
 
-// Define action types
 const ADD_TO_CART = 'ADD_TO_CART';
 const REMOVE_FROM_CART = 'REMOVE_FROM_CART';
 
