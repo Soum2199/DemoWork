@@ -408,8 +408,7 @@ module.exports =
 {
     "location": "Mumbai",
     "theatre": [
-        { "theatre_name": "Aditi Theatre", "show_times": ["6:30 AM", "9:30 AM", "12:30 PM"] },
-        { "theatre_name": "Ashoka Theatre", "show_times": ["8:00 AM", "11:30 PM"] },
+        { "theatre_name": "Ashoka Theatre", "show_times": ["11:00 AM", "6:30 PM", "9:00 PM"] },
         { "theatre_name": "Inox Theatre", "show_times": ["6:30 AM", "9:30 AM", "12:30 PM"] },
         { "theatre_name": "PVR Theatre", "show_times": ["10:30 AM", "12:30 PM", "2:00 PM"] }
     ]
