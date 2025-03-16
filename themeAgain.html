@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style> 
+:root{
+  --first: white;
+  --second: black;
+  --third: #5C6AC4;
+  --fourth: #a80210;
+  --fifth: #b88112;
+  --sixth: #0c9ac2;
+}
+.dark-theme{
+  --first: black;
+  --second: white;
+  --third: #e3e307;
+  --fourth: #fc986d;
+  --fifth: #fce851;
+  --sixth: #b6f2fc;
+}
+
+body{
+  padding: 15px;
+  	font-size: 27px;
+  background: var(--first);
+  color: var(--second);
+}
+.title, #stars {
+	color: var(--third);
+	font-size: 32px;
+}
+.okay{
+  margin: 5px;
+}
+/*not so mandatory ones*/
+
+#heart{
+  color: var(--fourth);
+}
+#crown{
+  color: var(--fifth);
+}
+#snow{
+  color: var(--sixth);
+}
+   </style>
+  </head>
+  <body>
+    <button type="submit" id="toggle"><i class="fa-solid fa-circle-half-stroke"></i></button>
+      <h1 class="title">Hello World! </h1>
+      <span class="okay">
+      <i class="fa-solid fa-star" id="stars"></i>
+        <i class="fa-solid fa-plane" id="airplane"></i>
+        <i class="fa-solid fa-heart" id="heart"></i>
+        <i class="fa-solid fa-web-awesome" id="crown"></i>
+        <i class="fa-solid fa-snowflake" id="snow"></i>
+      </span>
+      
+      <p id="currentTime"></p>
+      <script>
+
+function showTime() {
+	document.getElementById('currentTime').innerHTML = new Date().toUTCString();
+}
+showTime();
+setInterval(function () {
+	showTime();
+}, 1000);
+
+const button = document.getElementById("toggle")
+const bod = document.body
+button.addEventListener("click", function () {
+  // if (class == "dark-theme") {
+  button.style.cursor = "pointer";
+  bod.classList.toggle("dark-theme")
+    button.classList.toggle("dark-theme")
+})
+     </script>
+  </body>
+</html>
