@@ -1,0 +1,280 @@
+<div class="input-group justify-content-center">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-light">
+        <div class="container-fluid">
+          <h2>{s.title} </h2>
+      
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                <button class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                  {s.status}
+                </button>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                  <li><a class="dropdown-item" href="#">Pending</a></li>
+                  <li><a class="dropdown-item" href="#">In Progress</a></li>
+                  <li><a class="dropdown-item" href="#">Completed</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      </div>
+
+const [dates, setDates] = useState([]);
+const [displayTheatresInfo, setDisplayTheatresInfo] = useState(false)
+
+ useEffect(() => {
+        let info = [];
+        for (let i = 0; i < 3; i++) {
+            const currentDate = new Date();
+            currentDate.setDate(currentDate.getDate() + i);
+
+            const dayName = currentDate.toLocaleString('default', { weekday: 'short' });
+            const monthName = currentDate.toLocaleString('default', { month: 'short' });
+            const date = currentDate.getDate();
+
+            info.push({
+                dayName: dayName,
+                monthName: monthName,
+                date: date,
+            });
+        }
+        setDates(info);
+    }, []);
+
+function dateClicked(recievedDayName) {
+        setEnteredDayName(recievedDayName)
+        // Logic to change boolen to true
+        setDisplayTheatresInfo(true)
+    }
+
+<div className="container mt-3">
+            {locationName ? (
+                <div className="d-flex gap-10 border border-danger p-3 m-2">
+                    {dates.map((hi, index) => (
+                        <div style={{ cursor: "pointer" }} onClick={function () {
+                            dateClicked(hi.dayName)
+                        }
+                        } className={enteredDayName == hi.dayName ? "apply" : null}>
+                            <h4>{hi.dayName.toUpperCase()}</h4>
+                            <h2>{hi.date}</h2>
+                            <h4>{hi.monthName.toUpperCase()}</h4>
+                        </div>
+                    ))}
+                </div>
+            ) : null}
+------------------------------------------------------------------------------------------------------------------
+
+import React from 'react';
+
+function ShopPage() {
+  const cards = [
+    {
+      imgSrc: "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA1Aecy0.img?w=768&h=432&m=6",
+      title: "Card title 1",
+      text: "Some quick example text to build on the card title and make up the bulk of the card's content.",
+      price: "Rs 1999/-"
+    },
+    // Add more card objects here
+  ];
+
+  return (
+    <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-around" }}>
+      {cards.map((card, index) => (
+        <div key={index} className="card" style={{ width: "18rem", margin: "4px", padding: "1px" }}>
+          <img src={card.imgSrc} className="card-img-top" alt="image"/>
+          <div className="card-body">
+            <h5 className="card-title">{card.title}</h5>
+            <p className="card-text">{card.text}</p>
+            <p className="card-text">{card.price}</p>
+            <a href="#" className="btn btn-outline-secondary" style={{ padding: "7px 25px", fontSize: "18px" }}>View</a>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+
+
+return show && <div className="backdrop" onClick={click}></div>;
+
+
+.backdrop {
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+export default ShopPage;
+
+
+
+//using map function
+<div class="carousel-item">
+      <img src="..." class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Particular slide label</h5>
+        <p>Some representative placeholder content for the current slide.</p>
+      </div>
+    </div>
+
+//otherwise
+
+<div id="carouselExampleCaptions" class="carousel slide">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item">
+      <img src="..." class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>First slide label</h5>
+        <p>Some representative placeholder content for the first slide.</p>
+      </div>
+    </div>
+  
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+
+
+//-----------------------------------------------------------------third part----------------------
+
+<div id="carouselExampleCaptions" class="carousel slide">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+
+<div className='carousal-inner'>
+<div class="carousel-item">
+      <img src="..." class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Second slide label</h5>
+        <p>Some representative placeholder content for the second slide.</p>
+      </div>
+    </div>
+<div class="carousel-item">
+      <img src="..." class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>First slide label</h5>
+        <p>Some representative placeholder content for the first slide.</p>
+      </div>
+    </div>
+</div>
+
+<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+import React, {useState, useEffect} from 'react'
+import './App.css';
+// import Hello from './Hello';
+import Navbar from './Navbar';
+import { Route, Routes, Link } from 'react-router-dom'
+import ShopPage from './ShopPage';
+import Backdrop from './Backdrop';
+// import SideDrawer from './SideDrawer';
+
+function App() {
+  const [sideToggle, setSideToggle] = useState(false);
+  return (
+    <div className="App">
+        <h2>Good morning</h2>
+        {/* <Hello/> onClick={() => setSideToggle(true)} */}
+        <Navbar />
+        {/* <SideDrawer show={sideToggle} click={() => setSideToggle(false)}/> */}
+        {/* <Backdrop show={sideToggle} click={() => setSideToggle(false)} /> */}
+          <main>
+          <div id="carouselExampleCaptions" class="carousel slide">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item">
+      <img src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/mount-robson-snowcapped-mountain-alberta-canada-ndy-carton.jpg" class="d-block w-100" alt="..."/>
+      <div class="carousel-caption d-none d-md-block">
+        <h5>First slide label</h5>
+        <p>Some representative placeholder content for the first slide.</p>
+      </div>
+    </div>
+    <div class="carousel-item active">
+      <img src="https://wallpaperaccess.com/full/9085774.jpg" class="d-block w-100" alt="..."/>
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Second slide label</h5>
+        <p>Some representative placeholder content for the second slide.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="https://www.gettyimages.ca/gi-resources/images/Homepage/Hero/UK/CMS_Creative_164657191_Kingfisher.jpg" class="d-block w-100" alt="..."/>
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Third slide label</h5>
+        <p>Some representative placeholder content for the third slide.</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+          </main>
+        <div className="shop-container" style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-evenly" }}>
+        <ShopPage/>
+        <ShopPage/>
+        <ShopPage/>
+        <ShopPage/>
+        <ShopPage/>
+        <ShopPage/>
+      </div>
+      <Routes>
+        <Route path='/shop' element={<ShopPage/>}></Route>
+      </Routes>
+    </div>
+    
+  )
+}
+
+export default App
+
+
+const result = useSelector(function (outpet) {
+         return outpet
+  })
+console.log(result)
+
+s164@gmail.com
+s1646517887@gmail.com
+
+localhost:8086/get/products
