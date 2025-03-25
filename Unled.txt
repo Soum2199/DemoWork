@@ -1,0 +1,437 @@
+
+
+<div class="bg-white">
+  <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+    <h2 class="sr-only">Products</h2>
+
+    <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+      <a href="#" class="group">
+        <img src="https://tailwindui.com/plus/img/ecommerce-images/category-page-04-image-card-01.jpg" alt="Tall slender porcelain bottle with natural clay textured body and cork stopper." class="aspect-square w-full rounded-lg bg-gray-200 object-cover group-hover:opacity-75 xl:aspect-[7/8]">
+        <h3 class="mt-4 text-sm text-gray-700">Earthen Bottle</h3>
+        <p class="mt-1 text-lg font-medium text-gray-900">$48</p>
+      </a>
+
+      <a href="#" class="group">
+        <img src="https://tailwindui.com/plus/img/ecommerce-images/category-page-04-image-card-04.jpg" alt="Hand holding black machined steel mechanical pencil with brass tip and top." class="aspect-square w-full rounded-lg bg-gray-200 object-cover group-hover:opacity-75 xl:aspect-[7/8]">
+        <h3 class="mt-4 text-sm text-gray-700">Machined Mechanical Pencil</h3>
+        <p class="mt-1 text-lg font-medium text-gray-900">$35</p>
+      </a>
+
+    </div>
+  </div>
+</div>
+
+------------------------------------------------------------.........................................
+
+<div class="bg-white">
+  <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+
+    <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+      <div class="group relative">
+        <img src="https://tailwindui.com/plus/img/ecommerce-images/product-page-01-related-product-01.jpg" alt="Front of men&#039;s Basic Tee in black." class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80">
+        <div class="mt-4 flex justify-between">
+          <div>
+            <h3 class="text-sm text-gray-700">
+              <a href="#">
+                <span aria-hidden="true" class="absolute inset-0"></span>
+                Basic Tee
+              </a>
+            </h3>
+            <p class="mt-1 text-sm text-gray-500">Black</p>
+          </div>
+          <p class="text-sm font-medium text-gray-900">$35</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+    
+height: 310px;
+width: 98vw;
+  width: 250px;
+
+box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.25);
+
+// const self = require("fs")
+
+// self.writeFile("hey.txt", "Hello World!.", function (error) {
+//     if (error) {
+//         console.log("Couldnt do so!. SORRY")
+//     }
+//     else{
+//         console.log("Congrats, Data got printed!.")
+//     }
+// })
+// console.log("Happy birthday Mother Earth")
+//// initially file was not created, but got created after running the above code. TYSM Node js.
+//// the above one is asynchronous, Now we will see the synchronous ones.
+// const doin = self.writeFileSync("hey.txt", "Hey, hello World!. Hola Amigos.")
+// console.log(doin)
+
+//// asynchronous readings
+// self.readFile("hey.txt", "utf-8", function (error, output) {
+//     if (error) {
+//         console.log("Couldnt do so!. SORRY")
+//     }
+//     else{
+//         console.log(output)
+//     }
+// })
+// console.log("Happiest Biirthdayyy!!.... Mother Earth")
+
+//// synchronous readings
+// const doin = self.readFileSync("hey.txt", "utf-8")
+// console.log(doin)
+// console.log("Hey, Good afternoon!.")
+
+
+<div class="range">
+        <input type="range" name="range" id="range">
+      </div>
+
+
+
+ https://media.istockphoto.com/id/154920259/photo/jetty-on-mabul-island-sipadan-borneo-malaysia.jpg?s=2048x2048&w=is&k=20&c=L5cLQINtTZzlgMnX_2WaRcgRSWayUrfV-nD4U7XvkHI=
+
+Malaysia img
+
+
+
+
+=================================================================================================================================
+
+const initially = {
+    noofMobiles: 12
+}
+function buyMobiles(mobCount) {
+    return{
+        type: "BUY_MOBILE",
+        payload: mobCount
+    }
+}
+const mobileReducer = (state = initially, action) => {
+    if (action.type == "BUY_MOBILE") {
+        return{
+            noofMobiles: state.noofMobiles - action.payload
+        }
+    }
+    return state
+}
+const mobileStores = reducering.createStore(mobileReducer)
+console.log("Firstly", mobileStores.getState())
+mobileStores.dispatch(buyMobiles(4))
+console.log("Lastly", mobileStores.getState())
+===========-----------------------------====================================----------------------=.........................
+
+app.post("/collect",(req, res) => {
+    // console.log(req.body)
+    const recievedStud = req.body;
+    const abc = myFileSys.readFileSync("demo2.json", "utf-8")
+    const readingJs = JSON.parse(abc)
+    // console.log(readingJs)
+    readingJs.push(recievedStud)
+    myFileSys.writeFileSync("demo2.json", JSON.stringify(readingJs))
+    res.redirect("/")
+})
+
+app.get("/students",(req, res) => {
+    // const def = myFileSys.readFileSync("demo2.json", "utf-8")
+    // const convertJavscript = JSON.parse(def)
+
+    const convertJavscript = JSON.parse(myFileSys.readFileSync("demo2.json", "utf-8"))
+   res.render("viewStudent.ejs", {studentDetails: convertJavscript})
+})
+
+------------------------------------------------------------------------------------------------------------------------
+
+//for backend basic practice
+const myFileSys = require('fs')
+const myExpression = require('express')
+const app = myExpression()
+const myEjes = require('ejs')
+const Multerr = require('multer')
+
+app.use(myExpression.urlencoded())
+app.set("view engine", myEjes)
+
+Multerr({dest: "images/"})
+app.get("/",(req, res) => {
+    // res.sendFile(__dirname + "\\homepage.html")
+    res.render("homepage.ejs")
+})
+
+app.get("/add",(req, res) => {
+    // res.sendFile(__dirname + "\\addStudent.html")
+    res.render("addStudent.ejs")
+})
+
+app.post("/collect",(req, res) => {
+    // console.log(req.body)
+    const recievedStud = req.body;
+    const abc = myFileSys.readFileSync("demo2.json", "utf-8")
+    const readingJs = JSON.parse(abc)
+    // console.log(readingJs)
+    readingJs.push(recievedStud)
+    myFileSys.writeFileSync("demo2.json", JSON.stringify(readingJs))
+    res.redirect("/")
+})
+
+app.get("/students",(req, res) => {
+    // const def = myFileSys.readFileSync("demo2.json", "utf-8")
+    // const convertJavscript = JSON.parse(def)
+
+    const convertJavscript = JSON.parse(myFileSys.readFileSync("demo2.json", "utf-8"))
+   res.render("viewStudent.ejs", {studentDetails: convertJavscript})
+})
+
+app.get("*", function(req, res)
+{
+    res.render("Error404.ejs")
+})
+
+app.get("/students/:name", (req, res) => {
+    // console.log(req)
+    const extractedStudName = req.params.name
+    const allStudInfo = myFileSys.readFileSync("demo2.json", "utf-8")
+    const allStuds = JSON.parse(allStudInfo)
+    allStuds.map(function(i) {
+      if (i.studName == extractedStudName) {
+        res.render("particularStud.ejs", { particulars : i })
+      }
+    })
+    res.send("<h1>Sorry for the inconvinience</h1>")
+    // particulars
+//   res.render("Error404.ejs")
+    // res.render("particularStud.ejs")
+})
+
+app.listen(5000, () => {
+    console.log("My server file is running on port 5000\n")
+})
+
+//  particularStud  particularStud
+//   git config --global user.email "s1646517887@gmail.com"
+//   s1646517887@gmail.com
+
+// if (i.studAge == extractedStudName) {
+//     // console.log(i)
+//     res.render("particularStud.ejs", { particulars : i })
+//   }
+							or
+
+app.post("/collect", (req, res) => {
+    const receivedStudentData = req.body;
+    console.log("Received Student Data:", receivedStudentData); // Log the incoming data
+
+    const abcd = fs.readFileSync("stud.json", "utf-8");
+    const readJavascriptData = JSON.parse(abcd);
+    
+    // Check if the received data is valid
+    if (receivedStudentData.name && receivedStudentData.age) {
+        readJavascriptData.push(receivedStudentData);
+        fs.writeFileSync("stud.json", JSON.stringify(readJavascriptData));
+    } else {
+        console.error("Invalid student data received:", receivedStudentData);
+    }
+
+    res.redirect("/students");
+});
+
+https://github.com/MAshrafM/NodeJS_Projects/tree/master/01_SimpleServer
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+app.post("/collection", (req, res) =>{
+   console.log(req.body)
+const insetingFood = req.body;
+const insertFoodQuery = "insertinto foods(foodId, foodname, foodcost, foodrestaurant) values(?,?,?,?)"
+connectionInfo.query(insertFoodQuery, [insetingFood.foodId, insetingFood.foodname, insetingFood.foodcost, insetingFood], function (error) {
+        if (error) {
+            // return res.send("<h2></h2>")
+            return res.send("<h2>Sorry, could not insert</h2>")
+        }
+        else{
+           return res.send("<h2>Content is inserted suuccessfully.</h2>")
+        }
+    })
+  //  res.redirect("/")
+})
+
+affectedRows
+result.affectedRows
+
+res.status(404).send("Sorry")
+
+Software Engineer has an amazing career path wherein after achieving technical and interpersonal skills, you're promoted to senior-level engineers and the journey continues. The road to the career path in the Software Engineering profession and understanding the skills needed to become one.
+
+For early levels, getting promoted can take anywhere between one to two years as you gain experience. Here's what I did to earn my first promotion and what you should be doing to get promoted, increase your compensation, and open you up to more job opportunities.
+
+__________________________________________________________________________________________________________________
+
+
+//mandatory piece of code
+
+
+const myEjs = require("ejs")
+const myExpress = require("express")
+const MongooDb = require("mongodb")
+
+const app = myExpress()
+
+app.use(myExpress.urlencoded())
+app.set("view engine", myEjs)
+
+					OR
+
+
+const Ejes = require("ejs")
+const Express = require("express")
+const MongooDb = require("mongodb")
+
+const app = Express()
+
+app.use(Express.urlencoded())
+app.set("view engine", Ejes)
+
+
+async function makeCollection() {
+    const connection = await MongooDb.MongoClient.connect("mongodb://localhost:27017")
+    const databasic = connection.db("fooddatabase")
+    return databasic
+}
+
+app.listen(5000, function () {
+    console.log("my server runs on port 5k")
+})
+
+			OR
+
+app.listen(5000, () => {
+    console.log("my server runs on port 5k")
+})
+
+
+   
+ console.log(req.body)  //{ foodname: 'burger', foodcost: '125' } comes under req.body part of app.post
+
+enteredName = req.body.foodname
+enteredCost = req.body.foodcost
+
+:root{
+  --first: white;
+  --second: black;
+  --third: #5C6AC4;
+}
+
+    deb.collection("foodscollection").insertOne({foodname: enteredName, foodcost: enteredCost})
+    deb.collection("foodscollection").insertMany([{foodname: "Veg Burger", foodcost: "200"}, {foodname: "Chole Bature", foodcost: "85"}])
+
+
+    const output = await deb.collection("foodscollection").findOne({foodname: "Veg Pizza"})
+    const output = await deb.collection("foodscollection").findOne({foodcost: "100"})
+
+
+function showTaskDetails(details){
+      props.details(details)
+      navigate("/moviedetails")
+    }
+
+const showMovieDetails = (details) => {
+      props.details(details)
+      navigate("/moviedetails")
+    }
+==============================================================================================
+
+:root{
+  --first: white;
+  --second: black;
+  --third: #5C6AC4;
+}
+
+const [titles, setTitles] = useState("Hello world");
+  const [descriptions, setDescriptions] = useState("");
+  const [statuses, setStatuses] = useState("Pending");
+  const [dueDates, setDueDates] = useState("2001-01-01");
+		
+			to
+
+const [titles, setTitles] = useState();
+  const [descriptions, setDescriptions] = useState();
+  const [statuses, setStatuses] = useState();
+  const [dueDates, setDueDates] = useState();
+
+
+
+<!---------------------------------------------------------------------------------------------->
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+h1{
+  text-transform: capitalize;
+    text-align: center;
+}
+em{
+  padding: 2px;
+  margin: 6px;
+  font-size: 22px;
+    text-align: center;
+}
+.container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: dodgerblue;
+  padding: 10px;
+}
+.container > div {
+  background-color: #f1f1f1;
+  border: 1px solid black;
+  padding: 10px;
+  font-size: 30px;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+
+<h1>tic tac toe</h1>
+
+<em>Hello</em>
+
+<div class="container">
+  <div id="0">1</div>
+  <div id="1">2</div>
+  <div id="2">3</div>  
+  <div id="3">4</div>
+  <div id="4">5</div>
+  <div id="5">6</div>  
+  <div id="6">7</div>
+  <div id="7">8</div>
+  <div id="8">9</div>
+</div>
+<p>Direct child element(s) of the grid container automatically becomes grid items.</p>
+<button id="reset">Restart</button>
+<script type="text/javascript" charset="utf-8">
+  
+  const divBox  = document.querySelectorAll("div")
+  const p = document.querySelector("p");
+const resetBtn = document.getElementById("reset");
+const ems = document.querySelector("em");
+  let currentPlayer  = "X";
+  divBox.forEach(function (i) {})
+  function curry(){
+    if(currentPlayer === "X"){
+      currentPlayer  = "O";
+    }
+    else{
+      currentPlayer  = "X";
+    }
+  }
+</script>
+</body>
+</html>
+
+----------------------------------------------------------------------------------------------------------------------------
