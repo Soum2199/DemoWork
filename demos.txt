@@ -7,7 +7,9 @@ const [theme, setTheme] = useState("light");
     // Toggle theme function    
 const toggleTheme = () => {     
    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));    };
-    return (        <ThemeContext.Provider value={{ theme, toggleTheme }}>            <div className={theme}>{children}</div>        </ThemeContext.Provider>    );};
+    return (        <ThemeContext.Provider value={{ theme, toggleTheme }}>            
+<div className={theme}>{children}</div>        
+</ThemeContext.Provider>    );};
 // Custom Hook to use Theme
 export const useTheme = () => useContext(ThemeContext);
 
@@ -45,8 +47,7 @@ button {
     color: black;
 }
 
-
-
+//=========================================================================================================================
 
 
 import React from "react";
@@ -64,6 +65,7 @@ const ThemeToggleButton = () => {
 
 export default ThemeToggleButton;
 
+//==================------------------------------------------------------------------------------------------------
 
 import React from "react";
 import { ThemeProvider } from "./ThemeContext";
@@ -83,7 +85,7 @@ function App() {
 }
 
 export default App;
-==================-------------------------------------------------
+//==================------------------------------------------------------------------------------------------------
 <button type="button" class="btn btn-secondary">Save Task</button>
 
  function handleStatusChange(taskId, newStatus) {
@@ -93,8 +95,7 @@ export default App;
       )
     );
 
-
-
+//==================------------------------------------------------------------------------------------------------
 # Finding greatest among two numbers.
 a = int(input("Enter 1st number: "))
 b = int(input("Enter 2nd number: "))
@@ -270,7 +271,7 @@ bg-sky-500/30
 
                 </div>
 
-
+//==================------------------------------------------------------------------------------------------------
 
  switch (status) {
       case 'Pending':
