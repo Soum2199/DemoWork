@@ -3,9 +3,9 @@ import { useState } from "react";
 function Seat({ seatnumber, onSelect, onDeselect, isSelected }) {
   const handleClick = () => {
     if (isSelected) {
-      onDeselect(seatnumber); // Deselect if already selected
+      onDeselect(seatnumber);   // Kindly Deselect if already selected
     } else {
-      onSelect(seatnumber); // Select if not selected
+      onSelect(seatnumber); // Kindly Select if not selected
     }
   };
 
@@ -14,10 +14,7 @@ function Seat({ seatnumber, onSelect, onDeselect, isSelected }) {
       className={isSelected ? 'seatbutton selected' : 'seatbutton'}
       onClick={handleClick}
       style={{
-        border: "1px solid black",
-        width: "30px",
-        height: "30px",
-        textAlign: "center",
+        border: "1px solid black", width: "30px",  height: "30px", textAlign: "center",
         backgroundColor: isSelected ? "#aabeee" : "white",
       }}
     >
