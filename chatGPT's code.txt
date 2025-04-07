@@ -3,7 +3,7 @@ import { createStore, combineReducers, applyMiddleware } from "redux";
 export const myStore = createStore(seatReducer)
 ----------------------------------------------------------------------------------------------------------------------------------------
 
-Yes, it is possible to write a simpler version of the shopping Redux code without using `redux-thunk`. The main difference is that without `redux-thunk`, you will only be handling **synchronous actions**, and you'll need to remove the middleware and action creators that deal with asynchronous operations (like fetching data). 
+  Yes, it is possible to write a simpler version of the shopping Redux code without using `redux-thunk`. The main difference is that without `redux-thunk`, you will only be handling **synchronous actions**, and you'll need to remove the middleware and action creators that deal with asynchronous operations (like fetching data). 
 
 Here’s a simplified version of your shopping code without `redux-thunk`:
 
@@ -43,8 +43,9 @@ const store = createStore(
 );
 
 export default store;
-```
+---------------------------------------------------------------------------------------------------------------
 
+```
 ### Step 2: Update the `cartReducer`
 We can modify the `cartReducer` to just handle the cart actions like adding/removing items from the cart without using `redux-thunk`. Here's how the cart reducer can look like:
 
