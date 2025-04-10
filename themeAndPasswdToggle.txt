@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+      <h1 class="title">Hello World! </h1>
+      <p id="currentTime"></p>
+       <input type="password" id="pass" />
+       <button type="button" id="btn">show</button>
+      <script src="script.js"></script>
+  </body>
+</html>
+------------------------------------------------------------------------------------------------------------------------------------------
+:root {
+  --screen:white;
+  --text: black;
+  --title: #5C6AC4;
+}
+.darks{
+  --screen: black;
+   --text: white;
+  --title: #face00;
+}
+
+body{
+  padding: 25px;
+  background-color: var(--screen);
+  color: var(--text);
+}
+.title {
+	color: var(--title);
+	font-size: 35px;
+}
+#pass, button{
+  border:1px solid var(--text);
+  color: var(--text);
+  background-color: var(--screen);
+}
+------------------------------------------------------------------------------------------------------------------------------------------
+const tem = document.getElementById('currentTime')
+function showTime() {
+	tem.innerHTML = new Date().toUTCString();
+}
+showTime();
+setInterval(function () {
+	showTime();
+}, 1000);
+
+const title = document.querySelector(".title")
+title.addEventListener("click", function(){
+  document.body.classList.toggle("darks")
+  title.classList.toggle("darks")
+});
+
+const pass = document.getElementById('pass')
+const button = document.getElementById('btn')
+button.addEventListener("click", function () {
+   if (pass.type == 'password') {
+     pass.type = 'text'
+     button.innerHTML = 'hide'
+   }
+   else{
+     pass.type = 'password'
+     button.innerHTML = 'show'
+   }
+})
