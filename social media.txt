@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
 body{
-  padding: 15px;
+  padding: 25px;
 }
 header{
   display: flex;
@@ -27,6 +27,10 @@ pre{
     background: blue;
   }
 }
+.views{
+  color: #212121;
+  font-size: 17px;
+}
 .post{
   border: 1px solid #999;
   height: 500px;
@@ -37,6 +41,7 @@ h5{
   color: #555;
   padding: 3px;
   margin: 2px;
+  font-size: 15px;
 }
 .profile {
 	height: 60px;
@@ -94,6 +99,9 @@ main{
   /*padding-right: 25px;*/
   font-size: 20px;
 }
+#likes:hover, #comments:hover, #shares:hover{
+  background-color: rgba(10,20,30,0.35);
+}
 </style>
   </head>
   <body>
@@ -114,11 +122,11 @@ main{
  <div class="post_design">
   <img class="uploads" src="https://thumbs.dreamstime.com/b/masai-giraffe-jumps-across-river-savannah-347506186.jpg" alt="" />   
  </div> 
- <h5>May 21, 2012</h5>
+ <h5>May 21, 2012 <sup>.</sup>  <span class="views"><b>250</b> Views</span></h5>
  <main>
-   <i class="fa-regular fa-heart"></i> 
-  <i class="fa-regular fa-comment"></i>
-   <i class="fa-regular fa-paper-plane"></i>
+   <i class="fa-regular fa-heart" id="likes"></i> 
+  <i class="fa-regular fa-comment" id="comments"></i>
+   <i class="fa-regular fa-paper-plane" id="shares"></i>
  </main>
 
 </div>
