@@ -16,5 +16,4 @@ int main(void) {
    
   cout << PowersofTwo(coderbyteInternalStdinFunction(stdin));
   return 0;
-    
 }
