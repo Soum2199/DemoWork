@@ -8,10 +8,14 @@
   <body>
 <div id="post">
 <header>
+  <i class="fa-solid fa-bell"></i>
+  <div class="myHrefs">
 <a href="#">Home</a>
 <a href="#">About</a>
 <a href="#">Details</a>
-<a href="#">Login</a>
+<a href="#">Login</a>    
+  </div>
+<button>hello</button>
 
 </header>
 
@@ -22,27 +26,38 @@
 ---------------------------------------------------------------------------------------------------
 
 body{
-  padding: 25px;
+  padding: 15px;
 }
 header{
   display: flex;
   margin: 5px;
-  width: 360px;
+  /*width: 560px;*/
+  width: 70vw;
   justify-content: space-between;
   padding-bottom: 20px;
- background-color: lightblue;
+ /*background-color: lightblue;*/
+ background-color: #FFECA1;
 }
-header > a{
+header > .myHrefs> a{
    text-decoration: none;
   color: #123123;
   font-size: 21px;
   font-family: Trebuchet MS;
+  margin: 2px;
   &:hover{
-    color: darksalmon;
+    color: #D1AE4C;
     border: 1px dotted red;
   }
 }
-header > a::after{
+header > .myHrefs > a::after{
     font-family: Comic Sans MS;
     color: crimson;
   }
+button{
+  margin: 8px;
+  background-color: crimson;
+  color: #DDCFFF;
+}
+i{
+  margin: 0.5rem;
+}
