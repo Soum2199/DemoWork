@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Music Player 3</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+      <div>
+        <img src="https://www.pixelstalk.net/wp-content/uploads/2016/03/Beautiful-nature-spring-wallpaper-HD.jpg" alt="" />
+        <audio src=""></audio>
+        <h1 id="title">Hello World! </h1>
+      <!--<p id="currentTime"></p>-->
+      <p>Some Random Singer</p>
+      <span>
+        <div class="fixed">
+          <progress></progress>
+          <div class="timings">
+            <h4>0:00</h4>
+            <h4>3:50</h4>
+          </div>
+        </div>
+      </span>
+      <div class="icons">
+        <i class="fa-solid fa-forward fa-rotate-180"></i>
+        <i class="fa-solid fa-circle-play" id="icon1"></i>
+        <i class="fa-solid fa-forward"></i>
+      </div>
+      </div>
+      <script src="script.js"></script>
+  </body>
+</html>
+
+<!--<i class="fa-solid fa-circle-pause"></i>-->
+---------------------------------------------------------------------
+body{
+  padding: 25px;
+  text-align: center;
+}
+#title {
+	color: #5C6AC4;
+	margin: 5px 6px;
+}
+div{
+  border: 1px solid #666;
+}
+img{
+  height: 350px;
+  /*width: 350px;*/
+  width: 85%;
+  padding-top: 5px;
+}
+.icons{
+  padding: 10px;
+  justify-content: center;
+}
+progress{
+  width: 92%;
+  height: 21px;
+  border-radius: 5px;
+  /*background-color: azure;*/
+}
+.timings{
+  display: flex;
+  padding: 5px;
+  border: none;
+  justify-content: space-between;
+}
+------------------------------------------------------------------------
+
+// const title = document.querySelector('h1')
+const title = document.getElementById('title')
+const image = document.querySelector('img')
+
+const playIcon = document.getElementById("play")
+const audioFile = document.querySelector("audio")
+
+const musicDetails = [
+  {
+    images: "",
+    audios: "",
+    songTitle: "Blue",
+    singerName: ""
+  },{
+    images: "",
+    audios: "",
+    songTitle: "Yellow Song",
+    singerName: ""
+  },{
+    images: "",
+    audios: "",
+    songTitle: "White Brown Black",
+    singerName: ""
+  }
+  ]

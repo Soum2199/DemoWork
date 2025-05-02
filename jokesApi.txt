@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+      <div>
+        <h2></h2>
+        <pre></pre>
+        <button>Generate new joke</button>
+      </div>
+      <script src="script.js"></script>
+  </body>
+</html>
+--------------------------------------------------------------------------------------------
+body{
+  padding: 25px;
+  background-color: cyan;
+}
+div {
+	text-align: center;
+	align-items: center;
+	border: 2px double purple;
+	background-color: #fefefe;
+	padding: 5px;
+}
+button{
+  /*border: 2px dotted #789;*/
+  border: 2px dashed maroon;
+  background-color:  #deadaf;
+  font-size: 20px;
+  margin: 3px;
+  padding: 3px;
+}
+--------------------------------------------------------------------------------------------
+const myh2 = document.querySelector('h2')
+const myPre = document.querySelector('pre')
+const myButton = document.querySelector('button')
+
+function fetching()
+{
+fetch('https://official-joke-api.appspot.com/jokes/random')
+  .then(response => response.json())
+  .then(data => {console.log(data)
+  
+  // myButton.onclick = function () {
+  myh2.innerHTML = data.setup
+  myPre.innerHTML = data.punchline
+// }
+  }
+  )
+  .catch(err => console.log(`Sorry, due to ${err}`));
+}
+
+fetching()
+
+myButton.onclick = fetching
