@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div>
+      <form action="/" method="post" accept-charset="utf-8">
+      <h1 class="title">Login</h1>
+      <p>Username <i class="fa-solid fa-user"></i></p>
+      <input type="text" placeholder="Username" id="username" min="3" max="48" />
+      
+      <p>Password <i class="fa-solid fa-lock"></i></p>
+      <input type="password" placeholder="Password" id="password" />
+      <mark></mark>
+      <br />
+      <button id="submit">submit</button>
+      <div class="remembering">
+        <input type="checkbox" class="checkbox" id="checkbox" />
+        <pre>Remember me</pre> <hr /> 
+        <pre>   Forget Password?</pre>
+      </div>
+      <div class="lastly">
+        <p>Not yet registered? <b>Register here</b></p>
+      </div>
+      <!--<p id="currentTime"></p>     -->
+      </form>
+    </div>
+
+      <script src="script.js"></script>
+  </body>
+</html>
+
+-------------------------------------------------------------------------------------------------
+
+body{
+  font-family: Sans-Serif;
+  padding: 5px;
+  margin: 1px;
+text-align: center;
+align-items: center;
+justify-content: center;
+background: conic-gradient(
+  orangered 10deg,
+  salmon 30deg 21deg,
+  #1E90FF 46deg 64deg,
+  blueviolet 75deg 110deg,
+  blue 101deg 150deg,
+  #0CAFFF 290deg
+);
+}
+button{
+  font-size: 19px;
+  border: none;
+  border-radius: 6px;
+  color: #e2e8f0;
+  padding: 2px;
+  margin: 3px;
+  background: rgba(25, 25, 25, 0.12);
+  cursor: pointer;
+  &:hover{
+    box-shadow: 0 0 21px #eae7ed;
+    transform: scale(1.05);
+  }
+}
+.title {
+	color: #f2e7ff;
+}
+div{
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(4,3,2,0.25);
+  width: 78vw;
+}
+input{
+ padding: 3px;
+ border: 1px solid #fefefe;
+ width: 180px;
+ height: 23px;
+ border-radius: 6px;
+ margin: 2px;
+ background: none;
+ color: #d4d4d4;
+}
+p{
+  margin: 6px;
+  font-size: 20px;
+  color: azure;
+}
+.remembering{
+color: #fdf4ff;
+padding: 2px;
+  display: flex;
+  background-color: rgb(4,3,2,0.17);
+}
+.remembering > .checkbox{
+  width: 16px;
+  height: 17px;
+  /*background-color: rgba(255, 255, 255, 0.12);*/
+  background: none;
+ border: 1px solid #fefefe;
+}
+
+.lastly{
+  font-size: 18px;
+  color: #fdeafd;
+  padding: 3px;
+}
+ b:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
+--------------------------------------------------------------------------------------------
+
+
+const mark = document.querySelector("mark")
+const password = document.getElementById("password")
+
+password.addEventListener("keypress", function (e) {
+  // e.preventDefault();
+  if (e.match(/([a-z])/)) {
+    mark.innerText = "Atleaast capital letters should be present.";
+  }
+  if (e.match(/([a-z][A-Z])/)) {
+    mark.innerText = "Atleaast one number should be present.";
+  }
+  else if(e.match(/([a-z][A-Z][0-9])/ig)){
+    mark.innerText = "a strong password";
+  }
+})
