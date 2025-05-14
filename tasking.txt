@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Welcome to task Management!</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+      <h1 class="title">Task Management</h1>
+      <p id="currentTime"></p>
+      Enter task: <input type="text" id="task" placeholder="Enter the task..Eg.Playing"/>
+       <button type="button" id="btn">Add task</button>
+       <ul>  </ul>
+      <script src="script.js"></script>
+  </body>
+</html>
+-----------------------------------------------------------------------------------------------------------------------------------------
+:root {
+  --screen:white;
+  --text: black;
+  --title: #5C6AC4;
+}
+.darks{
+  --screen: black;
+   --text: white;
+  --title: #face00;
+}
+
+body{
+  padding: 25px;
+  background-color: var(--screen);
+  color: var(--text);
+}
+.title {
+	color: var(--title);
+	font-size: 35px;
+}
+input{
+  border:1px solid var(--text);
+  color: var(--text);
+  background-color: var(--screen);
+}
+button{
+    border:2px dotted var(--title);
+    color: var(--text);
+  background-color: var(--screen);
+  padding: 3px;
+}
+ul>li{
+  list-style-type: square;
+}
+-----------------------------------------------------------------------------------------------------------------------------------------
+const title = document.querySelector(".title")
+title.addEventListener("click", function(){
+  document.body.classList.toggle("darks")
+  title.classList.toggle("darks")
+});
+
+const task = document.getElementById('task')
+const button = document.getElementById('btn')
+const myUl = document.querySelector('ul')
+// const myLi = document.createElement('li')
+
+ button.addEventListener("click", function () {
+   let enteredTask = task.value;
+  const myLi = document.createElement('li')
+   myLi.innerHTML = enteredTask
+   console.log(myLi)
+   myUl.append(myLi)
+   task.value = ''
+ })

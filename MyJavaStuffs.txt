@@ -1,0 +1,330 @@
+
+class Main {
+    public static void main(String[] args) {
+        System.out.println("Try programiz.pro");
+	System.out.println(3+5);
+    }
+}
+-----------------------------------------------------------------------------------------------------------------------------------------
+class Main {
+    public static void main(String[] args) {
+        int num1 = 3;
+        int num2 = 5;
+        System.out.println(num1 + num2);
+    }
+}
+-----------------------------------------------------------------------------------------------------------------------------------------
+class Main {
+    public static void main(String[] args) {
+        int a = 6;
+        int b = 5;
+        int c = a+b;
+        System.out.println(c);
+    }
+}
+--------------------------------------------------------------------------------------------------------------------------------------
+class Main {
+    public static void main(String[] args) {
+        double a = 6.3;
+        double b = 4.5;
+        double c = a+b;
+        System.out.println(c);
+    }
+}
+-----------------------------------------------------------------------------------------------------------------------------------------
+class Main {
+    public static void main(String[] args) {
+        float a = 6.3f;
+        float b = 4.5f;
+        float c = a+b;
+        System.out.println(c);
+    }
+}
+--------------------------------------------------------------------------------------------------------------------------------------
+class Main {
+    public static void main(String[] args) {
+        char c = 'A';
+        // System.out.println(c);
+        System.out.println((int)c);
+    }
+}
+--------------------------------------------------------------------------------------------------------------------------------------
+class Main {
+    public static void main(String[] args) {
+        int n = 124;
+        System.out.println(n);
+        System.out.println((char)n);
+    }
+}
+-----------------------------------------------------------------------------------------------------------------------------------------
+class Main {
+    public static void main(String[] args) {
+        int i = 5;
+        System.out.println("the number is "+ i);
+        System.out.printf("the number here is %d", i);
+    }
+}
+-----------------------------------------------------------------------------------------------------------------------------------------
+class Main {
+    public static void main(String[] args) {
+        int a = 5;
+        int b = a >> 2;
+        int c = a << 2;
+        System.out.println(b);
+        System.out.println(c);
+    }
+}
+---------------------------------------------------------------------------------------------------------------------------------------
+class Main {
+    public static void main(String[] args) {
+        int a = 5;
+        int b = 7;
+        int c = a & b;
+        int d = a | b;
+        System.out.println(c);
+        System.out.println(d);
+    }
+}
+---------------------------------------------------------------------------------------------------------------------------------------
+class Main {
+    public static void main(String[] args) {
+        String yup = "Tryings";
+        System.out.println(yup);
+        System.out.println(yup.length());
+        System.out.println(yup.charAt(3));
+    }
+}
+----------------------------------------------------------------------------------------------------------------------------------------
+class Main {
+    public static void main(String[] args) {
+        int a = 3;
+        if (a%2 == 0){
+        System.out.println("Even number");            
+        }
+        else{
+        System.out.println("The odd nos");
+        }
+    }
+}
+-----------------------------------------------------------------------------------------------------------------------------------------
+class Main {
+    public static void main(String[] args) {
+        int a = 12;
+        int b = 24, c = 5;
+        if (a>b && a>c){
+        System.out.println( a + " is greater");           
+        }
+        else if(b>c){
+        System.out.println( b + " is greater");
+        }
+        else{
+        System.out.println( c + " is greater");
+        }
+    }
+}
+-----------------------------------------------------------------------------------------------------------------------------------------
+class Main {
+    public static void main(String[] args) {
+        int i = 1;
+        while(i < 10){
+            System.out.println(i);
+            i++; 
+        }
+    }
+}
+-----------------------------------------------------------------------------------------------------------------------------------------
+class Main {
+    public static void main(String[] args) {
+        if(System.out.printf("Try programiz.pro") == null){
+        }
+    }
+}
+-----------------------------------------------------------------------------------------------------------------------------------------
+class Main {
+    public static void main(String[] args) {
+        int i = 4;
+        switch (i) {
+    case 1:
+        System.out.print("One");
+        break;
+        
+    case 2:
+        System.out.print("Two");
+        break;
+        
+    case 4:
+        System.out.print("Four");
+        break;
+
+    case 8:
+        System.out.print("Eight");
+        break;
+
+    default:
+    System.out.println("Some number");
+        break;
+}
+    }
+}
+-----------------------------------------------------------------------------------------------------------------------------------------
+class Main {
+    public static void main(String[] args) {
+        int n = 371;
+        int sum = 0, temp=n;
+        while(n > 0){
+            int r = n%10;
+            n /= 10;
+            sum = sum + r*r*r;
+        }
+        if(temp == sum)
+        {
+            System.out.println("Armstrong number");
+        }
+        else{
+            System.out.println("Not an armstrong number");
+        }
+    }
+}
+-----------------------------------------------------------------------------------------------------------------------------------------
+class Main {
+    static{
+        System.out.println("Try programiz.pro");        
+    }
+    public static void main(String[] args) {
+
+    }
+}
+-----------------------------------------------------------------------------------------------------------------------------------------
+class Main {
+    static{
+        System.out.println("Try Blue pen");        
+    }
+    public static void main(String[] args) {
+        System.out.println("Try Yellow pen"); 
+    }
+     static{
+        System.out.println("Try Black pen");        
+    }
+}
+//output, 1 blue, 2 black, 3 yellow
+-----------------------------------------------------------------------------------------------------------------------------------------
+class A{
+    int i;
+    public A(){
+        i = 25;
+        System.out.println("Try puddings!");
+    }
+     public A(int k){
+        i = k;
+        System.out.println("Try going to hillstations, its so very beautiful.!");
+    }
+}
+
+class Main {
+    public static void main(String[] args) {
+        A obj = new A();
+        System.out.println(obj.i);    //can only try with i, but not with k
+    }
+}
+-----------------------------------------------------------------------------------------------------------------------------------------
+class Main {
+    public static void main(String[] args) {
+        String lm = "morning";
+        System.out.println(lm.toUpperCase());
+        // MORNING  as an output.
+    }
+}
+-----------------------------------------------------------------------------------------------------------------------------------------
+class Main {
+    public static void main(String[] args) {
+        Abc.show();
+        Abc.i = 5;
+        System.out.println(Abc.i);
+    }
+}
+class Abc {
+   static int i;   //a static variable
+   // int i;    //a non static variable
+    public static void show(){
+        System.out.println("Hii how are u?");
+    }
+}
+-----------------------------------------------------------------------------------------------------------------------------------------
+class Main {
+    static String s = "Oranges";
+    // static{ }
+    public static void main(String[] args) {
+    System.out.println(s);
+    System.out.println("The length: " + s.length());
+    }
+}
+-------------------------------------------------------------------------------------------------------------------------------------------
+class Main {
+    public static void main(String[] args) {
+        AddSub obj = new AddSub();
+        obj.num1 = 8;
+        obj.num2 = 5;
+        obj.add();
+        System.out.println(obj.result);
+        obj.sub();
+        System.out.println(obj.result);
+    }
+}
+class Add{
+    int num1, num2, result;
+    public void add(){
+        result = num1+num2;
+    }
+}
+class AddSub extends Add{
+    public void sub(){
+        result = num1-num2;
+    }
+}
+-----------------------------------------------------------------------------------------------------------------------------------------
+class Main {
+    public static void main(String[] args) {
+        // A obj = new A(); // only A is printed
+        B obj = new B();  // only B is printed
+        obj.show(16);
+    }
+}
+class A{
+    public void show(){
+        System.out.println("Hello guys");
+    }
+    public void show(int i){
+        System.out.println("Hey guys, he is " + i + " years old.");
+    }
+}
+class B extends A{
+    public void show(){
+        System.out.println("Hello girls!.");
+    }
+    public void show(int i){
+        System.out.println("Hey girls, she is " + i + " years old.");
+    }
+}
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------------------------------------------------------

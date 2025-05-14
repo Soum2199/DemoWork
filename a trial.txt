@@ -1,0 +1,220 @@
+import { useState } from "react";
+
+function Seat({ seatnumber, onSelect, onDeselect, isSelected }) {
+  const handleClick = () => {
+    if (isSelected) {
+      onDeselect(seatnumber);   // Kindly Deselect if already selected
+    } else {
+      onSelect(seatnumber); // Kindly Select if not selected
+    }
+  };
+
+  return (
+    <button
+      className={isSelected ? 'seatbutton selected' : 'seatbutton'}
+      onClick={handleClick}
+      style={{
+        border: "1px solid black", width: "30px",  height: "30px", textAlign: "center",
+        backgroundColor: isSelected ? "#aabeee" : "white",
+      }}>
+      {seatnumber}
+    </button>
+  );
+}
+
+export default Seat;
+
+-----------------------------------------------------------------------------------------------------------
+
+import Axios from 'axios';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import Seat from './Seat';
+
+function SeatLayout(props) {
+  const navigate = useNavigate();
+  const [selectedSeats, setSelectedSeats] = useState([]); // Track selected seats
+
+  const rowCount = 10;
+  const colCount = 15;
+  const totalSeats = rowCount * colCount;
+
+  // Generate seat grid
+  const seatGrid = [];
+  for (let i = 1; i <= totalSeats; i++) {
+    seatGrid.push(
+      <Seat
+        key={i}
+        seatnumber={i}
+        isSelected={selectedSeats.includes(i)} // Check if the seat is selected
+        onSelect={handleSeatSelect}
+        onDeselect={handleSeatDeselect}
+      />
+    );
+  }
+
+  // Handle seat selection
+  function handleSeatSelect(seatnumber) {
+    if (selectedSeats.length < props.count) {
+      setSelectedSeats([...selectedSeats, seatnumber]);
+    }
+  }
+
+  // Handle seat deselection
+  function handleSeatDeselect(seatnumber) {
+    setSelectedSeats(selectedSeats.filter(seat => seat !== seatnumber));
+  }
+
+  // Handle payment
+  function pleaseMakeThePayment() {
+    if (selectedSeats.length === props.count) {
+      Axios.post("https://movie-booking-application-back-end.onrender.com/create/order", {
+        amount: selectedSeats.length * 150,
+      })
+        .then(function (result) {
+          handlePaymentVerify(result.data.output);
+        });
+    } else {
+      alert(`Please select exactly ${props.count} seats.`);
+    }
+  }
+
+  async function handlePaymentVerify(recievedData) {
+    console.log("Payment data:", recievedData);
+    navigate("/bookings");
+  }
+
+  return (
+    <>
+      <h3 style={{ textAlign: "center" }}>PRICE: 150</h3>
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: `repeat(${colCount}, 50px)`,
+          gridGap: "10px",
+          marginTop: "100px",
+          marginLeft: "50px",
+        }}
+      >
+        {seatGrid}
+      </div>
+      <button className='btn btn-outline-primary' onClick={pleaseMakeThePayment}>
+        Make Payment
+      </button>
+    </>
+  );
+}
+
+export default SeatLayout;
+
+--------------------------------------------------------------------------------
+
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+
+function BookSeat(props) {
+  const navigate = useNavigate();
+  const [seatCount, setSeatCount] = React.useState([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+  const [selectedSeats, setSelectedSeats] = React.useState(null); // State for selected seat count
+
+  // Handle the seat count selection
+  function handleSeatSelection(count) {
+    setSelectedSeats(count);
+    props.func(count); // Pass the selected count to the parent component
+    navigate("/seatlayout"); // Navigate to the seat layout
+  }
+
+  return (
+    <div>
+      <h3>Select the number of seats:</h3>
+      {seatCount.map(function (i) {
+        return (
+          <button
+            key={i}
+            className={`btn ${selectedSeats === i ? 'btn-primary' : 'btn-link'}`}
+            style={{ margin: '5px', borderRadius: "16px" }}
+            onClick={() => handleSeatSelection(i)}
+          >
+            {i}
+          </button>
+        );
+      })}
+    </div>
+  );
+}
+
+export default BookSeat;
+
+
+
+FROM node:alpine
+WORKDIR /app
+COPY ./package*.json /app
+COPY . .
+RUN npm install
+CMD ["npm", "start"]
+
+
+docker run --name heythere -p 6000:3000 my-nextruns-app
+
+docker run -p 3000:3000 my-react-app-dev
+
+
+FROM node:alpine
+WORKDIR /app
+COPY ./package*.json /app
+RUN npm install
+COPY . .
+CMD ["npm", "start"]
+
+
+http://localhost:6000/
+http://localhost:5000/
+http://localhost:9000/
+Mongooose.connect("mongodb+srv://Sweety:spani99@cluster0.pk8r1.mongodb.net/moviedatabase?retryWrites=true&w=majority&appName=Cluster0")
+const MovieModel = Mongooose.model("moviescollection", MovieSchema)
+
+Mongooose.connect("mongodb+srv://Sweety:spani99@cluster0.pk8r1.mongodb.net/happybase?retryWrites=true&w=majority&appName=Cluster0")
+const MovieModel = Mongooose.model("justcollect", MovieSchema)
+
+return (
+        <>
+            <h3 style={{ textAlign: "center" }}>PRICE: 150</h3>
+            {seatsSelected === count ? <>
+                <div onClick={collect} className='disable' id='parent' style={{ display: "grid", gridTemplateColumns: `repeat(${colCount}, 50px)`, gridGap: "10px", marginTop: "100px", marginLeft: "50px" }}>
+                    {seatGrid}
+                </div></> : <div onClick={collect} className='parent' style={{ display: "grid", gridTemplateColumns: `repeat(${colCount}, 50px)`, gridGap: "10px", marginTop: "100px", marginLeft: "50px" }}>
+                {seatGrid}
+            </div>}
+            <button className='btn btn-outline-primary' onClick={pleaseMakeThePayment}>Make Payment</button>
+        </>
+    )
+----------------------------------------------------------------------------------
+
+"start": "set PORT=4000 && react-scripts start",
+"set PORT=2024 && react-scripts start",
+
+return (
+        <>
+            <h3 style={{ textAlign: "center" }}>PRICE: 150</h3>
+            {seatsSelected === count ? <>
+                 <div onClick={collect} className='parent' style={{ display: "grid", gridTemplateColumns: `repeat(${colCount}, 50px)`, gridGap: "10px", marginTop: "100px", marginLeft: "50px" }}>
+                {seatGrid}
+            </div></> : <div onClick={collect} className='disable' id='parent' style={{ display: "grid", gridTemplateColumns: `repeat(${colCount}, 50px)`, gridGap: "10px", marginTop: "100px", marginLeft: "50px" }}>
+                    {seatGrid}
+                </div>}
+            <button className='btn btn-outline-primary' onClick={pleaseMakeThePayment}>Make Payment</button>
+        </>
+    )
+
+<div onClick={collect} className='disable' id='parent' style={{ display: "grid", gridTemplateColumns: `repeat(${colCount}, 50px)`, gridGap: "10px", marginTop: "100px", marginLeft: "50px" }}>
+                    {seatGrid}
+                </div>
+
+
+<div className="d-grid gap-2 d-md-block">
+  <button class="btn btn-primary btn-sm" type="button">-</button>
+  <span>{quantity}</span>
+  <button class="btn btn-primary btn-sm" type="button">+</button>
+</div>
+btn-sm

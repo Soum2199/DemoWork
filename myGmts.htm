@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+    <style>
+:root{
+  --first: white;
+  --second: black;
+  --third: #5C6AC4;
+}
+.dark-theme{
+  --first: black;
+  --second: white;
+  --third: #ecd81c;
+}
+
+body{
+  padding: 25px;
+  background-color: var(--first);
+  color: var(--second);
+}
+.title {
+	color: var(--third);
+}
+    </style>
+  </head>
+  <body>
+      <h1 class="title">Hello World! </h1>
+      <p id="currentTime"></p>
+      <script>
+        function showTime() {
+	document.getElementById('currentTime').innerHTML = new Date().toUTCString();
+}
+showTime();
+setInterval(function () {
+	showTime();
+}, 1000);
+
+const title = document.querySelector(".title")
+title.addEventListener("click", function(){
+  title.style.cursor = "pointer";
+  document.body.classList.toggle("dark-theme")
+  title.classList.toggle("dark-theme")
+})
+      </script>
+  </body>
+</html>

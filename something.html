@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+.range input {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  background: transparent;
+  cursor: pointer;
+}
+.range input::-webkit-slider-runnable-track {
+  background: #e10179;
+  height: 0.5rem;
+  border-radius: 50px;
+}
+.range input::-moz-range-track {
+  background: #e10179;
+  height: 0.5rem;
+  border-radius: 50px;
+}
+.range input::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  margin-top: -6px; /* Centers thumb on the track */
+  background-color: #f1f1f1;
+  box-shadow: 0px 0px 2px 0.1px #555;
+  height: 1.2rem;
+  width: 1.2rem;
+  border-radius: 50%;
+}
+.range input::-moz-range-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  margin-top: -6px; /* Centers thumb on the track */
+  background-color: #f1f1f1;
+  box-shadow: 0px 0px 2px 0.1px #555;
+  height: 1.2rem;
+  width: 1.2rem;
+  border-radius: 50%;
+}
+h1{
+    grid-area: "content";
+}
+
+@keyframes prismplayanimation {
+    0% {
+        width: 32px;
+        height: 32px;
+        border-radius: 32px;
+        opacity: 0;
+    }
+
+    50% {
+        width: 32px;
+        height: 32px;
+        border-radius: 32px;
+        opacity: 1;
+    }
+
+    99% {
+        width: 76px;
+        height: 76px;
+        border-radius: 76px;
+        opacity: 0;
+    }
+
+    100% {
+        width: 0;
+        height: 0;
+    }
+}
+    </style>
+</head>
+<body>
+<h3> A world of entertainment. Available wherever you are.</h3>
+<p>With over 100,000 movies and TV shows to choose from, there always something great to watch on
+  myTunes and if you watch on Orange TV 4K, you will be able to enjoy a tremendous selection of your
+ favorite content in 4K HDR. So get ready to enjoy episodes of your favorite TV shows or hit movies
+ you have been waiting to see — anytime, anywhere. Just tap to play, or even download if you are going
+ somewhere you wont have Wi-Fi.</p>
+    <form action="/collected" method="post">
+        Enter Name: <input type="text" name="userName" /> <br/>
+        Enter Password: <input type="password" name="passsword" /> <br/>
+        <button>Login</button> <br><br>
+        <p>Dont have an account?</p>
+        <a href="/register">Please Register.</a>
+    </form>
+<script>
+function showTime() {
+	document.getElementById('currentTime').innerHTML = new Date().toUTCString();
+}
+showTime();
+setInterval(function () {
+	showTime();
+}, 1000);
+function pleaseSignIn(){
+	alert("has signed in successfully")
+}
+const confirmationOutput = mobileDetails.filter(function(i)
+    {
+        if(j.brandName.toLowerCase() == brand && j.cost == cost)   
+            {
+                return j
+            }     
+    })
+</script>
+</body>
+</html>

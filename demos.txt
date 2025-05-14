@@ -1,0 +1,592 @@
+import { createContext, useState, useContext } from "react";
+// Create Context
+const ThemeContext = createContext();
+// Theme Provider
+export const ThemeProvider = ({ children }) => {    
+const [theme, setTheme] = useState("light");
+    // Toggle theme function    
+const toggleTheme = () => {     
+   setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));    };
+    return (        <ThemeContext.Provider value={{ theme, toggleTheme }}>            
+<div className={theme}>{children}</div>        
+</ThemeContext.Provider>    );};
+// Custom Hook to use Theme
+export const useTheme = () => useContext(ThemeContext);
+
+
+.light {
+    background-color: white;
+    color: black;
+}
+
+.dark {
+    background-color: black;
+    color: white;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.light button {
+    background: black;
+    color: white;
+}
+
+.dark button {
+    background: white;
+    color: black;
+}
+
+//=========================================================================================================================
+
+
+import React from "react";
+import { useTheme } from "./ThemeContext";
+
+const ThemeToggleButton = () => {
+    const { theme, toggleTheme } = useTheme();
+
+    return (
+        <button onClick={toggleTheme}>
+          Switch to {theme === "light" ? "Dark" : "Light"} Mode
+        </button>
+    );
+};
+
+export default ThemeToggleButton;
+
+//==================------------------------------------------------------------------------------------------------
+
+import React from "react";
+import { ThemeProvider } from "./ThemeContext";
+import ThemeToggleButton from "./ThemeToggleButton";
+import "./styles.css"; // Add CSS for themes
+
+function App() {
+    return (
+        <ThemeProvider>
+            <div className="container">
+                <h1>React Theme Toggle</h1>
+                <ThemeToggleButton />
+                <p>This is a simple light/dark mode toggle example.</p>
+            </div>
+        </ThemeProvider>
+    );
+}
+
+export default App;
+//==================------------------------------------------------------------------------------------------------
+<button type="button" class="btn btn-secondary">Save Task</button>
+
+ function handleStatusChange(taskId, newStatus) {
+    setTaskDetails((prevTasks) =>
+      prevTasks.map((task) =>
+        task.id === taskId ? { ...task, status: newStatus } : task
+      )
+    );
+
+//==================------------------------------------------------------------------------------------------------
+# Finding greatest among two numbers.
+a = int(input("Enter 1st number: "))
+b = int(input("Enter 2nd number: "))
+# c = a>b ? a : b
+if a>b:
+    print("Greater is ", a)
+else:
+    print("Result is: ", b)
+   
+# Finding whether the number is even or odd. 
+n = int(input("Enter a nos:  "))
+res = "Even" if n % 2 == 0 else "Odd"
+print(res)  
+
+# Finding whether the number is divisible by 5 or not.
+n2 = int(input("Enter a nos:  ")) 
+res = "Yes, Divisible by 5" if n2 % 5 == 0 else "Not divisible"
+print(res)
+
+# Finding whether the given number is positive or not.
+m = int(input("Enter a nos:  ")) 
+ges = "Positive" if m > 0 else "Negative"
+print(ges)
+
+
+a=10
+a+=3 #a=a+3
+print("a+=3 : ",a)
+a-=3
+print("a-=3 : ",a)
+a*=3
+print("a*=3 : ",a)
+a/=3
+print("a/=3 : ",a)
+a//=3
+print("a//=3 : ",a)
+a**=4
+print("a**=4 : ",a)
+
+b = "Why so sad"
+# c = "s"
+# print(c in b)
+print(b.capitalize())
+print(b.lower())
+print(b.upper())
+print(b.index("s"))
+print(b.replace("sad", "rude"))
+# Program to print ‘Hello’ message 20 times.
+# Printing first 20 natural numbers.
+msg = "Hello"
+for i in range(1, 21):
+    print(msg, i)    
+    
+
+https://img.favpng.com/10/10/15/thumb-signal-computer-icons-gesture-ok-png-favpng-85GPYNBnc1bnBBEHb4r2NF9uj.jpg
+
+==================================================-------------------------------------------------========================
+
+import React, { useState, useEffect } from 'react';
+
+function Navbar() {
+  // Track the theme (default is light mode)
+  const [isDark, setIsDark] = useState(false);
+
+  // Toggle the theme
+  const toggleTheme = () => {
+    setIsDark(!isDark);
+  };
+
+  // Store theme preference in localStorage
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      setIsDark(savedTheme === 'dark');
+    }
+  }, []);
+
+  useEffect(() => {
+    // Update theme in localStorage and apply the body class
+    if (isDark) {
+      localStorage.setItem('theme', 'dark');
+      document.body.classList.add('dark');
+    } else {
+      localStorage.setItem('theme', 'light');
+      document.body.classList.remove('dark');
+    }
+  }, [isDark]);
+
+  return (
+    <>
+      <nav className={`bg-gray-700 ${isDark ? 'dark:bg-gray-800' : 'bg-white'}`}>
+        <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+          <div className="relative flex h-16 items-center justify-between">
+            <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+              <button
+                type="button"
+                className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                aria-controls="mobile-menu"
+                aria-expanded="false"
+              >
+                <span className="absolute -inset-0.5"></span>
+                <span className="sr-only">Open main menu</span>
+                <svg
+                  className="block size-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="1.5"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                  data-slot="icon"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+              </button>
+            </div>
+            <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+              <div className="flex shrink-0 items-center">
+                <img className="h-8 w-auto" src="https://img.favpng.com/10/10/15/thumb-signal-computer-icons-gesture-ok-png-favpng-85GPYNBnc1bnBBEHb4r2NF9uj.jpg" alt="Yours" />
+              </div>
+              <div className="hidden sm:ml-6 sm:block">
+                <div className="flex space-x-4">
+                  <a href="/signin" className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Signin</a>
+                  <a href="/task" className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Task</a>
+                  <a href="/about" className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">About</a>
+                  <a href="/" className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Logout</a>
+                </div>
+              </div>
+            </div>
+            <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+              <button
+                type="button"
+                className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                onClick={toggleTheme} // Toggle theme on button click
+              >
+                <span className="sr-only">Toggle theme</span>
+                {/* Theme toggle icon */}
+                <i className={`fa-solid ${isDark ? 'fa-sun' : 'fa-moon'} size-6`}></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Mobile Menu */}
+        <div className="sm:hidden" id="mobile-menu">
+          <div className="space-y-1 px-2 pb-3 pt-2">
+            <a href="/signin" className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white" aria-current="page">Signin</a>
+            <a href="/task" className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Task</a>
+            <a href="/about" className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">About</a>
+            <a href="/" className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Logout</a>
+          </div>
+        </div>
+      </nav>
+    </>
+  );
+}
+
+export default Navbar;
+
+
+.....................................................................
+
+rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white
+
+`rounded-md px-3 py-2 text-sm font-medium ${isDark ? 'text-gray-300' : 'text-gray-700'} hover:bg-gray-700 hover:text-slate-500/40`
+
+bg-sky-500/30
+
+                <div className="flex space-x-4">
+                  <a href="/signin" className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Signin</a>
+                  <a href="/task" className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Task</a>
+                  <a href="/about" className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">About</a>
+                  <a href="/" className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Logout</a>
+
+                </div>
+
+//==================------------------------------------------------------------------------------------------------
+
+ switch (status) {
+      case 'Pending':
+        return 'btn-danger'; // Red
+      case 'In Progress':
+        return 'btn-warning'; // Yellow
+      case 'Completed':
+        return 'btn-success'; // Green
+      default:
+        return 'btn-secondary'; // Default color
+    }
+
+function diffColors(status){
+ switch (status) {
+      case 'Pending':
+        return 'btn-danger'; // Red
+      case 'In Progress':
+        return 'btn-warning'; // Yellow
+      case 'Completed':
+        return 'btn-success'; // Green
+      default:
+        return 'btn-secondary'; // Default color
+    }
+}
+
+onClick={() => handleStatusChange(s.id, 'Pending')}>Pending</a></li>
+                        
+<li><a className="dropdown-item" onClick={() => handleStatusChange(s.id, 'In Progress')}>In Progress</a></li>
+                        
+<li><a className="dropdown-item" onClick={() => handleStatusChange(s.id, 'Completed')}
+-----------------------------------------------------------------------
+<li><a className="dropdown-item" onClick={() => handleStatusChange(s.id, 'Pending')}>Pending</a></li>
+<li><a className="dropdown-item" onClick={() => handleStatusChange(s.id, 'In Progress')}>In Progress</a></li>
+<li><a className="dropdown-item" onClick={() => handleStatusChange(s.id, 'Completed')}>Completed</a></li>
+
+function submit(e){
+e.preventDefault()
+Axios.post("http://localhost:9000/create", {})
+.then(function(result){
+ console.log(result)
+ nav('/task')
+})
+.catch(err => console.log(err))
+}
+
+
+onClick = {(eve) => plzDelete(s.id)}
+
+function plzDelete(id){
+ Axios.delete("http://localhost:9000/delete/:id")
+ .then(result => {console.log(result)
+ window.location.reload() 
+})
+ .catch(errs => console.log(errs))
+}
+
+app.delete("/delete/:id", async function(req, res){
+ const id = req.params.id
+ .find by id and delete ({id: id})
+    hie.findByIdAndDelete()
+ .then(result => res.json(result))
+ .catch(error => res.json(error))
+})
+
+app.put("/update/:id", async function(req, res){
+ const id = req.params.id
+  .find by id and update ({id: id})
+    hie.findByIdAndUpdate()
+ .then(result => res.json(result))
+ .catch(error => res.json(error)
+})
+
+
+<h1>Say <span>goodbye<i class="fa-regular fa-hand"></i></span> to daily follow-ups, reminders,<br/>
+excuses and chaotic task management.</h1>
+<h5>Get real-time updates on task progress along with escalated issues</h5>
+
+`btn ${getButtonColor(s.status)} dropdown-toggle`
+
+
+{
+  title: 'Singing',
+  description: 'To sing your favourite song, enjoy it and be happy',
+  status: 'Pending',
+  due_date: '2025-02-24'
+}
+
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+  (commit or discard the untracked or modified content in submodules)
+        modified:   frontend/mine (modified content, untracked content)
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+
+echo "# My_FullStacking_MERN_Task_mgmt" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/Soum2199/My_FullStacking_MERN_Task_mgmt.git
+git push -u origin main
+
+
+https://github.com/Soum2199/My_FullStacking_MERN_Task_mgmt
+
+
+const [movieDetails, setMovieDetils] = useState([])
+
+Axios.get("http://localhost:9000/")
+.then(res => console.log(res))
+.catch(err => console.log(err))
+
+mongodb+srv://<db_username>:<db_password>@cluster0.pk8r1.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+
+mongodb+srv://Sweety:spani99@cluster0.pk8r1.mongodb.net/moviedatabase?retryWrites=true&w=majority&appName=Cluster0
+
+const TheatreSchema = new Mongooose.Schema({
+theatre_name: String,
+show_times: Array
+})
+
+const LocationSchema = new Mongooose.Schema({
+location: String,
+theatre: [TheatreSchema]
+})
+
+const LocationModel = Mongooose.model("locationtheatrecollection", LocationSchema)
+module.exports = 
+
+
+
+{
+    "location": "Mumbai",
+    "theatre": [
+        { "theatre_name": "Ashoka Theatre", "show_times": ["11:00 AM", "6:30 PM", "9:00 PM"] },
+        { "theatre_name": "Inox Theatre", "show_times": ["6:30 AM", "9:30 AM", "12:30 PM"] },
+        { "theatre_name": "PVR Theatre", "show_times": ["10:30 AM", "12:30 PM", "2:00 PM"] }
+    ]
+},
+{
+    "location": "Delhi",
+    "theatre": [
+        { "theatre_name": "The Grand Theatre", "show_times": ["11:30 AM", "2:00 PM", "5:30 PM"] },
+        { "theatre_name": "Prithviraj Theatre", "show_times": ["8:00 PM", "10:30 PM"] },
+        { "theatre_name": "Delite Cinema Hall", "show_times": ["6:45 PM", "9:15 PM", "12:15 AM"] },
+        { "theatre_name": "PVR Plaza", "show_times": ["11:30 AM", "1:30 PM", "3:00 PM"] }
+    ]
+}
+
+// {
+//     location: "Bangalore",
+//     theatres: [
+//         { theatreName: "Urvashi Theatre", showTimes: ["6:30 AM", "9:30 AM", "12:30 PM"] },
+//         { theatreName: "Meenakshi Theatre", showTimes: ["8:00 AM", "11:30 PM"] },
+//         { theatreName: "PVR Theatre", showTimes: ["6:30 AM", "9:30 AM", "12:30 PM"] }
+//     ]
+// }
+
+
+{
+  "location": "Mumbai",
+  "theatre": [
+    {
+      "theatre_name": "Aditi Theatre",
+      "show_times": [
+        "6:30 AM",
+        "9:30 AM",
+        "12:30 PM"
+      ]
+    },
+    {
+      "theatre_name": "Ashoka Theatre",
+      "show_times": [
+        "8:00 AM",
+        "11:30 PM"
+      ]
+    },
+    {
+      "theatre_name": "Inox Theatre",
+      "show_times": [
+        "6:30 AM",
+        "9:30 AM",
+        "12:30 PM"
+      ]
+    },
+    {
+      "theatre_name": "PVR Theatre",
+      "show_times": [
+        "10:30 AM",
+        "12:30 PM",
+        "2:00 PM"
+      ]
+    }
+  ]
+}
+
+function showTime() {
+	document.getElementById('currentTime').innerHTML = new Date().toUTCString();
+}
+showTime();
+setInterval(function () {
+	showTime();
+}, 1000);
+
+
+{
+    "location": "Mumbai",
+    "theatre": [
+        { "theatre_name": "Aditi Theatre", "show_times": ["6:30 AM", "9:30 AM", "12:30 PM"] },
+        { "theatre_name": "Ashoka Theatre", "show_times": ["8:00 AM", "11:30 PM"] },
+        { "theatre_name": "Inox Theatre", "show_times": ["6:30 AM", "9:30 AM", "12:30 PM"] },
+        { "theatre_name": "PVR Theatre", "show_times": ["10:30 AM", "12:30 PM", "2:00 PM"] }
+    ]
+},
+
+
+{
+    "location": "Pune",
+    "theatre": [
+        { "theatre_name": "Inox: Metro, Shivaji Road", "show_times": ["1:50 PM", "4:20 PM"] },
+        { "theatre_name": "Rajhans Cinema, Avenue Mall", "show_times": ["4:30 PM", "9:00 PM"] }
+    ]
+},
+
+{
+    "location": "Chandigarh",
+    "theatre": [
+        { "theatre_name": "Fun Cinemas", "show_times": ["10:45 AM", "2:45 PM"] },
+        { "theatre_name": "Cinepolis: Jagtap Mall", "show_times": ["10:30 AM", "3:00 PM"] },
+        { "theatre_name": "PVR, KVK Punjab Mall", "show_times": ["9:30 AM", "12:45 PM"] },
+        { "theatre_name": "PVR Centra", "show_times": ["11:00 AM", "1:30 PM", "3:00 PM", "4:30 PM", "6:00 PM", "8:30 PM"] }
+    ]
+}
+
+{
+    "location": "Hyderabad",
+    "theatre": [
+        { "theatre_name": "Inox: Prism Mall", "show_times": ["3:30 PM"] },
+        { "theatre_name": "PVR, Next Galleria Mall", "show_times": ["11:00 AM", "2:15 PM"] },
+        { "theatre_name": "PVR Central Mall", "show_times": [ "4:30 PM", "9:30 PM"] }
+    ]
+},
+
+{
+    "locations": [
+        {
+            "location": "Chennai",
+            "theatre": [
+                { "theatre_name": "Sathyam Cinemas", "show_times": ["8:00 AM", "10:30 AM", "1:15 PM"] },
+                { "theatre_name": "Agasthya Theatre", "show_times": ["9:00 AM", "12:00 PM", "3:00 PM"] },
+                { "theatre_name": "Inox Chennai", "show_times": ["7:30 AM", "9:30 AM", "1:00 PM"] },
+                { "theatre_name": "PVR Cinemas", "show_times": ["11:00 AM", "2:00 PM", "5:00 PM"] }
+            ]
+        },
+
+        {
+            "location": "Kolkata",
+            "theatre": [
+                { "theatre_name": "Nandan Cinema", "show_times": ["8:30 AM", "11:30 AM", "2:30 PM"] },
+                { "theatre_name": "Menoka Theatre", "show_times": ["11:00 AM", "4:00 PM"] },
+                { "theatre_name": "Inox Kolkata", "show_times": ["9:30 AM", "12:30 PM", "3:30 PM"] },
+                { "theatre_name": "PVR Cinemas", "show_times": ["11:00 AM", "1:30 PM", "4:30 PM"] }
+            ]
+        },
+        {
+            "location": "Ahmedabad",
+            "theatre": [
+                { "theatre_name": "Big Cinemas", "show_times": ["7:30 AM", "10:30 AM", "1:30 PM"] },
+                { "theatre_name": "Cinemax Ahmedabad", "show_times": ["11:15 AM", "3:15 PM"] },
+                { "theatre_name": "PVR Ahmedabad", "show_times": ["10:00 AM", "1:00 PM", "4:00 PM"] },
+                { "theatre_name": "Cinepolis", "show_times": ["11:30 AM", "2:30 PM", "5:30 PM"] }
+            ]
+        },
+        {
+            "location": "Cochin",
+            "theatre": [
+                { "theatre_name": "Shree Theatre", "show_times": ["10:15 AM", "1:15 PM", "6:45 PM"] },
+                { "theatre_name": "Cinepolis Cochin", "show_times": ["10:00 AM", "1:00 PM"] },
+                { "theatre_name": "PVR Cochin", "show_times": ["9:30 AM", "12:30 PM", "3:30 PM"] },
+                { "theatre_name": "Satya Cinemas", "show_times": ["10:30 AM", "4:00 PM", "6:30 PM", "9:00 PM"] }
+            ]
+        },
+        {
+            "location": "Lucknow",
+            "theatre": [
+                { "theatre_name": "PVR Lucknow", "show_times": ["6:00 AM", "9:00 AM", "12:00 PM"] },
+                { "theatre_name": "Inox Lucknow", "show_times": ["8:30 AM", "11:30 AM", "2:30 PM"] },
+                { "theatre_name": "Wave Cinemas", "show_times": ["7:15 AM", "10:15 AM", "1:15 PM"] },
+                { "theatre_name": "Fun Cinemas", "show_times": ["9:45 AM", "12:45 PM", "3:45 PM"] }
+            ]
+        }
+    ]
+}
+
+const [modal, setModal] = useState(false)
+function toggleModal(){
+setModal(!modal)
+}
+<button>Open Modal</button>
+<div class="modal">
+<div class="overlay">
+<div class="modal-content">
+<h1>Hello World!</h1>
+<p>How are you doing today? Is all good here by!?.. Okay, nice to meet you though, See you again.</p>
+<button>Close</button>
+</div>
+</div>
+</div>
+
+import { useNavigate } from 'react-router-dom';
+
+function TheatreDetail() {
+const navigate = useNavigate();
+
+<NavLink to="/about">{hi}</NavLink>

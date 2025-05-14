@@ -1,0 +1,218 @@
+<form class="row g-3 justify-content-center" method='post'>
+<div className='col-sm-5 col-md-6'>
+  Enter name:<input class="form-control" type="text" name="username"/>
+  Enter email id:<input class="form-control" type="email" name="useremail"/>
+  Password:<input class="form-control" type="password" name="userpassword"/>
+  Confirm password:<input class="form-control" type="password" name="userconfirmpassword"/>
+  <button className='btn btn-outline-primary'>Submit</button>
+</div>
+<br/>
+<p>Already have an account? <a href="#" class="stretched-link text-primary">Kindly <strong>Login</strong> here</a></p>
+</form>
+
+		VS
+
+<div class="card text-center">
+      <div class="card-header">
+        <h1>Welcome to task management, <br/> please sign in below</h1>
+      </div>
+      <form method='post'>
+        <div class="card-body">
+          <h5 class="card-title">Enter your name:</h5>
+          <input type="text" class=" form-control" placeholder="Mark" required></input>
+          <h5 class="card-title">Enter password:</h5>
+          <input type="password" class=" form-control" required></input>
+          <a href="#" class="btn btn-primary">Sign in</a>
+        </div>
+        <div class="card-footer text-body-secondary">
+          OR <br/>
+          <button onClick={plzSigning} type="button" class="btn btn-outline-primary">Sign in with Google</button>
+        </div>
+      </form>
+    </div>
+
+
+				VS
+
+<div className="d-flex justify-content-center align-items-center">
+  <div className='card w-40 mb-3'>
+        <div className="card-body row g-2 text-center">
+            <div className="col-auto">
+                <label for="inputPassword6" class="col-form-label"> Enter Task: </label>
+            </div>
+            <div className="col-auto">
+                <input type="text" class="form-control --bs-info-border-subtle" placeholder="task here..." aria-describedby="passwordHelpInline"/>
+            </div>
+            <div className="col-auto">
+                <button type="button" class="btn btn-secondary">Add Task +</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+const student1 = {
+    name: "Ranlia",
+    age: 63,
+    city: "Dubai",
+    displayData: function() {
+        console.log(this.name, this.age, this.city)
+    }
+}
+student1.displayData()
+
+
+name:{
+        type: String,
+        unique: false,
+        required: true
+    },
+    description:{
+        type: String,
+        unique: false,
+        required: true
+    },
+    price:{
+        type: Number,
+        unique: false,
+        required: true
+    },
+    countInStock:{
+        type: Number,
+        unique: false,
+        required: true
+    },
+    imageUrl:{
+        type: String,
+        unique: false,
+        required: true
+    }
+
+---------------------------------------------------------------------------------------------------------------
+
+"name":"Iphone 13 Pro",
+    "imageUrl": "https://images.unsplash.com/photo-1664363535302-6f71e41a176a?q=80&w=2127&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "description":"With more than 1 year warranty for phone and guarantee for in Box Accessories, and with an advanced dual-camera system that allows you to click mesmerising pictures with immaculate clarity. Furthermore, the lightning-fast A15 Bionic chip allows for seamless multitasking, elevating your performance to a new dimension. A big leap in battery life, a gigantic storage level, a durable design, and a bright Super Retina XDR display facilitate boosting your user experience.",
+    "price": 72500,
+    "countInStock": 8
+
+
+{
+    "name": "Iphone 12",
+    "imageUrl":
+      "https://images.unsplash.com/photo-1605787020600-b9ebd5df1d07?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1463&q=80",
+    "description":
+      "Welcome to a new era of iPhone. Beautifully brightened 6.1-inch Super Retina XDR display. Ceramic Shield with 4x better drop performance. Incredible low-light photography with Night mode on all cameras. Cinema-grade Dolby Vision video recording, editing, and playback. Powerful A14 Bionic chip. And new MagSafe accessories for easy attach and faster wireless charging. So, Let the fun begins now.",
+    "price": 51099,
+    "countInStock": 10
+  }
+
+.then(data => console.log(data))
+    .catch(err => console.log(err))
+
+"name":"Iphone 13 Pro",
+    "imageUrl": "https://images.unsplash.com/photo-1664363535302-6f71e41a176a?q=80&w=2127&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "description":"With more than 1 year warranty for phone and guarantee for in Box Accessories, and with an advanced dual-camera system that allows you to click mesmerising pictures with immaculate clarity. Furthermore, the lightning-fast A15 Bionic chip allows for seamless multitasking, elevating your performance to a new dimension. A big leap in battery life, a gigantic storage level, a durable design, and a bright Super Retina XDR display facilitate boosting your user experience.",
+    "price": 72500,
+    "countInStock": 8
+
+
+{
+  "name": "Iphone 12",
+  "imageUrl": "https://images.unsplash.com/photo-1605787020600-b9ebd5df1d07?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw...",
+  "description": "Welcome to a new era of iPhone...",
+  "price": 51099,
+  "countInStock": 10
+}
+
+"name": "PlayStation 5",
+    "imageUrl":
+      "https://images.unsplash.com/photo-1606813907291-d86efa9b94db?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1352&q=80",
+    "description":
+      "PlayStation 5 (PS5) is a home video game console developed by Sony Interactive Entertainment. Announced in 2019 as the successor to the PlayStation 4, the PS5 was released on November 12, 2020 in Australia, Japan, New Zealand, North America, Singapore, and South Korea, and November 19, 2020 onwards in other major markets except China and India.",
+    "price": 499,
+    "countInStock": 15
+
+
+"name": "SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s",
+"imageUrl": "https://m.media-amazon.com/images/I/61mExYRV6mL.jpg",
+"description":  "Easy upgrade for faster boot up, shutdown, application load and response (As compared to 5400 RPM SATA 2.5” hard drive; Based on published specifications and internal benchmarking tests using PCMark vantage scores) Boosts burst write performance, making it ideal for typical PC workloads The perfect balance of performance and reliability Read/write speeds of up to 535MB/s/450MB/s (Based on internal testing; Performance may vary depending upon drive capacity, host device, OS and application.)",
+   "price": 12099,
+  "countInStock": 48
+
+
+{
+productList.map(function(i){
+  return  <div class="card" style={{width: "18rem", margin: "6px"}}>
+  <img src="https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA1pCLxT.img?w=768&h=432&m=6" class="card-img-top" alt="..."/>
+  <div class="card-body">
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <h5 class="card-text">Price/-</h5>
+    <button type="button" class="btn btn-outline-dark d-grid gap-2 col-6 mx-auto">Dark</button>
+  </div>
+</div>
+ })
+}
+
+
+    <div class="card" style={{width: "19rem", margin: "6px"}}>
+  <img src={i.imageUrl} class="card-img-top" alt="..." style={{ height: "250px" }} />
+  <div class="card-body">
+    <p class="card-text">{i.description}</p>
+    <h5 class="card-text">Price: Rs.{i.price}/-</h5>
+    <button type="button" class="btn btn-outline-dark d-grid gap-2 col-6 mx-auto">View</button>
+  </div>
+</div>
+
+<div style={{display: "flex", flexWrap: "wrap", margin: "6px"}}>
+              <Route path='/' element={<Product/>}></Route>
+      </div>
+
+
+
+<div class="card" style={{width: "18rem"}}>
+  <img src={props.info.imageUrl} class="card-img-top" alt="..."/>
+  <div class="card-body">
+    <h5 class="card-title">{props.info.name}</h5>
+    <p class="card-text">{props.info.description}</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Stocks available: {props.info.countInStock}</li>
+  </ul>
+  <div class="card-body">
+ {countInStock <= 0 ? ( <a class="btn btn-danger disabled" role="button" aria-disabled="true">Out Of Stock</a>) : 
+ (<a href="#" class="btn btn-outline-secondary" role="button">Add To Cart +</a>)}
+  </div>
+</div>
+
+
+ {countInStock <= 0 ? ( <a class="btn btn-danger disabled" role="button" aria-disabled="true">Out Of Stock</a>) : 
+ (<a href="#" class="btn btn-outline-secondary" role="button">Add To Cart +</a>)}
+
+
+<div style={{display: "flex", flexWrap: "wrap", margin: "6px"}}>
+	  <div class="card" style={{width: "19rem", margin: "6px"}}>
+  <img src={i.imageUrl} class="card-img-top" alt="..." style={{ height: "250px" }} />
+  <div class="card-body">
+    <p class="card-text">{i.name}</p>
+    <h5 class="card-text">Price: Rs.{i.price}/-</h5>
+    <button onClick={() =>showDetails(i)} type="button" class="btn btn-outline-dark d-grid gap-2 col-6 mx-auto">View</button>
+  </div>
+</div>
+      </div>
+
+class="btn btn-secondary" role="button"
+display: "flex", flexWrap: "wrap", gap: "16px", justifyContent: "space-evenly" }}>
+        {productList.map(i => (
+
+
+“display: "flex", flexWrap: "wrap", gap: "16px", justifyContent: "flex-start",  width: "100%", padding: "10px"
+
+
+
+ "name": "WD 4TB Gaming Drive Works with Playstation 4 Portable External Hard Drive",
+  "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/31XxhZxzaLL.jpg",
+  "description": "Expand your PS4 gaming experience, Play anywhere Fast and easy, setup Sleek design with high capacity, 3-year manufacturer's limited warranty",
+  "price": 11499,
+  "countInStock": 40

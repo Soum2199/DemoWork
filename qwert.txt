@@ -1,0 +1,51 @@
+/* some random css here*/
+
+:root {
+  --docsearch-primary-color: #5468ff;
+  --docsearch-text-color: #1c1e21;
+  --docsearch-spacing: 12px;
+  --docsearch-icon-stroke-width: 1.4;
+  --docsearch-highlight-color: var(--docsearch-primary-color);
+  --docsearch-muted-color: #969faf;
+  --docsearch-container-background: rgba(101,108,133,.8);
+  --docsearch-logo-color: #5468ff;
+  --docsearch-modal-width: 560px;
+  --docsearch-modal-height: 600px;
+  --docsearch-modal-background: #f5f6f7;
+  --docsearch-modal-shadow: inset 1px 1px 0 0 hsla(0,0%,100%,.5),0 3px 8px 0 #555a64;
+  --docsearch-searchbox-height: 56px;
+  --docsearch-searchbox-background: #ebedf0;
+  --docsearch-searchbox-focus-background: #fff;
+  --docsearch-searchbox-shadow: inset 0 0 0 2px var(--docsearch-primary-color);
+  --docsearch-hit-height: 56px;
+  --docsearch-hit-color: #444950;
+  --docsearch-hit-active-color: #fff;
+  --docsearch-hit-background: #fff;
+  --docsearch-hit-shadow: 0 1px 3px 0 #d4d9e1;
+  --docsearch-key-gradient: linear-gradient(-225deg,#d5dbe4,#f8f8f8);
+  --docsearch-key-shadow: inset 0 -2px 0 0 #cdcde6,inset 0 0 1px 1px #fff,0 1px 2px 1px rgba(30,35,90,.4);
+  --docsearch-key-pressed-shadow: inset 0 -2px 0 0 #cdcde6,inset 0 0 1px 1px #fff,0 1px 1px 0 rgba(30,35,90,.4);
+  --docsearch-footer-height: 44px;
+  --docsearch-footer-background: #fff;
+  --docsearch-footer-shadow: 0 -1px 0 0 #e0e3e8,0 -3px 6px 0 rgba(69,98,155,.12);
+}
+
+------------------------------------------------------------------------------------------------------------------
+// Non working forms below here  s1646517887@gmail.com   https://www.scaler.com/topics/
+
+<div className="card text-center">
+        <form className="row g-3 justify-content-center" method='post'>
+          <div className='col-sm-5 col-md-6'>
+            Enter name:<input className="form-control" type="text" onChange={collectsUsername} name="username"/>
+            Enter email id:<input className="form-control" type="email" onChange={collectsEmail} name="email"/>
+            Password:<input className="form-control" type="password" onChange={collectsPassword} name="password"/>
+            Confirm password:<input className="form-control" type="password" onChange={collectsConfirmPassword} name="confirmpassword"/>
+            <br/>
+            <button onClick={sendSignups} className='btn btn-outline-primary'>Sign in</button>
+          </div>
+          <br/>
+          <button onClick={plzSigning} type="button" className="btn btn-primary">Sign in with Google</button>
+          <br/>
+          <p>Already have an account? <a href="#" className="stretched-link text-primary">Kindly <strong>Login</strong> here</a></p>
+        </form>
+      </div>

@@ -1,0 +1,62 @@
+{"_id":{"$oid":"679e35003c24eba0031ada63"},"id":{"$numberInt":"1"},"title":"Playing","description":"To play video games with friends","status":"Pending","due_date":"2025-02-17"}
+
+{
+    "id": 1,   
+    "title": "Playing",
+    "description": "To play video games with friends",
+    "status": "Pending",
+    "due_date": "2025-02-17"
+}
+
+{
+    "id": 2,
+    "title": "Schedule team meeting",
+    "description": "Set agenda and invite team members",
+    "status": "In Progress",
+    "due_date": "2023-12-12"
+}
+
+{
+    "id": 3,
+    "title": "Shopping for easter",
+    "description": "Shop for the easter eggs for your loved ones and buy chocolates for them.",
+    "status": "Pending",
+    "due_date": "2024-12-25"
+}
+
+{
+    "id": 4,
+    "title": "Improve documents",
+    "description": "Set strategies to make changes in the part of the document you want to change",
+    "status": "Completed",
+    "due_date": "2024-10-22"
+}
+{
+    "id": 5,
+    "title": "Cooking",
+    "description": "To cook a new dish such as fries, potato wafers, etc.",
+    "status": "Pending",
+    "due_date": "2025-03-15"
+},
+//copied it again
+{
+    "id": 5,
+    "title": "Cooking",
+    "description": "To cook a new dish such as fries, potato wafers, etc.",
+    "status": "Pending",
+    "due_date": "2025-03-15"
+}
+{
+    "id": 6,
+    "title": "Cleaning",
+    "description": "To clean yourself, your home, and to detox your mind by exercise.",
+    "status": "In Progress",
+    "due_date": "2027-04-25"
+}
+
+{"_id":{"$oid":"679f93ea30f34f3bf6c10ec1"},"id":{"$numberInt":"2"},"title":"Schedule team meeting","description":"Set agenda and invite team members","status":"In Progress","due_date":"2023-12-12"}
+
+{"_id":{"$oid":"679f9b3a30f34f3bf6c10ec2"},"id":{"$numberInt":"3"},"title":"Shopping for easter","description":"Shop for the easter eggs for your loved ones and buy chocolates, ","status":"Pending","due_date":"2024-12-25"}
+
+{"_id":{"$oid":"679f9bee30f34f3bf6c10ec3"},"id":{"$numberInt":"4"},"title":"Improve documents","description":"Set strategies to make changes in the part of the document you want to change","status":"Completed","due_date":"2024-10-22"}
+

@@ -1,0 +1,210 @@
+import { createStore, combineReducers, applyMiddleware } from "redux";
+
+export const myStore = createStore(seatReducer)
+----------------------------------------------------------------------------------------------------------------------------------------
+
+  Yes, it is possible to write a simpler version of the shopping Redux code without using `redux-thunk`. The main difference is that without `redux-thunk`, you will only be handling **synchronous actions**, and you'll need to remove the middleware and action creators that deal with asynchronous operations (like fetching data). 
+
+Here’s a simplified version of your shopping code without `redux-thunk`:
+
+### Step 1: Remove `redux-thunk` and async logic
+In this version, we'll only handle synchronous actions such as adding products to the cart, without performing asynchronous operations like fetching product data from an API.
+
+```javascript
+import { createStore, combineReducers } from 'redux';
+
+// Reducers
+import { cartReducer } from './reducers/cartReducers';
+import {
+  getProductsReducer,
+  getProductDetailsReducer,
+} from './reducers/productReducers';
+
+// Combine reducers (for simplicity, we're assuming the other reducers are synchronous)
+const reducer = combineReducers({
+  cart: cartReducer,
+  getProducts: getProductsReducer,
+  getProductDetails: getProductDetailsReducer,
+});
+
+// If you want to prepopulate the cart state from localStorage
+const cartItemsInLocalStorage = localStorage.getItem('cart')
+  ? JSON.parse(localStorage.getItem('cart')) : [];
+
+const INITIAL_STATE = {
+  cart: {
+    cartItems: cartItemsInLocalStorage,
+  },
+};
+
+const store = createStore(
+  reducer,
+  INITIAL_STATE
+);
+
+export default store;
+---------------------------------------------------------------------------------------------------------------
+
+```
+### Step 2: Update the `cartReducer`
+We can modify the `cartReducer` to just handle the cart actions like adding/removing items from the cart without using `redux-thunk`. Here's how the cart reducer can look like:
+
+```javascript
+// cartReducers.js
+
+const ADD_TO_CART = 'ADD_TO_CART';
+const REMOVE_FROM_CART = 'REMOVE_FROM_CART';
+
+// Initial state
+const initialCartState = {
+  cartItems: [],
+};
+
+// Reducer to handle cart actions
+export const cartReducer = (state = initialCartState, action) => {
+  switch (action.type) {
+    case ADD_TO_CART:
+      return {
+        ...state,
+        cartItems: [...state.cartItems, action.payload],
+      };
+    case REMOVE_FROM_CART:
+      return {
+        ...state,
+        cartItems: state.cartItems.filter(item => item.id !== action.payload.id),
+      };
+    default:
+      return state;
+  }
+};
+
+// Action creators for adding/removing items
+export const addToCart = (product) => {
+  return {
+    type: ADD_TO_CART,
+    payload: product,
+  };
+};
+
+export const removeFromCart = (product) => {
+  return {
+    type: REMOVE_FROM_CART,
+    payload: product,
+  };
+};
+```
+
+### Step 3: Define actions for fetching products (optional)
+If you’re not using `redux-thunk`, you will need to simulate the fetching action synchronously, like so:
+
+```javascript
+// productReducers.js
+
+const GET_PRODUCTS = 'GET_PRODUCTS';
+const GET_PRODUCT_DETAILS = 'GET_PRODUCT_DETAILS';
+
+// Example product data
+const initialProductState = {
+  products: [],
+  productDetails: {},
+};
+
+export const getProductsReducer = (state = initialProductState, action) => {
+  switch (action.type) {
+    case GET_PRODUCTS:
+      return {
+        ...state,
+        products: action.payload,
+      };
+    default:
+      return state;
+  }
+};
+
+export const getProductDetailsReducer = (state = initialProductState, action) => {
+  switch (action.type) {
+    case GET_PRODUCT_DETAILS:
+      return {
+        ...state,
+        productDetails: action.payload,
+      };
+    default:
+      return state;
+  }
+};
+
+// Action creators (you would normally fetch this data from an API)
+export const getProducts = () => {
+  const products = [
+    { id: 1, name: 'Product 1', price: 100 },
+    { id: 2, name: 'Product 2', price: 200 },
+  ]; // Static product data as example
+  return {
+    type: GET_PRODUCTS,
+    payload: products,
+  };
+};
+
+export const getProductDetails = (id) => {
+  const product = { id, name: `Product ${id}`, price: 100 * id }; // Static product data
+  return {
+    type: GET_PRODUCT_DETAILS,
+    payload: product,
+  };
+};
+```
+
+### Step 4: Use the store and dispatch actions
+
+Now, you can use the store and dispatch actions in your components (React or others) as follows:
+
+```javascript
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { addToCart, removeFromCart, getProducts } from './actions';
+
+const ShoppingCart = () => {
+  const dispatch = useDispatch();
+  const products = useSelector((state) => state.getProducts.products);
+  const cartItems = useSelector((state) => state.cart.cartItems);
+
+  React.useEffect(() => {
+    // Dispatch action to get products (synchronously in this case)
+    dispatch(getProducts());
+  }, [dispatch]);
+
+  const handleAddToCart = (product) => {
+    dispatch(addToCart(product));
+  };
+
+  const handleRemoveFromCart = (product) => {
+    dispatch(removeFromCart(product));
+  };
+
+  return (
+    <div>
+      <h1>Products</h1>
+      {products.map((product) => (
+        <div key={product.id}>
+          <p>{product.name} - ${product.price}</p>
+          <button onClick={() => handleAddToCart(product)}>Add to Cart</button>
+        </div>
+      ))}
+      <h2>Cart</h2>
+      {cartItems.map((item) => (
+        <div key={item.id}>
+          <p>{item.name} - ${item.price}</p>
+          <button onClick={() => handleRemoveFromCart(item)}>Remove from Cart</button>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default ShoppingCart;
+```
+
+### Summary:
+In this simplified version, we removed `redux-thunk` and kept the logic for the cart and products within Redux actions and reducers in a synchronous manner. This means the `getProducts` and `getProductDetails` actions are simulated as static data instead of making asynchronous calls to an API.
+
+This code is more straightforward and doesn't handle async operations, but it may not be suitable for real-world applications that require fetching dynamic data from a backend. For such cases, `redux-thunk` (or other middleware like `redux-saga`) is still recommended.

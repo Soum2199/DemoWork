@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+body{
+  padding: 25px;
+}
+header{
+  display: flex;
+  margin: 5px;
+  width: 220px;
+  justify-content: space-between;
+  padding-bottom: 20px;
+}
+pre{
+  font-family: Segoe UI;
+  font-size: 19px;
+  height: 25px;
+  width: 69px;
+  font-weight: 500;
+  color: blue;
+  /*padding-left: 1px;*/
+  &:hover{
+    color: white;
+    background: blue;
+  }
+}
+.views{
+  color: #212121;
+  font-size: 17px;
+}
+.post{
+  border: 1px solid #999;
+  height: 500px;
+	width: 500px;
+}
+h5{
+  font-weight: 400;
+  color: #555;
+  padding: 3px;
+  margin: 2px;
+  font-size: 15px;
+}
+.profile {
+	height: 60px;
+	width: 60px;
+	border-radius: 50%;
+	margin: 3px;
+}
+
+.profile_part{
+  display: flex;
+  padding-left: 16px;
+}
+.profile_part > p{
+  font-weight: 600;
+  font-size: 20px;
+ 
+}
+.profile_part > p > span{
+  font-weight: 500;
+  color: grey;
+  font-size: 18px;
+  &:hover{
+    text-decoration: underline;
+  }
+}
+#icon{
+  color: blue;
+}
+.post_design{
+   height: 300px;
+	width: 300px;
+	border-radius: 4px;
+	border: 1px solid #999;
+	background-color: #fefefe;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.post_design > .uploads{
+  height: 98%;
+	width: 98%;
+	border-radius: 4px;
+	border: 1px solid #999;
+}
+h4{
+  font-weight: 400;
+  font-size: 19px;
+}
+main{
+  width: 135px;
+  padding-top: 5px;
+  margin: 5px 3px;
+  display: flex;
+  justify-content: space-evenly;
+  /*padding-right: 25px;*/
+  font-size: 20px;
+}
+#likes:hover, #comments:hover, #shares:hover{
+  background-color: rgba(10,20,30,0.35);
+}
+</style>
+  </head>
+  <body>
+<div id="post">
+<header>
+  <i class="fa-solid fa-arrow-right fa-rotate-180 fa-lg"></i>
+  <h2>Post</h2>
+</header>
+<div class="profile_part">
+  <img class="profile" src="https://wallpapercave.com/wp/wp10074078.jpg" alt="profile" />
+  <p>Peoples  <i class="fa-solid fa-circle-check" id="icon"></i> <sup>.</sup><br /><span>@hello_world</span></p>
+  <pre>
+  Follow
+  </pre>
+</div>
+
+<h4>Hello guys look at the beauty <i class="fa-solid fa-seedling" style="color: #00d200;"></i> <i class="fa-solid fa-heart" style="color: #ff0040;"></i></h4>
+ <div class="post_design">
+  <img class="uploads" src="https://thumbs.dreamstime.com/b/masai-giraffe-jumps-across-river-savannah-347506186.jpg" alt="" />   
+ </div> 
+ <h5>May 21, 2012 <sup>.</sup>  <span class="views"><b>250</b> Views</span></h5>
+ <main>
+   <i class="fa-regular fa-heart" id="likes"></i> 
+  <i class="fa-regular fa-comment" id="comments"></i>
+   <i class="fa-regular fa-paper-plane" id="shares"></i>
+ </main>
+
+</div>
+  </body>
+</html>

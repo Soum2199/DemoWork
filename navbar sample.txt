@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+<div id="post">
+<header>
+  <i class="fa-solid fa-bell"></i>
+  <div class="myHrefs">
+<a href="#">Home</a>
+<a href="#">About</a>
+<a href="#">Details</a>
+<a href="#">Login</a>    
+  </div>
+<button>hello</button>
+
+</header>
+
+</div>
+      <script src="script.js"></script>
+  </body>
+</html>
+---------------------------------------------------------------------------------------------------
+
+body{
+  padding: 15px;
+}
+header{
+  display: flex;
+  margin: 5px;
+  /*width: 560px;*/
+  width: 70vw;
+  justify-content: space-between;
+  padding-bottom: 20px;
+ /*background-color: lightblue;*/
+ background-color: #FFECA1;
+}
+header > .myHrefs> a{
+   text-decoration: none;
+  color: #123123;
+  font-size: 21px;
+  font-family: Trebuchet MS;
+  margin: 2px;
+  &:hover{
+    color: #D1AE4C;
+    border: 1px dotted red;
+  }
+}
+header > .myHrefs > a::after{
+    font-family: Comic Sans MS;
+    color: crimson;
+  }
+button{
+  margin: 8px;
+  background-color: crimson;
+  color: #DDCFFF;
+}
+i{
+  margin: 0.5rem;
+}

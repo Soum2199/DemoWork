@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Calculator</title>
+    <style type="text/css" media="all">
+      body{
+  padding: 25px;
+  font-family: Sans-Serif;
+}
+.title {
+	color: #212529;
+	font-size: 45px;
+}
+.calculator-screen{
+  height: 35px;
+  width: 240px;
+  padding: 3px;
+  margin: 5px;
+  font-size: 19px;
+  justify-content: center;
+  border: 2px double #e6eef9;
+}
+.displays{
+  border: 1px solid;
+  justify-content: center;
+  align-items: center;
+  padding: 2px;
+  width: 51vw;
+  background-color: #773d3f;
+}
+
+.part-1{
+  padding: 2px;
+  margin: 5px;
+  color: #123456;
+}
+.part-2{
+  padding: 2px;
+  margin: 4px;
+  color: #123456;
+}
+.part-3{
+  padding: 2px;
+  margin: 4px;
+  color: #123456;
+}
+.part-3 button{
+  width: 12%;
+}
+.operate-parent{
+  padding: 2px;
+  margin: 6px;
+  font-size: 26px;
+}
+button{
+  background-color: #fffb86;
+  color: #3e4671;
+  align-self: center;
+  font-size: 24px;
+  width: 15%;
+  border: 1px dotted #face00;
+  &:hover{
+    background-color: #351a1b;
+  color: #f1f6fc;
+  transition: all 200ms ease-in-out 0.5s;
+  }
+}
+    </style>
+  </head>
+  <body>
+      <h1 class="title">Just A Simple Calculator</h1>
+      <div class="displays">
+        <div class="calculator">
+        <input type="text" class="calculator-screen" name="myscreen" />
+        <div class="calculator-keys">
+          <div class="operate-parent">
+            <button type="button" class="operator" id="add" value="+">+</button>
+            <button type="button" class="operator" id="subtract" value="-">-</button>
+            <button type="button" class="operator" id="multiply" value="*">&times;</button>
+            <button type="button" class="operator" id="divide" value="/">&divide;</button>
+          </div>
+          <div class="part-1">
+            <button type="button" id="seven" onclick="myscreen.value += '7' " value="7">7</button>
+            <button type="button" id="eight" value="8">8</button>
+            <button type="button" id="nine" value="9">9</button>
+            <button type="button" id="decimal" value=".">.</button>
+          </div>
+            <div class="part-2">
+             <button type="button" id="four" value="4">4</button>
+            <button type="button" id="five" value="5">5</button>
+            <button type="button" id="six" value="6">6</button>
+            <button type="button" id="all-clear" value="all-clear">AC</button>
+            </div>
+            <div class="part-3">
+            <button type="button" id="one" value="1">1</button>
+            <button type="button" id="two" value="2">2</button>
+            <button type="button" id="three" value="3">3</button>
+            <button type="button" id="zero" value="0">0</button>
+            <button type="button" id="equal-sign" value="=">=</button>              
+            </div>
+        </div>
+    </div>
+      </div>
+      <script>
+        const calcScreen = document.querySelector(".calculator-screen")
+const zero = document.getElementById("zero")
+zero.addEventListener('click',function () {
+  calcScreen.value += "0";
+})
+const one = document.getElementById("one")
+one.addEventListener('click',function () {
+  calcScreen.value += "1";
+})
+
+const two = document.getElementById("two")
+two.addEventListener('click',function () {
+  calcScreen.value += "2";
+})
+
+const three = document.getElementById("three")
+three.addEventListener('click',function () {
+  calcScreen.value += "3";
+})
+const four = document.getElementById("four")
+four.addEventListener('click',function () {
+  calcScreen.value += "4";
+})
+
+const five = document.getElementById("five")
+five.addEventListener('click',function () {
+  calcScreen.value += "5";
+})
+
+const six = document.getElementById("six")
+six.addEventListener('click',function () {
+  calcScreen.value += "6";
+})
+
+const seven = document.getElementById("seven")
+seven.addEventListener('click',function () {
+  calcScreen.value += "7";
+})
+
+const eight = document.getElementById("eight")
+eight.addEventListener('click',function () {
+  calcScreen.value += "8";
+})
+
+const nine = document.getElementById("nine")
+nine.addEventListener('click',function () {
+  calcScreen.value += "9";
+})
+
+const clear = document.getElementById("all-clear")
+clear.addEventListener('click',function () {
+  calcScreen.value = "";
+})
+const decimal = document.getElementById("decimal")
+decimal.addEventListener('click',function () {
+  calcScreen.value += ".";
+})
+
+const equals = document.getElementById("equal-sign")
+equals.addEventListener('click',function () {
+  calcScreen.value = eval(calcScreen.value);
+})
+
+const plus = document.getElementById("add")
+plus.addEventListener('click',function () {
+  calcScreen.value += "+";
+})
+
+const minus = document.getElementById("subtract")
+minus.addEventListener('click',function () {
+  calcScreen.value += "-";
+})
+
+const multiply = document.getElementById("multiply")
+multiply.addEventListener('click',function () {
+  calcScreen.value += "*";
+})
+
+const divide = document.getElementById("divide")
+divide.addEventListener('click',function () {
+  calcScreen.value += "/";
+})
+      </script>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+Some CSS props be like:
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+     
+<li>T</li>
+<li>R</li>
+<li>U</li>
+<li>E</li>
+<li>Heroes</li>
+
+      <script src="script.js"></script>
+  </body>
+</html>
+
+
+body{
+background-color: blue;
+}
+li{
+    list-style: none;
+    word-spacing: 15px;
+    padding: 10px;
+    margin: 5px;
+    font-size: 35px;
+    color: yellow;
+    font-weight: 800;
+    display: block;
+    text-align: center;
+  font-family: "Segoe UI", sans-serif;
+    
+}
+li:hover{
+text-shadow: 1px 3px 5px magenta;
+transform: scaleY(1.4);
+transition-property: all;
+transition-duration: 15s;
+/*transition-delay: 5s;*/
+transition-timing-function: ease-in-out;
+ transition: transform 4s ease-in-out;
+  transform: rotateY(360deg);
+}
+
+

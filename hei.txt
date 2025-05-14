@@ -1,0 +1,61 @@
+print("Hello world")
+
+#Helllo Everyone, Good morning/afternoon/evening
+
+# a = 3
+# print("the number here is ",a)
+
+# person = "Tony Stark"
+# age = 51
+# is_genius = True
+
+# print(person, "\n", age, "\n", is_genius)
+# print(type(person))
+# print(type(age))
+# print(type(is_genius))
+
+# names = input("What is the name?.: ")
+# print("Hello " + names)
+
+# for i in range (0,6):
+#     print("* " * i)
+
+older = int(input("Enter your age then: "))
+now = older + 3
+print("age now is " , now)
+print(type(older))
+print(type(now))
+# File "<main.py>", line 24, in <module> TypeError: can only concatenate str (not "int") to str
+
+
+one = int(input("enter first number "))
+two = int(input("Enter second number "))
+sum = one + two
+print(sum)
+
+
+a = 'Hello World'
+print(a) #output will be whole string. Hello World
+print(a[0]) #output will be first character. H
+print(a[0:5]) #output will be first five characters. Hello
+print(a[:3]) # gives Hel
+print(a[:-1]) #gives Hello Worl
+print(a[-1:]) #gives d only
+print(a[3:6]) #gives lo and some space
+print(a[3:10]) #gives lo Worl as output
+
+int_num = 10 # class int value
+float_num = 10.2 #class float value
+complex_num = 3.14j #class complex value
+long_num = 1234567 #its a long value but gives class int
+print(type(int_num), type(float_num), type(complex_num), type(long_num))
+
+#Printing Even numbers
+def isEven(a):
+    if a%2 ==0:
+        return True
+    #this next line should be even with the if
+    return False
+
+print(isEven(7))
+print(isEven(6))

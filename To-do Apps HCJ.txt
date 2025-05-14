@@ -1,0 +1,43 @@
+		HTML
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+      <h1 class="title">Hello World! </h1>
+      <input type="text" placeholder="pl enter"/>
+      <button type="submit">Add task</button>
+      <ul>
+        
+      </ul>
+      <script src="script.js"></script>
+  </body>
+</html>
+---------------------------------------------------------------------------------------------
+		CSS
+body{
+  padding: 25px;
+}
+.title {
+	color: #5C6AC4;
+}
+ul{
+  list-style-type: square;
+}
+---------------------------------------------------------------------------------------------
+		JS
+
+const myInput = document.querySelector("input")
+const myButton = document.querySelector("button")
+const myUl = document.querySelector("ul")
+myButton.addEventListener("click", function(){
+  const valued = myInput.value
+  const myli = document.createElement("li")
+  myli.innerText = valued
+   console.log(valued)
+   myUl.append(myli)
+   myInput.value = ""
+})
+// myInput.value = ""

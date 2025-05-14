@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+<div>
+  <h2>Welcome Here</h2>
+  <label for="">Username <i class="fa-solid fa-user"></i></label><br />
+  <input type="text" name="username" id="username" /><br />
+  <label for="">Password <i class="fa-solid fa-lock"></i></label><br />
+  <input type="password" name="password" id="password" /><br />
+  <button id="submit">submit</button>
+  <hr />
+  <mark>OR</mark><br />
+  <label for="">Sign in with</label>
+  <div class="icons">
+    <i id="gogli" class="fa-brands fa-google"></i>
+    <i id="linkedin" class="fa-brands fa-linkedin"></i>
+    <i id="facebook" class="fa-brands fa-facebook"></i>
+    <i id="github" class="fa-brands fa-github"></i>
+    <i id="apples" class="fa-brands fa-apple"></i>
+    <i id="whatsapp" class="fa-brands fa-whatsapp"></i>
+    <i id="instagram" class="fa-brands fa-instagram"></i>   
+  </div>
+</div>
+      <script src="script.js"></script>
+  </body>
+</html>
+----------------------------------------------------------------------------------------------------------------------------------------------
+body{
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+  background: url(https://images.unsplash.com/photo-1546781788-6d251f25273e?q=80&w=1937&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+}
+h2 {
+	color: #9f9f9f;
+}
+div{
+  background-color: rgba( 95,158, 172,  0.45);
+  
+  text-align: center;
+  width:  80vw;
+}
+input{
+  border: none;
+  background-color: #535bf2ac;
+  color: rgba(250, 250, 250, 0.938);
+  height: 20px;
+  width: 180px;
+}
+button{
+  background: #5C6AC4;
+  color: beige;
+  padding: 2px;
+  margin: 4px;
+  border: none;
+  text-transform: capitalize;
+}
+.icons{
+  padding: 4px;
+  margin: 6px;
+
+}
+.icons > #gogli:hover{
+  /*color: blue;*/
+  color: orangered;
+transform: scale(1.15);
+}
+
+.icons > #linkedin:hover{
+  color: #0033cc;
+transform: scale(1.1);
+}
+
+.icons > #facebook:hover{
+  color: #005ce6;
+transform: scale(1.1);
+}
+
+.icons > #github:hover{
+  color: #404040;
+transform: scale(1.1);
+}
+
+.icons > #apples:hover{
+  color: #ccc;
+transform: scale(1.1);
+}
+
+.icons > #whatsapp:hover{
+  color: #39e600;
+transform: scale(1.1);
+}
+
+.icons > #instagram:hover{
+  color: #ff0080;
+transform: scale(1.1);
+}
+
+label{
+  color: #f9f9f9;
+}

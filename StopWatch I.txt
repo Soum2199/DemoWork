@@ -1,0 +1,103 @@
+						HTML
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+      <h1 class="title">00:00:00</h1>
+      <!--<p id="currentTime"></p>-->
+      <button id="start">Start</button>
+      <button id="stop">Stop</button>
+      <button id="reset">Reset</button>
+      
+      <script src="script.js"></script>
+  </body>
+</html>
+
+						CSS
+
+body{
+  padding: 25px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.title {
+	color: #5C6AC4;
+	font-size: 50px;
+	letter-spacing: 1px;
+}
+button{
+  font-size: 22px;
+  color: beige;
+  background: linear-gradient(to right, limegreen, lightseagreen);
+  border-radius: 6px;
+  border: none;
+  box-shadow: 0 0 6px #5C6AC4;
+  padding: 5px;
+  margin: 4px 5px;
+  cursor: pointer;
+  &:hover{
+    box-shadow: 0 0 7px rgba(92, 106, 196, 0.796);
+    transform: scale(1.1);
+  }
+}
+						JS
+
+// function showTime() {
+// 	document.getElementById('currentTime').innerHTML = new Date().toUTCString();
+// }
+// showTime();
+// setInterval(function () {
+// 	showTime();
+// }, 1000);
+
+const StartBtn = document.getElementById('start')
+const StopBtn = document.getElementById('stop')
+const ResetBtn = document.getElementById('reset')
+const title = document.querySelector('.title')
+
+let sec = 0;
+let min = 0;
+let hrs = 0;
+function Stopwatch() {
+  sec++;
+  if (sec > 59) {
+    sec=0;
+    min++;
+    if (min > 59) {
+      min=0;
+      hrs++;
+      if(hrs > 23){
+         sec = 0;
+ min = 0;
+ hrs = 0;
+        title.innerHTML = "00:00:00";
+      }
+    }
+  }
+  let finalSec = (sec>=10)? `${sec}`: `0${sec}`;
+  let finalMin = (min>=10)? `${min}`: `0${min}`;
+  let finalHrs = (hrs>=10)? `${hrs}`: `0${hrs}`;
+  
+  title.innerHTML = `${finalHrs}:${finalMin}:${finalSec}`
+}
+let info = null
+
+StartBtn.addEventListener('click', function () {
+   info = setInterval(Stopwatch, 999);
+   console.log(info)
+})
+StopBtn.addEventListener('click', function () {
+  clearInterval(info)
+})
+ResetBtn.addEventListener('click', function () {
+ clearInterval(info)
+  sec = 0;  min = 0;  hrs = 0;
+  title.innerHTML = "00:00:00";
+  // title.textContent = "00" + ":" + "00" + ":" + "00";
+  // clearInterval(info)
+})

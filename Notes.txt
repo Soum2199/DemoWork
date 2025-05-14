@@ -1,0 +1,42 @@
+Hello World
+
+varia = "Frooti"
+print("Hey there, whats up "+varia+", How are you?")
+
+Which of the following is a valid way to comment in Python? Ans:. # is valid way
+The result of the expression in Python: 5 + 2 * 3 is equals 11.
+a = 5 
+b = 2 
+print(a // b)  Ans:. 2 
+Which of the following statements is true about Python variables?
+Ans:. Python variables are case-sensitive.
+The input()  is the correct way to take user input in Python. 
+Here the correct type conversion for converting a floating-point number to an integer in Python is: int(float_num) 
+
+value = 2 + 3 * 4 / 2 
+print(value) #gives 8 
+
+print(5 * 3) # 15 
+print('5' * 3) #string part of 555 
+print(5 // 2) #2 
+print(5 + 2 * 3) #11 
+
+print(oct(23)+oct(23)) #0o270o27  
+The correct way to round a floating-point number to the nearest integer in Python is round().
+The rshift() operator overloads the >> operator.
+
+str = 'GFG'
+print(not (not(str and ''))) # False is the output
+
+print(~(~2)) #gives 2 
+Reason:
+Negation of negation is positive, hence correct answer is 2.
+What is the result of 10 > 5 and 5 < 3? Ans:. False
+
+print("list of even numbers")
+for i in range(0,101,2):
+       print(i)
+
+
+When a function is defined inside a class then it is called Method.
+ The method is accessible to data that is contained within the class.

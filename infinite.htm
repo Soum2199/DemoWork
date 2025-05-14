@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinite Scrollls..</title>
+    <style>
+    body{
+        padding: 5px;
+    }
+    .title {
+        color: #5C6AC4;
+    }
+    img{
+        width: 300px;
+        height: 300px;
+        margin: 4px;
+    } 
+    </style>
+</head>
+<body>
+    <div class="container"></div>
+    <script>
+const myContainer = document.querySelector(".container");
+
+function getRandom(num){
+
+for (let i = 0; i < num; i++) {
+    fetch("https://api.unsplash.com/photos/random?client_id=xa3t_Km7VF5q20nhOUN3q1r_fCafv5s8Q_ND6Sc0fV8")
+        .then(function(jsonOutput) {
+            return jsonOutput.json()
+        })
+        .then(function(result) {
+            console.log(result.urls.full)
+            let imgUrl = result.urls.full;
+            const myImg = document.createElement("img")
+            myImg.src = imgUrl
+            myContainer.append(myImg)
+        })
+        .catch(function(error) {
+            console.log(error)
+        })
+}
+// no things of array is required
+}
+getRandom(13)
+
+    </script>
+</body>
+</html>
