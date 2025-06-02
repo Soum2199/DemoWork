@@ -326,17 +326,106 @@ class B extends A{
     }
 }
 -----------------------------------------------------------------------------------------------------------------------------------------
+class Main {
+    public static void main(String[] args) {
+        // A obj = new A();
+        B obj = new B();
+    }
+}
+class A{
+    public A(){
+        System.out.println("copenhagen");
+    }
+}
+class B extends A{
+    public B(){
+        System.out.println("tysm holas");
+    }
+}
+-----------------------------------------------------------------------------------------------------------------------------------------
+class Main {
+    public static void main(String[] args) {
+        // A obj = new A(28);
+        B obj = new B(26);
+    }
+}
+class A{
+    public A(){
+        super();
+        System.out.println("copenhagen");
+    }
+    public A(int i){
+        super();
+        System.out.println("Turning "+i+" tomorrow");
+    }
+}
+class B extends A{
+    public B(){
+        super();
+        System.out.println("tysm holas");
+    }
+    public B(int i){
+        super(); //will call A's default and B's parameterized part
+        // super(i); //will call both A's and B's parameterized part
+        System.out.println("\nty holy for " +i+" years of life.");
+    }
+}
 
 -----------------------------------------------------------------------------------------------------------------------------------------
-
+class Main {
+    public static void main(String[] args) {
+       final int i = 4;   // i++;
+        System.out.println("The value: "+ i );
+    }
+}
 -----------------------------------------------------------------------------------------------------------------------------------------
-
+interface Abc{
+    void show();
+}
+class Pqr implements Abc{
+    public void show(){
+        System.out.println("Try it out");
+    }
+}
+class Main {
+    public static void main(String[] args) {
+        // Pqr obj = new Pqr();
+        Abc obj = new Pqr();
+        obj.show();
+    }
+}
 -----------------------------------------------------------------------------------------------------------------------------------------
-
+interface Abc{
+   default void show(){
+       System.out.println("Fryday out");
+   }
+}
+class Pqr implements Abc{
+}
+class Main {
+    public static void main(String[] args) {
+        // Pqr obj = new Pqr();
+        Abc obj = new Pqr();
+        obj.show();
+    }
+}
 -----------------------------------------------------------------------------------------------------------------------------------------
-
------------------------------------------------------------------------------------------------------------------------------------------
-
+public class Happy {
+    int age;
+    // float age;
+    String name;
+    public void selfIntroduction(){
+        System.out.println("name: "+name);
+        System.out.println("age: "+age + " years old");
+    }
+    public static void main(String[] args) {
+        Happy obj = new Happy();
+        obj.name = "Sweety";
+        // obj.age = 25.5f;
+        obj.age = 26;
+        obj.selfIntroduction();
+    }
+}
 -----------------------------------------------------------------------------------------------------------------------------------------
 
 -----------------------------------------------------------------------------------------------------------------------------------------

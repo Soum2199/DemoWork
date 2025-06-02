@@ -1,0 +1,372 @@
+//index.js
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './App.css';
+import App from './App';
+import {Provider } from "react-redux"
+import { store } from './redux/indices';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+    <Provider store={store}>
+      <App />
+    </Provider>
+);
+------------------------------------------------------------------------------------------------------------------------------------------
+//App.js
+import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Layout from './compon/Layout';
+import Home from './compon/Home';
+import Detail from './compon/Detail'
+
+function App() {
+  return (
+    <>
+      <BrowserRouter>
+      <Layout/>
+        <Routes>
+<Route index element={<Home/>}/>
+<Route path='/:menuId' element={<Detail/>}/>
+          {/* <Route index element={<Layout/>}/>  <Layout/> */}
+        </Routes>
+        {/* <Layout/> */}
+      </BrowserRouter>
+    </>
+  )
+}
+export default App;
+-----------------------------------------------------------------------------------------------------------------------------------------
+import React from 'react'
+import { Outlet } from 'react-router-dom';
+import Header from "./Header";
+import CartTab from "./CartTab";
+function Layout() {
+  return (
+    <div className='bg-gray-100'>
+      <main className='w-[1190px] max-w-full m-auto p-4'>
+        <Header/>
+        <Outlet/>
+      </main>
+      <CartTab/>
+    </div>
+  )
+}
+export default Layout
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+//Producting.js
+import React from 'react'
+import { Link } from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux';
+import { addToCart } from '../redux/cart2';
+
+function Producting(props) {
+  console.log(props)
+  console.log(props.data)
+  const dispatching =  useDispatch()
+  const cartsi = useSelector(storre => storre.cart.items)
+  console.log(cartsi)    //Most important part
+  function handleAdding() {
+    dispatching(addToCart({
+      prodId: props.data.menuId,
+      quantity: 1
+    }))
+  }
+  return (
+    <>
+      <div className='p-3 rounded-2xl shadow-sm'>
+        <Link to={`/${props.data.menuId}`}><img src={props.data.menuImg} alt="foodimg" className="w-full h-80 object-cover object-top drop-shadow-md"/> </Link>
+        <h3 className='text-xl py-2 text-center font-sans'>{props.data.menusName}</h3>
+        <div className='flex justify-between items-center'>
+          <span>Rs.{props.data.menuPrice}</span>
+          <button type="button" className="btn btn-outline-secondary font-serif" onClick={handleAdding}>Add To Cart</button>
+        </div>
+      </div>
+      
+    </>
+  )
+}
+export default Producting
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+//Home.js
+import React from 'react'
+import {foodItems} from '../productes'
+import Producting from './Producting'
+function Home() {
+  return (
+    <div>
+      <h2 className='text-3xl my-4 '>List products </h2>
+      <div className='grid lg:grid-cols-3'>
+        {
+          foodItems.map(function (product, key){
+            return  <Producting key={key} data={product}/>
+          }) 
+        }
+      </div>
+    </div>
+  )
+}
+export default Home
+-----------------------------------------------------------------------------------------------------------------------------------------
+//Header.js
+import React, {useState, useEffect} from 'react'
+import { Link } from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux';
+import { toggleStatusTab } from '../redux/cart2';
+
+function Header() {
+  const dispatch = useDispatch()
+  const [totalQuantity, setTotalQuantity] = useState(0);
+  const cartie = useSelector(story => story.cart.items);
+  useEffect(() => {
+    let total = 0;
+    cartie.forEach(item => total += item.quantity);
+    setTotalQuantity(total)
+  }, [cartie])
+  function handleOpenCart() {
+    dispatch(toggleStatusTab())
+  }
+  return (
+    <header className='flex justify-between items-center mb-4'>
+      <Link to="/" className='text-2xl font-semibold'>Homes.</Link>
+      <div className=' w-11 h-11 text-center px-3 text-xl rounded-full flex justify-center items-center relative hover:bg-slate-300 cursor-pointer' onClick={handleOpenCart}>
+        <i class="fa-solid fa-cart-shopping w-8 h-8"></i>
+        <cite className='absolute top-2/3 right-1/3 bg-amber-100 text-lg w-[21px] h-[21px] rounded-full flex justify-center items-center'>{totalQuantity}</cite>
+        {/* <cite className='absolute top-2/3 right-1/3 bg-amber-100 text-lg w-[21px] h-[21px] rounded-full flex justify-center items-center'>0</cite> */}
+      </div>
+    </header>
+  )
+}
+export default Header
+-----------------------------------------------------------------------------------------------------------------------------------------
+//Details.js
+import React, {useState, useEffect} from 'react'
+import { useParams } from 'react-router-dom'
+import {foodItems} from "../productes"
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../redux/cart2';
+// import Producting from './Producting';
+
+function Detail() {
+  const dispatch = useDispatch();
+  const {menuId} = useParams();
+  const [details, setDetails] = useState([]);
+  const [quantity, setQuantity] = useState(1);
+  useEffect(() => {
+    const findDetail = foodItems.filter(pro => pro.menuId === menuId)
+    if (findDetail.length > 0) {
+      setDetails(findDetail[0])
+      console.log(details)
+    } else {
+      window.location.href = "/";
+    }
+  }, [menuId])
+
+  function handleMinus() {
+    setQuantity((quantity - 1) < 1 ? 1 : (quantity-1))
+  }
+  function handlePlus() {
+    setQuantity(quantity + 1)
+  }
+  function handleAddToCart() {
+    console.log("Hello to my " + details.menusName)
+    dispatch(addToCart({
+      prodId: details.menuId,
+      quantity: quantity
+    }))
+  }
+  console.log("my food id is " + details.menuId)
+  console.log(details.menuImg)
+  console.log(details.menusName)
+  return (
+    <div>
+      <h1 className='text-center text-3xl'>Product Details</h1> 
+      {/* <h4>{details.menusName}</h4>
+      <img src='https://thumbs.dreamstime.com/b/masai-giraffe-jumps-across-river-savannah-347506186.jpg' alt='product images' className="w-full h-80 object-cover object-top drop-shadow-md"/>   */}
+      <div class="card" style={{width: "32rem"}}>
+  <img src={details.menuImg} class="card-img-top" alt="product Image"/>
+  <div class="card-body">
+    <h5 class="card-title font-semibold text-xl">{details.menusName}</h5>
+    <p class="card-text">{details.menuDescript}</p>
+    <h5 class="card-title font-mono text-green-500">Rs.{details.menuPrice}</h5>
+    <button type="button" class="btn btn-outline-primary btn-sm m-1 text-lg" onClick={handlePlus}>+</button>
+    <cite className='text-2xl text-red-600 font-bold'>{quantity}</cite>
+    {/* <cite className='text-2xl text-red-600 font-bold'>1</cite> */}
+    <button type="button" class="btn btn-outline-primary btn-sm m-1 text-lg" onClick={handleMinus}>-</button>
+    <br/>
+    <button type="button" class="btn btn-primary m-1" onClick={handleAddToCart}>Add to Cart <i class="fa-solid fa-cart-plus"></i></button>
+  </div>
+</div>
+    </div>
+  )
+}
+export default Detail
+-----------------------------------------------------------------------------------------------------------------------------------------
+//CartTab.js
+import React from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import CartItem from "./CartItem";
+import { toggleStatusTab } from '../redux/cart2';
+function CartTab() {
+  const dispatch = useDispatch()
+  const cartss = useSelector(store => store.cart.items);
+  const statusTab = useSelector(store => store.cart.statusTab)
+// console.log(data)
+// console.log(key)
+function handleCloseCart() {
+  dispatch(toggleStatusTab())
+}
+console.log(cartss)
+  return (
+    <div className={`fixed top-0 right-0 bg-blue-400 shadow-xl w-[350px] h-full grid grid-rows-[60px_1fr_60px] transform ${statusTab == false ? "translate-x-full" : ""}`}>
+      <h2 className='text-yellow-700 text-center text-2xl m-1'>Product Listings</h2>
+    <div className='p-4'>
+    {
+      cartss.map(function (key, item) {
+        return <CartItem key={key} data={item}/>
+      })
+    }
+    </div>
+<div class="grid grid-cols-2 ">
+  <button class="btn btn-secondary me-md-2" type="button" onClick={handleCloseCart}>Close</button>
+  <button class="btn btn-warning" type="button">Checkout</button>
+</div>
+    </div>
+  )
+}
+export default CartTab
+-----------------------------------------------------------------------------------------------------------------------------------------
+//CartItem.js
+import React, { useState, useEffect } from 'react';
+import { foodItems } from "../productes";
+
+function CartItem(props) {
+  const { prodId, quantity } = props.data;
+  const [detail, setDetail] = useState(null);
+
+  useEffect(() => {
+    const findDetail = foodItems.find(product => product.menuId === prodId);
+    setDetail(findDetail);
+    // console.log(detail)
+    // console.log(findDetail)
+    
+  }, [prodId]);
+  
+  useEffect(() => {
+    if (detail) {
+      console.log("Updated detail:", detail);
+    }
+  }, [detail]);
+  
+console.log(detail)
+  // Calculate total cost
+  const totalCost = detail ? (detail.price * quantity).toFixed(2) : 0;
+  console.log("All foodItems:", foodItems);
+
+  return (
+    <div className='flex justify-between items-center bg-green-500 text-teal-50 p-1 border-b-2 gap-3 rounded-md'>
+      {detail && (
+        <>
+          {/* <img src={detail.imageUrl} className='w-11' alt={detail.name} /> */}
+          <img src={detail?.imageUrl} className='w-11' alt={detail?.name || "Product"} />
+          <div>{detail.name}</div>
+          <div className="badge text-bg-primary text-wrap" style={{ width: "3rem" }}>
+            +
+          </div>
+          <h2>{quantity}</h2>
+          <div className="badge text-bg-primary text-wrap" style={{ width: "3rem" }}>
+            -
+          </div>
+          <div>Total Cost: ${totalCost}</div>
+        </>
+      )}
+    </div>
+  );
+}
+
+export default CartItem;
+
+// import React, { useState, useEffect } from 'react';
+// import { useDispatch } from "react-redux";
+// import { foodItems } from "../productes";
+
+// function CartItem(props) {
+//   console.log(props)
+//   console.log(props.data)
+//   const [detail, setDetail] = useState([])
+//   useEffect(() => {
+//     const findDetail = foodItems.filter(prod => prod.menuId )
+  
+//   }, [])
+//   console.log(detail)
+//   return (
+//     <div className=''>
+      
+//     </div>
+//   );
+// }
+
+// export default CartItem;
+-----------------------------------------------------------------------------------------------------------------------------------------
+//redux part - cart2.js
+
+import { createSlice } from '@reduxjs/toolkit'
+
+const initialState = {
+    items: [],
+    statusTab: false
+}
+const cartSlice =  createSlice({
+        name: "cart",
+        initialState, 
+        reducers:{
+        addToCart(state, action){
+                const {prodId, quantity} = action.payload;
+                        const idxProduct = (state.items).findIndex(item=>item.prodId === prodId)
+                            if (idxProduct >= 0) {
+                                state.items[idxProduct].quantity += quantity;
+                            }
+                            else{
+                                state.items.push({prodId, quantity})
+                            } 
+            },
+        changeQuantity(state, action){
+            const {prodId, quantity} = action.payload;
+            const idxProduct = (state.items).findIndex(item=>item.prodId === prodId)
+            if (quantity > 0) {
+                state.items[idxProduct].quantity = quantity
+            } else {
+            //    delete state.items[idxProduct]
+            state.items = state.items.filter(item => item.prodId !== prodId) 
+            }
+        },
+        toggleStatusTab(state){
+            if(state.statusTab === false){
+                state.statusTab = true;
+            }
+            else{
+                state.statusTab = false
+            }
+        }
+    }
+})
+
+export default cartSlice.reducer;
+export const {addToCart, changeQuantity, toggleStatusTab} = cartSlice.actions;
+// export const {addToCart} = cartSlice.actions;
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+//redux another part - indices.js
+import { configureStore } from "@reduxjs/toolkit";
+// import { createReducer } from "@reduxjs/toolkit";
+
+import cartReducer from "./cart2"
+
+export const store = configureStore({
+    reducer:{
+        cart: cartReducer,
+        // user: ...
+    }
+})

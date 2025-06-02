@@ -1,0 +1,109 @@
+ function handleMinus() {
+    setCount((count - 1) < 1 ? 1 : (count-1))
+  }
+  function handlePlus() {
+    setCount(count + 1)
+  }
+/////////////////////////////////////////////////////////////////////////
+
+ function handleMinus() {
+    const newThing = count - 1;
+    dispatch(changeQuantity({ prodId, count: newThing }));
+  }
+
+  function handlePlus() {
+    const newThing = count + 1;
+    dispatch(changeQuantity({ prodId, count: newThing }));
+  }
+
+grid lg:grid-cols-3
+
+----------------------------------------------------------------------------------------------------------------------
+
+
+----------------------------------------------------------------
+-------------------------------------------------------------------
+
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { foodItems } from "../productes";
+
+function CartSummary() {
+  const cartItems = useSelector((state) => state.cart.items);
+
+  const totalPrice = cartItems.reduce((total, item) => {
+    const product = foodItems.find(p => p.menuId === item.prodId);
+    if (!product) return total; // skip if product not found
+    return total + product.menuPrice * item.quantity;
+  }, 0);
+
+  return (
+    <div className="text-white bg-indigo-900 p-4 rounded-lg">
+      <h2 className="text-lg font-semibold">Total Price: Rs. {totalPrice.toFixed(2)}</h2>
+    </div>
+  );
+}
+
+export default CartSummary;
+
+.......................................................................
+
+// cartSelectors.js
+import { foodItems } from "../productes";
+
+export const selectCartTotal = (state) => {
+  return state.cart.items.reduce((total, item) => {
+    const product = foodItems.find(p => p.menuId === item.prodId);
+    return product ? total + product.menuPrice * item.quantity : total;
+  }, 0);
+};
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+import { useSelector } from 'react-redux';
+import { selectCartTotal } from '../redux/cartSelectors';
+
+const total = useSelector(selectCartTotal);
+
+----------------------------------------------- my PHP journey ------------------------------------------------------------
+
+
+<?php
+
+echo "Try programiz.pro".PHP_EOL."but why?";
+$n1 = 4;
+$n2 = 6;
+echo PHP_EOL.$n1+$n2;
+echo PHP_EOL."\nHello World\tHey there".PHP_EOL;
+$age = 24;
+if($age >= 18){
+    echo "You are eligible to vote".PHP_EOL;
+}
+else{
+    echo "Too young to vote".PHP_EOL;
+}
+
+?>
+
+//part 2
+
+<?php
+// 	echo "Hello, World!"
+$n = 7;
+while ($n < 10){
+  $n++;
+  echo "The number is ".$n.PHP_EOL;
+}
+echo "Thank you";
+?>
+
+
+https://demo-backend-kp64.onrender.com
+
+    Axios.post("http://localhost:2025/login", {
+OR 
+    Axios.post("https://demo-backend-kp64.onrender.com/login", {
+
+        Axios.post("http://localhost:2025/signin", {
+OR
+        Axios.post("https://demo-backend-kp64.onrender.com/signin", {
