@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <i class="fa-solid fa-circle-half-stroke" id="strokes"></i>
+    <h1 class="title">Hello World!</h1>
+    <p id="currentTime"></p>
+    <script src="script.js"></script>
+  </body>
+</html>
+
+
+:root {
+  --screen: #f0f0f0;  /* Light background */
+  --text: #333333;    /* Dark text */
+  --title: #ff5733;   /* Title color */
+}
+
+.theme-dark {
+  --screen: #1a1a1a;  /* Dark background */
+  --text: #e0e0e0;    /* Light text */
+  --title: #00e127;   /* Title color in dark mode */
+}
+
+.theme-blue {
+  --screen: #007BFF;  /* Blue background */
+  --text: #ffffff;    /* White text */
+  --title: #FFD700;   /* Gold title color */
+}
+
+.theme-green {
+  --screen: #28a745;  /* Green background */
+  --text: #ffffff;    /* White text */
+  --title: #ffcc00;   /* Yellow title color */
+}
+
+body {
+  padding: 25px;
+  background-color: var(--screen);
+  color: var(--text);
+}
+
+.title {
+  color: var(--title);
+}
+
+
+function showTime() {
+  document.getElementById('currentTime').innerHTML = new Date().toString();
+}
+
+showTime();
+setInterval(function () {
+  showTime();
+}, 1000);
+
+const title = document.querySelector('.title');
+const strokes = document.getElementById('strokes');
+
+let currentTheme = 0;
+const themes = ['theme-dark', 'theme-blue', 'theme-green'];
+
+strokes.addEventListener('click', function () {
+  document.body.classList.remove(themes[currentTheme]);
+  currentTheme = (currentTheme + 1) % themes.length; // Cycle through themes
+  document.body.classList.add(themes[currentTheme]);
+  title.classList.toggle('dark'); // Optional: You can remove this if not needed
+});
