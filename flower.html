@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Flower with HTML/CSS/JS</title>
+  <style>
+body {
+  background: #e0f7fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.flower {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  transition: transform 1s ease;
+}
+
+.petal {
+  --total: 8;
+  --angle: calc(360deg / var(--total));
+  position: absolute;
+  /*width: 81px;*/
+  width: 63px;
+  /*height: 48px;*/
+  height: 76px;
+  /*background: pink;*/
+  /*background-color: #007bff;*/
+  background-color: oklch(0.646 0.222 41.116);
+  border-radius: 50% 50% 10% 10%;
+  transform-origin: bottom center;
+  top: 60px;
+  left: 60px;
+  transform: rotate(calc(var(--i) * var(--angle))) translateY(-60px);
+}
+
+.center {
+  position: absolute;
+  width: 75px;
+  height: 75px;
+  background: gold;
+  border-radius: 50%;
+  top: 93px;
+  left: 65px;
+  z-index: 1;
+  box-shadow: 0 0 18px oklch(0.666 0.179 58.318);
+}
+
+.stem {
+  position: absolute;
+  width: 20px;
+  height: 150px;
+  background: green;
+  top: 190px;
+  left: 90px;
+}
+
+</style>
+</head>
+<body>
+
+<div class="flower" onclick="spinFlower()">
+  <div class="petal" style="--i: 0;"></div>
+  <div class="petal" style="--i: 1;"></div>
+  <div class="petal" style="--i: 2;"></div>
+  <div class="petal" style="--i: 3;"></div>
+  <div class="petal" style="--i: 4;"></div>
+  <div class="petal" style="--i: 5;"></div>
+  <div class="petal" style="--i: 6;"></div>
+  <div class="petal" style="--i: 7;"></div>
+  <div class="center"></div>
+  <div class="stem"></div>
+</div>
+  <script>
+function spinFlower() {
+  const flower = document.querySelector('.flower');
+  flower.style.transform = 'rotate(360deg)';
+  setTimeout(() => {
+    flower.style.transform = 'rotate(0deg)';
+  }, 2000);
+}
+
+</script>
+</body>
+</html>
