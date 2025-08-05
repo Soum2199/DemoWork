@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+    <style>
+body{
+  padding: 5px;
+}
+.title {
+	color: #5C6AC4;
+}
+input{
+  padding: 5px;
+  margin:  5px;
+  background-color: #e0d4ff;
+  border: 1px dashed #370c69;
+  color: #20491e;
+}
+button{
+  color: #345678;
+  background-color: #c5df77;
+  
+  &:hover{
+    background-color: #bce359;
+  }
+  &:active{
+    background-color: #f38b44;
+  }
+}
+</style>
+  </head>
+  <body>
+      <h1 class="title">Hello World! </h1>
+      
+      <label for="passing">Enter Password</label>
+      <input type="password" name="passing" id="passing" value="" />
+      <br /> <button type="submit">Show</button>
+      <script>
+const pass = document.getElementById("passing")
+const button = document.querySelector("button")
+
+button.addEventListener("click", function () {
+  if (pass.type == 'password') {
+    pass.type = 'text'
+    button.innerHTML = "Hide"
+  }
+  else{
+    pass.type = 'password'
+    button.innerHTML = "Show"
+  } 
+})
+</script>
+  </body>
+</html>
