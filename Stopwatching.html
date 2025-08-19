@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+    <style type="text/css" media="all">
+      body{
+  padding: 15px;
+}
+.title {
+	color: #AC45C6;
+}
+
+#start{
+  font-size: 20px;
+  border: 1px solid green;
+  &:hover{
+    background-color: oklch(0.845 0.143 164.978);
+  }
+}
+#stop{
+    font-size: 20px;
+  border: 1px solid red;
+  &:hover{
+    background-color: oklch(0.808 0.114 19.571);
+  }
+}
+#reset{
+    font-size: 20px;
+  border: 1px solid blue;
+  &:hover{
+    background-color: oklch(0.785 0.115 274.713);
+  }
+}
+    </style>
+  </head>
+  <body>
+      <h1 class="title">00:00:00</h1>
+      <!--<p id="currentTime"></p>-->
+      <button id="start">Start</button>
+<button id="stop">Stop</button>
+<button id="reset" type="reset">Reset</button>
+      <script type="text/javascript" charset="utf-8">
+        
+const title = document.querySelector(".title")
+
+const start = document.getElementById("start")
+const stop = document.getElementById("stop")
+const reset = document.getElementById("reset")
+
+let sec = 0, min = 0, hr = 0;
+let info = null
+function StoppingWatch() {
+  sec++;
+  if(sec > 59){
+    sec = 0;
+    min++;
+    
+    if(min > 59){
+      min = 0;
+      hr++;
+      
+      if (hr > 23) {
+        hr = 0;
+        title.innerHTML = "00:00:00";
+      }
+    }
+  }
+  let newHr = hr >= 10 ? hr :  `0${hr}`
+  let newMin = min >= 10 ? min :  `0${min}`
+  let newSec = sec >= 10 ? sec :  `0${sec}`
+  title.innerHTML  = `${newHr}:${newMin}:${newSec}`
+}
+
+start.addEventListener("click", function () {
+  info = setInterval(function () {
+	StoppingWatch();
+}, 1000);
+console.log(info)
+})
+
+stop.addEventListener("click", function () {
+  clearInterval(info)
+})
+
+reset.addEventListener("click", function () {
+  clearInterval(info)
+  sec = 0; 
+  min = 0; 
+  hr = 0;
+  title.innerHTML = "00:00:00";
+})
+      </script>
+  </body>
+</html>
