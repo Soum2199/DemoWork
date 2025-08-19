@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+    <style type="text/css" media="all">
+      body{
+  padding: 15px;
+  background-color: #cecfc7;
+  color: #1b1b18;
+}
+.title {
+	color: #AC45C6;
+}
+
+input{
+  padding: 3px;
+  margin: 2px;
+  font-size: 19px;
+  text-transform:  capitalize;
+}
+button{
+    font-size: 19px;
+      padding: 3px;
+  border: 1px solid #3b3d37;
+  &:hover{
+    background-color: #929487;
+  }
+  &:active{
+    background-color: #75786a;
+  }
+}
+    </style>
+  </head>
+  <body>
+      <h1 class="title">Weather Appli</h1>
+    
+    <label for="weat">Enter City: </label>
+    <input type="search" name="weat" id="weat" value="goa" />
+    <button type="submit" id="submitted">Search</button>
+    <br />
+    <div class="entries">
+      
+    </div>
+      <script type="text/javascript" charset="utf-8">
+        const submitted = document.getElementById("submitted");
+const weatInput = document.getElementById("weat");
+const entriesDivTag = document.querySelector(".entries")
+const p = document.createElement("p")
+const h4 = document.createElement("h4")
+
+submitted.addEventListener("click", function () {
+  let entryMade = weatInput.value;
+ // const p = document.createElement("p")
+  
+  fetch(`https://api.openweathermap.org/data/2.5/weather?q=${entryMade}&appid=d1bc67f1630bee48778347e3d4eddce5&units=metric`)
+  .then(function (outs) {
+    return outs.json()
+  })
+  .then((data)=>{
+    console.log(data)
+    p.innerHTML = `${data.name} has a temperature of ${data.main.temp} degree Celsius <br> <br>  Feels like: ${data.main.feels_like} <sup>O</sup>C. <br> The humidity of ${data.name} = ${data.main.humidity} percent.`;
+    h4.innerHTML = `Status of the place in ${data.sys.country}: ${data.weather[0].description}`;
+    entriesDivTag.append(p)
+    entriesDivTag.append(h4)
+  })
+  .catch((erroor)=>{
+    console.log(erroor)
+  })
+})
+      </script>
+  </body>
+</html>
