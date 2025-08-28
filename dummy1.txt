@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <style>
+        .itemNames{
+            padding: 5px;
+            background-color: #cafe90;
+            font-weight: 500;
+            font-family: serif;
+            border: 1px dotted;
+            margin: 6px;
+            color: brown;
+        }
+        cite{
+            font-size: 22px;
+            text-transform: capitalize;
+        }
+    </style>
+</head>
+<body>
+    <Applet>Hello</Applet>
+    <cite>Heyllloew</cite>
+    <div class="goods">
+        <div class="itemNames"></div>
+    </div>
+    <center>Hey..</center>
+    <script>
+        let info;
+// const itemNames = document.getElementsByClassName("itemNames")
+const goods = document.getElementsByClassName('goods')[0]
+        info = setTimeout(() => {
+           //starting part
+            fetch('https://fakestoreapi.com/products')
+        .then(function (output) {
+            return output.json()
+        })
+        .then(data => {
+// for (let i = 0; i < 6; i++) {
+//     const itemNames = document.getElementsByClassName("itemNames")[i]
+//             console.log(res)
+//             console.log(res[i].id)
+//             itemNames.innerHTML = `Product Name: ${res[i].title}`
+//             goods.appendChild(itemNames)
+// }
+
+ for (let i = 0; i < 13; i++) {
+            const item = document.createElement('div');
+            item.className = 'itemNames';
+            item.innerHTML = `<h3>Product Name: ${data[i].title}</h3>
+            <p>Price: ${data[i].price} dollars</p>
+            <cite>Which category: ${data[i].category}</cite> <br /><br />
+           <u>Rate: ${data[i].rating.rate} / 5</u> `;
+            if (data[i].category == 'jewelery') {
+                item.style.backgroundColor = "#fcef60"
+            } else if(data[i].category == 'electronics') {
+                item.style.backgroundColor = "#bdebde"
+            }
+            else{
+                item.style.backgroundColor = "#cafe90"
+            }
+
+            if(data[i].rating.rate > 4){
+                item.style.color = "chocolate"
+                item.style.textShadow = "1px 1px 25px white"
+                // item.style.fontSize = "20px"
+            }
+            else{
+                item.style.color = "tomato"
+            }
+            goods.appendChild(item); // append to the container
+          }
+        })
+        .catch(err => console.log(err))
+            //ending part
+        }, 700);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,196 @@
+    <h1 class="title">tic tac toe.</h1>
+    <em id="currentTime"></em>
+    
+	<main>
+    <div class="box">
+      <div class="boxer" id="0"></div>
+    <div class="boxer" id="1"></div>
+  <div class="boxer" id="2"></div>
+  <div class="boxer" id="3"></div>
+  <div class="boxer" id="4"></div>
+  <div class="boxer" id="5"></div>
+  <div class="boxer" id="6"></div>
+  <div class="boxer" id="7"></div>
+  <div class="boxer" id="8"></div>
+    </div>
+<i class="verdict"></i>
+    <button type="reset" id="reset">Restart Game</button>
+	</main>
+
+
+body{
+  padding: 15px;
+}
+.title {
+	color: #AC45c6;
+	text-transform: capitalize;
+}
+em{
+  font-size: 21px;
+}
+
+.boxer{
+height: 90px;
+  width:  90px;
+  border: 2px dashed var(--boxing);
+  transform: translateY(4px);
+
+}
+.box{
+  display: flex;
+  justify-content: space-between;
+  border:  1px solid;
+}
+main{
+display: flex;
+  justify-content: center;
+}
+
+
+function showTime() {
+	const tame = document.getElementById('currentTime')
+      tame.innerHTML = new Date().toString();
+}
+showTime();
+setInterval(function () {
+	showTime();
+}, 1000);
+
+const reset = document.getElementById("reset")
+
+//const   document.querySelectorAll(".boxer")
+const verdict = document.querySelector(".verdict")
+
+---------------------------------------------------------------======== NEW ONES ==============-------------------------------------------
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+      <h1 class="title">tic tac toe.</h1>
+      <p id="currentTime"></p>
+      
+      <div class="container">
+        <div class="box" id="0"></div>
+<div class="box" id="1"></div>
+<div class="box" id="2"></div>
+<div class="box" id="3"></div>
+<div class="box" id="4"></div>
+<div class="box" id="5"></div>
+<div class="box" id="6"></div>
+<div class="box" id="7"></div>
+<div class="box" id="8"></div>
+      </div>
+      <button type="reset" id="reset">restart game</button>
+      <script src="script.js"></script>
+  </body>
+</html>
+
+
+
+body{
+  padding: 15px;
+  /*background-color: #111;*/
+  /*color: #eee;*/
+  background-color: #ebdfe8;
+}
+.title {
+	color: #AC45C6;
+	text-transform: capitalize;
+}
+.container{
+  height: 322px;
+  width: 322px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  border: 1px solid blue;
+  padding: 1px;
+}
+.box{
+  height: 32%;
+  width: 32%;
+  border: 2px dotted #e8e32b;
+}
+button{
+  background-color: #f0f593;
+  text-transform: capitalize;
+  border: none;
+  border-radius: 13px;
+  font-size: 22px;
+  font-weight: 600;
+  padding: 5px;
+  &:hover{
+    background-color: #d8cb1a;
+     transform: translateY(-2px);
+  }
+  &:active{
+    /*background-color: #0bd6c1;*/
+    background-color: #33d9ff;
+  }
+}
+
+
+
+function showTime() {
+  const tame = document.getElementById('currentTime');
+	tame.innerHTML = new Date().toString();
+}
+showTime();
+setInterval(function () {
+	showTime();
+}, 1000);
+
+const allBox = document.querySelectorAll(".box")
+let currPlay = "X"
+const reset = document.getElementById("reset")
+let arr = Array(9).fill(null)
+
+console.log(arr)
+
+allBox.forEach(function (i) {
+  i.addEventListener("click", (event) =>{
+    // console.log(event)
+    let numb = Number(event.target.id)
+    console.log(numb)
+    // console.log(`click at ${numb} that is actually ${numb+1}th box`)
+    alert(`click at ${numb} that is actually ${numb+1}th box`)
+    swapPlayers()
+  })
+})
+
+function swapPlayers() {
+  currPlay = (currPlay === "X" ? "O" : "X");
+  // alert(`Its ${currPlay}'s turn`);
+}
+
+// rows - 012, 345, 678   col - 036, 147, 258   diagonals - 048, 246 
+
+if(
+(arr[0] == arr[1] && arr[1] == arr[2] && arr[0] != null) ||
+(arr[3] == arr[4] && arr[4] == arr[5] && arr[3] != null) ||
+(arr[6] == arr[7] && arr[7] == arr[8] && arr[6] != null) ||
+
+(arr[0] == arr[3] && arr[3] == arr[6] && arr[0] != null) ||
+(arr[1] == arr[4] && arr[4] == arr[7] && arr[1] != null) ||
+(arr[2] == arr[5] && arr[5] == arr[8] && arr[2] != null) ||
+
+(arr[0] == arr[4] && arr[4] == arr[8] && arr[0] != null) ||
+(arr[2] == arr[4] && arr[4] == arr[6] && arr[2] != null)
+)
+{
+  console.log("We have a winner")
+}
+else{
+  console.log("Its a draw")
+}
+
+
+reset.addEventListener("click", function () {
+  currPlay = "X"
+  arr = null;
+})
+
