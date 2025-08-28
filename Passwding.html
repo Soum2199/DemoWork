@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+      <h1 class="title">Hello World! </h1>
+      <p id="currentTime"></p>
+      
+      <label for="pass">Enter password: </label>
+      <input type="password" name="pass" id="pass" />
+      <button type="submit">Show</button>
+      <script src="script.js"></script>
+  </body>
+</html>
+
+
+function showTime() {
+	document.getElementById('currentTime').innerHTML = new Date().toString();
+}
+showTime();
+setInterval(function () {
+	showTime();
+}, 1000);
+
+
+const pass = document.getElementById('pass')
+const button = document.querySelector('button')
+
+button.addEventListener('click', function () {
+  if(pass.type == 'text'){
+    pass.type = 'password'
+    button.innerHTML = 'Show'
+  }
+  else {
+    pass.type = 'text'
+    button.innerHTML = "Hide"
+  }
+})
