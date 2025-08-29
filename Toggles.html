@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+    <style>
+:root{
+  --screen : white;
+  --text: black;
+  --title: #AC45C6;
+}
+
+.dark{
+  --screen : black;
+  --text: white;
+  --title: #6fe352;
+}
+
+body{
+  padding: 15px;
+  background-color: var(--screen);
+  color: var(--text);
+}
+.title {
+	color: var(--title);
+}
+h2{
+  cursor: pointer;
+  color: var(--text);
+}
+</style>
+  </head>
+  <body>
+      <h1 class="title">Hello World! </h1>
+      <p id="currentTime"></p>
+      <h2 id="button">. Q .</h2>
+      <script>
+function showTime() {
+  const tam = document.getElementById('currentTime')
+	tam.innerHTML = new Date().toString();
+}
+showTime();
+setInterval(function () {
+	showTime();
+}, 1000);
+
+const boed = document.body;
+const h2 = document.getElementById("button")
+
+h2.addEventListener("click", function () {
+  boed.classList.toggle("dark")
+  h2.classList.toggle("dark")
+})
+
+</script>
+  </body>
+</html>
