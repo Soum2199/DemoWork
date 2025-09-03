@@ -1,0 +1,129 @@
+<!--- A basic todo appli--->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+    <style>
+body{
+  padding: 10px;
+}
+.title {
+	color: #AC45C6;
+}
+input{
+  padding: 5px;
+  margin:  5px;
+  background-color: #e0d4ff;
+  border: 1px dashed #370c69;
+  color: #20491e;
+}
+</style>
+  </head>
+  <body>
+      <h1 class="title">Hello World! </h1>
+      <label for="task">Enter the task:</label>
+      <input type="text" name="task" id="task" value="hey" placeholder="Playing" />
+      <button type="submit" id="submits">Add task</button>
+      <br />
+      <ul>      </ul>
+      <script>
+const submits = document.getElementById("submits");
+const ul = document.querySelector("ul")
+const inputTask = document.getElementById('task')
+
+submits.addEventListener("click", function () {
+  let myTask = inputTask.value;
+  const li = document.createElement("li")
+  li.innerHTML = `${myTask} <button id="del">Delete</button>`
+  console.log(myTask)
+  ul.append(li)
+  inputTask.value = ''
+  
+  // for some delete functions.
+  // let del = document.getElementById('del')
+    let del = li.getElementById('del')
+  del.addEventListener("click", function () {
+    li.remove()
+  })
+  
+})
+</script>
+  </body>
+</html>
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+<script>
+const submits = document.getElementById("submits");
+const ul = document.querySelector("ul")
+const inputTask = document.getElementById('task')
+
+submits.addEventListener("click", function () {
+  let myTask = inputTask.value;
+  const li = document.createElement("li")
+  li.innerHTML = `${myTask} <button class="del">Delete</button>`
+  ul.append(li)
+  inputTask.value = ''
+
+  // Correct way to select the delete button inside this li
+  let del = li.querySelector('.del')
+  del.addEventListener("click", function () {
+    li.remove()
+  })
+})
+</script>
+
+=====================================================================================================
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+    <style>
+body{
+  padding: 10px;
+}
+.title {
+	color: #AC45C6;
+}
+input{
+  padding: 5px;
+  margin:  5px;
+  background-color: #e0d4ff;
+  border: 1px dashed #370c69;
+  color: #20491e;
+}
+</style>
+  </head>
+  <body>
+      <h1 class="title">Hello World! </h1>
+      <label for="task">Enter the task:</label>
+      <input type="text" name="task" id="task" value="hey" placeholder="Playing" />
+      <button type="submit" id="submits">Add task</button>
+      <br />
+      <ul>      </ul>
+      <script>
+const submits = document.getElementById("submits");
+const ul = document.querySelector("ul")
+const inputTask = document.getElementById('task')
+
+submits.addEventListener("click", function () {
+  let myTask = inputTask.value;
+  const li = document.createElement("li")
+  li.innerHTML = `${myTask} <button id="del">Delete</button>`
+  console.log(myTask)
+  ul.append(li)
+  inputTask.value = ''
+  
+  // for some delete functions.
+  // let del = document.getElementById('del')
+    const del = li.querySelector('#del')
+  del.addEventListener("click", function () {
+    li.remove()
+  })
+  
+})
+</script>
+  </body>
+</html>
