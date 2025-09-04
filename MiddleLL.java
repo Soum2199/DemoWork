@@ -1,0 +1,25 @@
+// Middle of Linked List
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+//    https://api.openweathermap.org/data/3.0/weather?q=mumbra&appid=dmc1967f53honeybeegiveshoneyes&units=metric
+class Solution {
+    public ListNode middleNode(ListNode head) {
+        if(head == null) return head;
+        ListNode slow = head, fast = head;
+        while(fast != null && fast.next != null){
+            fast = fast.next.next;
+            slow = slow.next;
+        }
+        return slow;
+    }
+}
+
+// TC = O(n),  SC = O(1)
