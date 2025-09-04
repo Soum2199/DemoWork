@@ -1,0 +1,176 @@
+class Solution {
+    public int binarysearch(int[] arr, int k) {
+        // Code Here
+        int l = 0; int r = arr.length-1;
+        while(l <= r){
+            int mid = (l+r)/2;
+            if(arr[mid] == k){return mid;}
+            else if(arr[mid] > k){
+                r = mid - 1;
+            }
+            else{
+                l = mid + 1;
+            }
+        }
+        return -1;
+    }
+}
+---------------------------------------------------------------------------
+
+class Solution {
+    public int binarysearch(int[] arr, int k) {
+        // Check if the array is empty
+        if (arr == null || arr.length == 0) {
+            return -1; // Return -1 for an empty array
+        }
+
+        int l = 0; 
+        int r = arr.length - 1;
+
+        while (l <= r) {
+            int mid = l + (r - l) / 2; // Calculate mid to avoid overflow
+
+            if (arr[mid] == k) {
+                return mid; // Target found
+            } else if (arr[mid] > k) {
+                r = mid - 1; // Search in the left half
+            } else {
+                l = mid + 1; // Search in the right half
+            }
+        }
+        return -1; // Target not found
+    }
+}
+
+
+======----------==================------------------==============----------------------================
+Wrong Answer.!
+Possibly your code does not work correctly for multiple test-cases (TCs).
+
+The first test case where your code failed:
+
+Test Cases Passed: 
+10 /1117
+For Input : 
+3
+1 1 1 2 2 3 3 3 3 3 3 4 4 4 5 5 5
+Your Code's output is: 
+8
+It's Correct output is: 
+5
+Output Difference: 
+85
+
+
+class Solution {
+    public int binarysearch(int[] arr, int k) {
+        // Check if the array is empty
+        if (arr == null || arr.length == 0) {
+            return -1; // Return -1 for an empty array
+        }
+
+        int l = 0; 
+        int r = arr.length - 1;
+
+        while (l <= r) {
+            int mid = l + (r - l) / 2; // Calculate mid to avoid overflow
+
+            if (arr[mid] == k) {
+                return mid; // Target found
+            } else if (arr[mid] > k) {
+                r = mid - 1; // Search in the left half
+            } else {
+                l = mid + 1; // Search in the right half
+            }
+        }
+        return -1; // Target not found
+    }
+}
+
+
+public static void main(String[] args) {
+    Solution solution = new Solution();
+    
+    // Test case 1: Normal case
+    int[] arr1 = {1, 2, 3, 4, 5};
+    System.out.println(solution.binarysearch(arr1, 3)); // Output: 2
+
+    // Test case 2: Target not present
+    int[] arr2 = {1, 2, 3, 4, 5};
+    System.out.println(solution.binarysearch(arr2, 6)); // Output: -1
+
+    // Test case 3: Empty array
+    int[] arr3 = {};
+    System.out.println(solution.binarysearch(arr3, 1)); // Output: -1
+
+    // Test case 4: Single element array
+    int[] arr4 = {1};
+    System.out.println(solution.binarysearch(arr4, 1)); // Output: 0
+    System.out.println(solution.binarysearch(arr4, 2)); // Output: -1
+}
+
+
+
+
+//new code ones
+
+class Solution {
+    public int binarysearch(int[] arr, int k) {
+        // Check if the array is empty
+        if (arr == null || arr.length == 0) {
+            return -1; // Return -1 for an empty array
+        }
+
+        int l = 0; 
+        int r = arr.length - 1;
+        int result = -1; // To store the index of the first occurrence
+
+        while (l <= r) {
+            int mid = l + (r - l) / 2; // Calculate mid to avoid overflow
+
+            if (arr[mid] == k) {
+                result = mid; // Store the index
+                r = mid - 1; // Continue searching in the left half
+            } else if (arr[mid] > k) {
+                r = mid - 1; // Search in the left half
+            } else {
+                l = mid + 1; // Search in the right half
+            }
+        }
+        return result; // Return the index of the first occurrence or -1 if not found
+    }
+}
+====================================================================================================================================
+
+
+
+function binarySearch(arr, k) {
+    if (!arr || arr.length === 0) {
+        return -1;
+    }
+
+    let left = 0;
+    let right = arr.length - 1;
+    let result = -1;
+
+    while (left <= right) {
+        const mid = Math.floor(left + (right - left) / 2);
+
+        if (arr[mid] === k) {
+            result = mid;
+            right = mid - 1;  // Search left for earlier occurrence
+        } else if (arr[mid] > k) {
+            right = mid - 1;
+        } else {
+            left = mid + 1;
+        }
+    }
+
+    return result;
+}
+
+// Test case
+const arr = [1, 1, 1, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, 4, 5, 5, 5];
+console.log(binarySearch(arr, 3));  // Output: 5
+
+//Time Complexity: O(log n),   Auxiliary Space: around O(1)
