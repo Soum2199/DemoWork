@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+      <h1 class="title">Hello World! </h1>
+      <p id="currentTime"></p>
+      <label for="task">Enter the task: </label>
+      <input type="text" name="task" id="task" value="hi" />
+      <button type="submit">Add task</button>
+      <br />
+      <ul>
+        
+const button = document.querySelector('button')
+const inputText = document.querySelector('input')
+const ul = document.querySelector('ul')
+
+button.addEventListener("click", function () {
+  let texts =  inputText.value;
+  const li = document.createElement('li')
+  
+  console.log(texts)
+  li.innerHTML = texts;
+  // `<li>${texts}</li>`
+  ul.append(li)
+  inputText.value = ''
+})
+
+      </ul>
+      <script src="script.js"></script>
+  </body>
+</html>
+
+------------------------------------------------------------------------------------
+
+function showTime() {
+	document.getElementById('currentTime').innerHTML = new Date().toString();
+}
+showTime();
+setInterval(function () {
+	showTime();
+}, 1000);
+
+const title = document.querySelector("h1")
+const start = document.getElementById('start')
+const stop = document.getElementById('stop')
+const reset = document.getElementById('reset')
+let sec = 0, min=0, hr=0;
+
+function showTime2() {
+  // sec = 0;
+  sec++;
+  if(sec > 59){
+    sec = 0;
+    min++;
+    if(min > 59){
+      min = 0;
+      hr++;
+      if(hr > 23){
+        sec = 0;
+        min=0; hr=0;
+        title.textContent = "00:00:00";
+      }
+    }
+  }
+  let finalSec = sec > 10 ? `0${sec}` : sec;
+  let finalMin = min > 10 ? `0${min}` : min;
+  let finalHr = hr > 10 ? `0${hr}` : hr;
+  title.innerText = `${finalHr}:${finalMin}:${finalSec}`;
+}
+
+start.onclick = showTime2
+
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+			==================== simon says =================================
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+      <h1 class="title">Simon says game</h1>
+      <h3 id='yup'>press any key to start the game.</h3>
+      <div class="simon">
+        <div class="box" id="turn1"></div>
+        <div class="box" id="turn2"></div>
+        <div class="box" id="turn3"></div>
+        <div class="box" id="turn4"></div>
+      </div>
+      <script src="script.js"></script>
+  </body>
+</html>
+
+
+body{
+  padding: 25px;
+}
+.title {
+	/*color: #5C6AC4;*/
+	padding: 6px;
+}
+
+.simon{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.box{
+  height: 114px;
+  width: 118px;
+  padding: 2px;
+  margin: 26px;
+  border: 5px dashed black;
+  border-radius: 2px;
+}
+
+#turn1{
+  background-color: #5C6AC4;
+}
+
+#turn2{
+  background-color: #AC45c6;
+}
+
+#turn3{
+  background-color: #face00;
+}
+
+#turn4{
+  background-color: #00face;
+}
+
+/*.flash{*/
+/*  background-color: white;*/
+/*}*/
+
+// function showTime() {
+// 	document.getElementById('currentTime').innerHTML = new Date().toString();
+// }
+// showTime();
+// setInterval(function () {
+// 	showTime();
+// }, 1000);
+
+const h3 = document.getElementById("yup")
+let level = 0;
+let starters = false;
+
+let gameStake = []
+let users = []
+
+let squares = ["darkblue", "purple", "yellow", "cyan"]
+
+document.addEventListener("keypress", function () {
+  if(starters == false){
+    console.log("Game has started.")
+    starters = true;
+  levels(); }
+})
+
+function levels() {
+  level++;
+  h3.textContent = `Level ${level}`;
+
+let randoms = Math.floor(Math.random() * 3);
+let randomColor = squares[randoms]
+let randBtn = document.querySelector(`.${randomColor}`)
+//print these new variables on console as well
+  flash(randBtn);
+}
+
+
+function flash(sq) {
+  sq.classList.add("flash")
+setTimeout(() => {
+   sq.classList.remove("flash")
+}, 1000);
+
+}
+
+function buttonPress(){
+console.log("Button was pressed", this)
+let buttons = this;
+flash(buttons);
+}
+
+let second = document.querySelectorAll(".box")
+function buttonPress(){
+  for(let first of second) {
+    first.addEventListener("click", buttonPress)
+  }
+}
