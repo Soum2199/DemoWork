@@ -1,0 +1,115 @@
+Sure! Based on your input:
+
+```
+Input:
+Hello Techgig
+1
+4
+
+Output:
+ello
+```
+
+It looks like the program reads a string, then two integers representing the **start index** and **end index (exclusive)**, and prints the substring between those indices.
+
+Let me provide the implementation in all the requested languages:
+
+---
+
+### ✅ **C++**
+
+```cpp
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    string s;
+    getline(cin, s); // Read the input string with spaces
+    int start, end;
+    cin >> start >> end;
+
+    cout << s.substr(start, end - start) << endl;
+
+    return 0;
+}
+```
+
+---
+
+### ✅ **C#**
+
+```csharp
+using System;
+
+class Program {
+    static void Main() {
+        string s = Console.ReadLine();
+        int start = int.Parse(Console.ReadLine());
+        int end = int.Parse(Console.ReadLine());
+
+        Console.WriteLine(s.Substring(start, end - start));
+    }
+}
+```
+
+---
+
+### ✅ **Java**
+
+```java
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+        int start = sc.nextInt();
+        int end = sc.nextInt();
+
+        System.out.println(s.substring(start, end));
+    }
+}
+```
+
+---
+
+### ✅ **JavaScript (Node.js or Browser Console)**
+
+```javascript
+const readline = require('readline');
+
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+let inputs = [];
+
+rl.on('line', (line) => {
+    inputs.push(line);
+    if (inputs.length === 3) {
+        let str = inputs[0];
+        let start = parseInt(inputs[1]);
+        let end = parseInt(inputs[2]);
+        console.log(str.substring(start, end));
+        rl.close();
+    }
+});
+```
+
+---
+
+### ✅ **Python**
+
+```python
+s = input()
+start = int(input())
+end = int(input())
+
+print(s[start:end])
+```
+
+---
+
+Let me know if you want these wrapped as functions or used differently (like handling errors or edge cases).
