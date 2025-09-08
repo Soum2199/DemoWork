@@ -1,0 +1,306 @@
+const myEjs = require("ejs")
+const myExpress = require("express")
+const MongooDb = require("mongodb")
+
+const app = myExpress()
+
+app.use(myExpress.urlencoded())
+app.set("view engine", myEjs)
+
+async function makeCollection() {
+    const connection = await MongooDb.MongoClient.connect("mongodb://localhost:27017")
+    const databasic = connection.db("fooddatabase")
+    return databasic
+}
+
+app.get("/", function(req, res) {
+    res.send("<a href='/add/food'>Hello</a>")
+})
+app.listen(5000, function () {
+    console.log("my server runs on port 5k")
+})
+
+app.get("/add/food", function (req, res) {
+    res.render("foodform.ejs")
+})
+
+app.post("/collection", async function(req, res) {
+    console.log(req)  //req.body;
+    const d_b = await makeCollection()
+    d_b.collection("foodscollection").insertOne({})
+})
+
+// app.get()
+
+// app.put()
+
+// app.delete()
+----------------------------------------------------------------------------------------------------------------------------------------
+
+// console.log("Hii\nHow are you?.")
+const Express = require("express")
+const Cors  = require('cors')
+// const MongoDB = require("mongodb")
+const Mongoose = require("mongoose")
+const app = Express()
+const Ports = 7000;
+
+Mongoose.connect("mongodb://localhost:27017/portfoliobase")
+.then(() => console.log("Successfully connected to MongoDB.."))
+.catch((err) => console.log("Sorry, There was an issue connecting to Atlas", err))
+
+app.use(Cors())
+app.use(Express.urlencoded())
+app.use(Express.json())
+
+const EduSchema = Mongoose.Schema({
+    school:{
+        type: String,
+    },
+    location:{
+        type: String,
+    },
+    year:{
+        type: Number
+    }        
+})
+const EduModel = Mongoose.model("schoolcollection", EduSchema)
+
+const ProjectSchema = Mongoose.Schema({
+    pro_name:{
+        type: String,
+    },
+    pro_descript:{
+        type: String
+    },
+    pro_link:{
+        type: String
+    },
+   pro_skills:{
+	type:Array
+    }      
+})
+const ProjectModel = Mongoose.model("projectslist", ProjectSchema)
+
+app.get("/", (req, res) => {
+    EduModel.find()
+    .then(result => {
+        console.log(result)
+        res.json(result)
+    })
+.catch(err => console.log(err))
+})
+
+app.get("/about", (req, res) =>{
+    ProjectModel.find()
+    .then(result => {
+        console.log(result)
+        res.json(result)
+    })
+.catch(err => console.log(err))
+})
+app.listen(Ports, ()=> console.log(`This server will run on port no. ${Ports}\n Thank you!.`))
+
+
+
+
+
+
+
+#include <iostream>
+#include <vector>
+#include <string>
+
+using namespace std;
+
+void is_game_winnable(int N, const string& s, int q, const vector<pair<long long, long long>>& controllers) {
+  
+  long long p = 0, m = 0;
+    for (char c : s) {
+        if (c == '+') p++;
+        else m++;
+    }
+
+    for (auto& ctrl : controllers) {
+        long long A = ctrl.first, B = ctrl.second;
+        if (A == B) {
+            // If A == B, only winnable if p == m
+            cout << (p == m ? "YES" : "NO") << "\n";
+        } else {
+            long long numerator = (m - p) * B;
+            long long denominator = A - B;
+            // Check if numerator divisible by denominator
+            if (denominator == 0) {
+                cout << "NO\n";
+                continue;
+            }
+            if (numerator % denominator != 0) {
+                cout << "NO\n";
+                continue;
+            }
+            long long d = numerator / denominator;
+            // Check if d in [-m, p]
+            if (d >= -m && d <= p) {
+                cout << "YES\n";
+            } else {
+                cout << "NO\n";
+            }
+        }
+    }
+}
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    int N, q;
+    cin >> N;
+    string s;
+    cin >> s;
+    cin >> q;
+    vector<pair<long long, long long>> controllers(q);
+    for (int i = 0; i < q; ++i) {
+        cin >> controllers[i].first >> controllers[i].second;
+    }
+    is_game_winnable(N, s, q, controllers);
+    return 0;
+}
+
+
+
+
+
+
+rm -rf node_modules package-lock.json
+npm install
+
+
+npm install react-scripts --save
+
+
+git checkout package.json package-lock.json
+npm install
+npm start
+
+npm cache clean --force
+
+
+npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch
+
+
+npx @tailwindcss/cli -i ./src/index.css -o ./src/output.css --watch
+
+
+
+mongodb://localhost:27017/
+
+
+
+
+
+
+
+long p = 0L, m = 0L;
+        for (char c : s.toCharArray()) {
+            if (c == "+") p++;
+            else m++;
+        }
+        for (int i = 0; i < q; i++) {
+            long A = controllers[i][0];
+            long B = controllers[i][1];
+            if (A == B) { System.out.println(p == m ? "YES" : "NO"); } 
+	else {
+                long numerator = (m - p) * B;
+                long denominator = A - B;
+                if (denominator == 0) {
+                    System.out.println("NO");
+                    continue;
+                }
+                if (numerator % denominator != 0) {
+                    System.out.println("NO");
+                    continue;
+                }
+                long d = numerator / denominator;
+                if (d >= -m && d <= p) {
+                    System.out.println("YES");
+                } else {
+                    System.out.println("NO");
+                }
+            }
+        }
+
+
+
+ let p = 0;
+    for (let c of s) {
+        if (c === '+') p++;
+    }
+    let m = N - p;
+    for (let i = 0; i < q; i++) {
+        let [A, B] = controllers[i];
+        if (A === B) {
+            console.log(p === m ? "YES" : "NO");
+        } else {
+            let numerator = (m - p) * B;
+            let denominator = A - B;
+            if (denominator === 0) {
+                console.log("NO");
+                continue;
+            }
+            if (numerator % denominator !== 0) {
+                console.log("NO");
+                continue;
+            }
+            let d = numerator / denominator;
+            if (d >= -m && d <= p) {
+
+
+
+
+
+npm install -D tailwindcss@3
+npx tailwindcss init
+
+
+
+
+
+ /** @type {import('tailwindcss').Config} */
+export default {
+   content: ["./src/**/*.{html,js}"],
+   theme: {
+     extend: {},
+   },
+   plugins: [],
+ }
+
+
+npx tailwindcss -i ./src/input.css -o ./src/output.css --watch
+
+npx tailwindcss -i ./src/index.css -o ./src/output.css --watch
+
+
+npx tailwindcss -i ./src/input.css -o ./src/output.css --watch
+npx tailwindcss -i ./src/index.css -o ./src/output.css --watch
+
+
+npm install -D tailwindcss@3 postcss autoprefixer
+npx tailwindcss init
+
+
+
+// POV: Cover Letter
+
+Hello team MAXXION System,
+Greetings for the day!. This is Soumya Panigrahi, a certified Full Stack Developer. I saw your job post on the Indeed platform and I believe that I'm the perfect fit for Java Full Stack Developer role. 
+After reading your job description, I am glad to say that my skills are aligning with the job description. In addition to, I posses certain skills like good communication skills, active listener, team player, and also passionate for problem-solving skills. 
+I might be a great asset to your company, as I'm very much keen to work in MAXXION System company. 
+Kindly acknowledge the same and inform me about the next hiring steps.
+
+Thanks and Regards,
+Soumya Panigrahi,
+My Email id: soumya.subrat17@siesgst.ac.in
+My digit: +91 98195 62430
+https://www.linkedin.com/in/soumya-panigrahi-7b3105287/
+github.com/Soum2199
+
