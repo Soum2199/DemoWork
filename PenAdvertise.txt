@@ -1,0 +1,209 @@
+---------------================ I created ads using HTML, CSS, JS ===================----------------------------
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reynolds Pen - Endorsed by Leonardo DiCaprio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap');
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .hero-section {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+        
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .pen-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 30px;
+        }
+        
+        .pen-image {
+            width: 200px;
+            height: auto;
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+        }
+        
+        .pen-image:hover {
+            transform: scale(1.05);
+        }
+        
+        .button {
+            background-color: #e63946;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            border: none;
+            font-size: 16px;
+        }
+        
+        .button:hover {
+            background-color: #c1121f;
+        }
+        
+        .features {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .feature-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: #e63946;
+        }
+        
+        footer {
+            background-color: #222;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        
+        .quote {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+        
+        .actor-name {
+            font-weight: 700;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .quote {
+                font-size: 20px;
+            }
+            
+            .overlay {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero-section">
+        <img src="https://www.theglobeandmail.com/resizer/v2/NB53SNVOQVE2HMA65KASGP5UOA?auth=6854ef43ebf5f4232a874734165de6bc54eec469b46aa96f4fdac207d71ed40b&width=1500&quality=80" alt="Leonardo DiCaprio in a luxurious office setting, holding the Reynolds Pen while gazing thoughtfully" class="hero-image">
+        <div class="overlay">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">The Reynolds Pen</h1>
+            <p class="quote">"In my career, every signature matters. That's why I trust Reynolds."</p>
+            <div class="actor-name">— Leonardo DiCaprio</div>
+            
+            <div class="pen-container">
+                <img src="https://m.media-amazon.com/images/I/31hJ9xa2POL._UF1000,1000_QL80_.jpg" alt="Premium Reynolds Pen in sleek silver and black design with gold accents" class="pen-image">
+                <button class="button">Shop Now</button>
+            </div>
+        </div>
+    </section>
+    
+    <section class="features">
+        <h2 class="text-3xl font-bold text-center mb-10">Why Professionals Choose Reynolds</h2>
+        
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="feature-icon">✒️</div>
+                <h3 class="text-xl font-bold mb-3">Smooth Writing</h3>
+                <p>Our patented ink technology ensures effortless writing with every stroke, just like signing an important contract.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">💎</div>
+                <h3 class="text-xl font-bold mb-3">Luxury Design</h3>
+                <p>Crafted with premium materials for those who appreciate the finer things in life, much like a Hollywood star.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">⏳</div>
+                <h3 class="text-xl font-bold mb-3">Long-lasting</h3>
+                <p>With 3x more ink than standard pens, you'll never be left without a writing instrument when inspiration strikes.</p>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <p>© 2023 Reynolds Pen Company. All rights reserved.</p>
+        <p class="mt-4">"The Reynolds Pen - Crafted for those who make their mark."</p>
+    </footer>
+    
+    <script>
+        // Add interactive functionality
+        document.querySelector('.button').addEventListener('click', function() {
+            alert("Thank you for your interest in the Reynolds Pen! Our team will contact you shortly.");
+        });
+        
+        // Smooth scroll for better user experience
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
