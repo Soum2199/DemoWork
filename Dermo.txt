@@ -1,0 +1,360 @@
+<!---Demo--->
+<div class="card" style="width: 18rem;">
+  <img src="https://th.bing.com/th/id/R.05445f5b3df56d3027d280fe1d97aee5?rik=Mw7W4Ki8ikWFsA&riu=http%3a%2f%2fimages2.fanpop.com%2fimages%2fphotos%2f7800000%2fAmazing-Nature-Wallpapers-national-geographic-7896980-1280-960.jpg&ehk=3ke%2bdwkvxQQTnrBIdEVjFTMZKcvghI4rj%2bYuniJIiOA%3d&risl=&pid=ImgRaw&r=0" class="card-img-top" alt="product Image"/>
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+
+fixed top-0 right-0 bg-blue-600 shadow-xl w-96 h-full grid grid-rows-[60px_1fr_60px]
+
+
+ <div class="btn-group me-2" role="group" aria-label="First group">
+    <button type="button" class="btn btn-outline-secondary">1</button>
+     <span> {quantity} </span>
+    <button type="button" class="btn btn-outline-secondary">4</button>
+  </div>
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+Don’t miss this golden opportunity to kickstart your career!
+For further details:
+📞 Contact at 7758943488 / 7387190986
+🔗 Join our WhatsApp community
+📢 Follow us on LinkedIn: VishvaVidya LinkedIn
+
+
+ answer of console.log(1 - '1') is 0
+var student = {
+    firstName: "jonathan",
+    lastName: "doe"
+}
+
+delete student.firstName;
+console.log(student.firstName+ " "+ student.lastName);
+//output:  undefined doe
+ 
+
+
+https://another-project-backends.onrender.com
+
+.then(output => console.log(output))
+.catch(error => console.log(error))
+
+https://outlier.ai/coding/front-end-en-in?utm_medium=paid&pod=coders&domain=tier_2_coder&locale=IN&language=EN&utm_content=MSG+%7C+Jean+%7C+English+%7C+en-IN+%7C+Financial+%7C+V2+%7C+LP+Swapped&utm_campaign=Scale+%7C+LinkedIn+%7C+Coders+%7C+Tier+2+Coders+%7C+en-IN+%7C+EN*+%7C+IN+%7C+Front+End+Developers+%7C+EN+%7C+Message+Ad+%7C+03%2F27%2F2025&li_fat_id=0fe2150a-7be9-4cb5-89be-8ff7d4c4b38e&campaign_id=386345576&utm_source=linkedin&ad_id=674341833
+
+
+,
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+      <!--<div class="title">Sweety</div>-->
+      <h1 class="title">Sweety</h1>
+      <!--<marquee behavior="scroll" direction="right" scrollamount="2" class="title">Text scroll from right to left.</marquee>-->
+      <p id="currentTime"></p>
+      
+      <script src="script.js"></script>
+  </body>
+
+<h1>Hello world</h1>
+
+
+</html>
+
+body{
+  padding: 15px;
+}
+.title {
+	color: #AC45C6;
+	animation: dance 12s infinite ease-in-out;
+	/*font-size: 20px;*/
+}
+
+@keyframes dance{
+  /*0%{*/
+  /*  text-align: left;*/
+  /*}*/
+  /*40%{*/
+  /*  text-align: center;*/
+  /*}*/
+  /*90%{*/
+  /*  text-align: right;*/
+  /*}*/
+  
+  from{
+    transform: translateX(-100%);
+  }
+  to{
+    transform: translateX(100%);
+  }
+  
+}
+
+let u = "Sweety"
+let hi = ""
+for(let i=u.length-1; i>=0; i--){
+    hi += u[i] 
+}
+// return hi;
+console.log(hi)
+
+
+// function prime(n){
+//     if(n  <= 1){
+//         return false;
+//     }
+//     for(let i=2; i*i<=n; i++){
+//         if(n % i == 0){
+//             return false;
+//         }
+//     }
+//     return true;
+// }
+
+// console.log(prime(23));
+
+--------------------------------------------------------------------------------------------------------------------
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+    <style type="text/css" media="all">
+      
+body{
+  padding: 10px;
+}
+.title {
+	color: #AC45C6;
+}
+
+ul> li{
+  list-style-type:  none;
+  text-align: center;
+  display:  flex;
+  flex-wrap:  nowrap;
+  padding: 4px;
+  font-size: 25px;
+  color: #228B22;
+  text-transform:  uppercase;
+}
+li:nth-child(even){
+  /*animation:  3s linear 1s infinite running slide-in;*/
+  animation: slides1 1s ease-in-out forwards;
+} 
+
+@keyframes slides1{
+  from{
+    transform: translateY(-70%);
+  }
+  to{
+    transform: translateY(0%);
+  }
+}
+
+li:nth-child(odd){
+  /*animation: 3s ease-in 1s infinite reverse both running slide-in;*/
+  animation: slides2 2s ease-in-out reverse forwards;
+}
+
+@keyframes slides2{
+  from{
+    transform: translateX(0%);
+  }
+  to{
+    transform: translateX(80%);
+  }
+}
+
+    </style>
+  </head>
+  <body>
+      <h1 class="title">Sweety</h1>
+      <ul>
+        <li>S</li>
+        <li>w</li>
+        <li>i</li>
+        <li>t</li>
+        <li>y</li>
+      </ul>
+      <p id="currentTime"></p>
+      
+      <script type="text/javascript" charset="utf-8">
+function showTime() {
+  const tam = document.getElementById('currentTime')
+	tam.innerHTML = new Date().toString();
+// 	new Date().toUTCString();
+}
+showTime();
+setInterval(function () {
+	showTime();
+}, 1000);
+
+</script>
+  </body>
+</html>
+==============================================================================================================================
+
+<h2>Sw<span>e</span>et<span class="hi">y</span></h2>
+      
+body{
+  background-color: #123456;
+}
+
+h2{
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-align: center;
+  webkit-text-stroke:  3px #bad;
+  font-size: 42px;
+  /*color: #2468ac;*/
+  color: chartreuse;
+}
+
+span{
+  animation: blinks 2.5s ease-in infinite;
+}
+
+@keyframes blinks{
+  0%{
+    color:  hotpink;
+    font-size: 45px;
+  }
+  35%{
+    color: chartreuse;
+  }
+  95%{
+    color: hotpink;
+  }
+}
+
+.hi{
+  animation:  blinked 5s ease-out infinite;
+}
+
+@keyframes blinked{
+  0%{
+    color: rgb(127, 158, 249);
+  }
+  35%{
+    color: chartreuse;
+  }
+  95%{
+    color: hotpink;
+    font-size: 45px;
+  }
+}
+
+-------------------------------------------------------------------------------------------------
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Hello, World!</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+      <h1>Panigrahi <br />family <br /><i class="fa-solid fa-heart"></i></h1>
+      <script src="script.js"></script>
+  </body>
+</html>
+
+body{
+  padding: 5px;
+  background-color: bisque;
+}
+
+h1{
+  text-transform: uppercase;
+  font-size: 76px;
+  -webkit-text-stroke: 4px orangered;
+  letter-spacing: 1px;
+	font-family: Candara;
+	color: #5c6ac4;
+	
+	animation: rin 7.5s ease-in-out infinite;
+}
+
+@keyframes rin{
+  from{
+    /*transform: rotate(-90deg);*/
+    transform: scaleX(-10);
+    /*writing-mode: horizontal-tb;*/
+  }
+  to{
+    /*transform:  rotate(90deg);*/
+    transform: scaleX(5);
+  }
+}
+
+/*elementClass {*/
+/*	writing-mode: horizontal-tb | vertical-rl | vertical-lr | sideways-lr  | sideways-rl;*/
+/*}*/
+
+body{
+  padding: 5px;
+  text-align: center;
+  animation: them 8s infinite ease-in-out;
+   transition: animation 1s;
+   animation-iteration-count: infinite;
+}
+/*.title {*/
+/*	color: #AC45C6;*/
+/*}*/
+
+@keyframes them{
+  0%{
+    background:  #5fc975;
+    color:  #0b2812;
+    letter-spacing: 4px;
+  }
+  50%{
+    background:  oklch(0.627 0.265 303.9);
+    color:  #13579b;
+    letter-spacing: 2px;
+  }
+  85%{
+    /*background: linear-gradient(45deg, red,#ffb86a, yellow);*/
+    
+      background: linear-gradient(55deg, red, #ffb86a, yellow);
+    background-repeat: no-repeat; /* Prevents the background from repeating */
+    background-size: cover; /* Ensures the gradient covers the entire area */
+    height: 100vh;
+    color: #029b05;
+    letter-spacing: 1px;
+  }
+  100%{
+    background: #ffa1af;
+    color: #0c0a09;
+  }
+}
+
+*{
+      background: linear-gradient(55deg, red, #ffb86a, yellow);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+/// or
+
+body{
+  padding: 5px;
+  text-align: center;
+  background: linear-gradient(135deg, #a1a1a1, cyan, lemonchiffon, yellow, rgb(251, 161, 220));
+  background-repeat: no-repeat;
+  height: 99vh;
+}
+.title {
+	color: #AC45C6;
+}
