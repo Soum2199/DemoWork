@@ -1,0 +1,28 @@
+{/* <div> </div> #26B694  #dc2626  #d63384    */}
+      <h1 className='text-red-600'>HEllo world</h1>
+      <div className="card">
+        {/* <button onClick={() => setCount((count) => count + 1)}>
+          count is {count}
+        </button> 
+         */}
+         </div>
+
+
+
+const CheckBoxes = ({ data, checked, setChecked }) =>{
+function handleChange (e){
+ setChecked((prev) =>{})
+ }
+}
+
+
+<div className="card" style={{width:"18rem"}}>
+  <img src="https://www.pixelstalk.net/wp-content/uploads/2016/03/Beautiful-nature-spring-wallpaper-HD.jpg" class="card-img-top" alt="..."/>
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-outline-secondary">Go somewhere</a>
+  </div>
+</div>
+i.title  i.image  i.price  i.description  i.category  {i.rating.rate}
+
