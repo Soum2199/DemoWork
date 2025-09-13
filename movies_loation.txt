@@ -1,0 +1,29 @@
+
+
+{
+            "location": "Kolkata",
+            "theatre": [
+                { "theatre_name": "Nandan Cinema", "show_times": ["8:45 AM", "11:15 AM", "2:30 PM", "5:30 PM"] },
+                { "theatre_name": "Menoka Theatre", "show_times": ["10:00 AM", "2:00 PM", "4:30 PM", "7:30 PM"] },
+                { "theatre_name": "Inox Kolkata", "show_times": ["10:30 AM", "1:30 PM", "3:30 PM", "5:00 PM", "7:30 PM"] },
+                { "theatre_name": "PVR Cinemas", "show_times": ["11:00 AM", "1:30 PM", "4:30 PM", "7:30 PM"] }
+            ]
+        },
+        {
+            "location": "Ahmedabad",
+            "theatre": [
+                { "theatre_name": "Big Cinemas", "show_times": ["9:30 AM", "1:30 PM", "4:00 PM", "6:30 PM", "8:30 PM"] },
+                { "theatre_name": "Cinemax Ahmedabad", "show_times": ["11:15 AM", "3:15 PM", "5:45 PM"] },
+                { "theatre_name": "PVR Ahmedabad", "show_times": ["10:00 AM", "1:00 PM", "4:00 PM"] },
+                { "theatre_name": "Cinepolis", "show_times": ["11:30 AM", "2:30 PM", "5:30 PM"] }
+            ]
+        },
+{
+            "location": "Pune",
+            "theatre": [
+                { "theatre_name": "PVR Inorbit Pune", "show_times": ["1:30 PM", "5:00 PM", "7:30 PM", "9:30 PM"]},
+                { "theatre_name": "Inox Phoenix Mall", "show_times": ["11:30 AM", "1:00 PM", "4:00 PM", "6:30 PM", "9:00 PM"]},
+                { "theatre_name": "Cinepolis-WestEnd Mall", "show_times": ["1:30 PM", "4:45 PM", "7:15 PM", "10:00 PM"]}
+            ]
+        },
+
