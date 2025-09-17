@@ -161,3 +161,8 @@ https://leetcode.com/problems/customers-who-never-order/
 -- select * from Customers c inner join Orders o where c.id = o.customerId;
 select c.name as Customers from Customers c left join Orders o on c.id = o.customerId where o.customerId is null;
 
+--https://leetcode.com/problems/department-highest-salary/
+-- select max(salary) from Employee  order by departmentId;
+-- select * from Employee e  inner join Department d on e.departmentId = d.id;
+SELECT d.name AS Department, e.name AS Employee, e.salary AS Salary FROM Employee e JOIN Department d ON e.departmentId = d.id
+WHERE e.salary = (SELECT MAX(salary) FROM Employee WHERE departmentId = e.departmentId );
