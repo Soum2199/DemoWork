@@ -1376,5 +1376,24 @@ print(s[:8])
 print(s[:-1])
 print(s[-1:])
 print(s[::])
+
+s = "Sweety"
+print(s[::-1])
+
+i=1
+while True:
+  if i%3 == 0:
+    break
+  print(i)
+  # i += 1
+  i = i+1
+
+def genie():
+  yield 1
+  yield 2
+  yield 3
+  
+gen = genie()
+print(next(gen))
 ```
 
