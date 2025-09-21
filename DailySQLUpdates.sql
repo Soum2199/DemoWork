@@ -161,8 +161,37 @@ https://leetcode.com/problems/customers-who-never-order/
 -- select * from Customers c inner join Orders o where c.id = o.customerId;
 select c.name as Customers from Customers c left join Orders o on c.id = o.customerId where o.customerId is null;
 
---https://leetcode.com/problems/department-highest-salary/
+-- https://leetcode.com/problems/department-highest-salary/
 -- select max(salary) from Employee  order by departmentId;
 -- select * from Employee e  inner join Department d on e.departmentId = d.id;
 SELECT d.name AS Department, e.name AS Employee, e.salary AS Salary FROM Employee e JOIN Department d ON e.departmentId = d.id
 WHERE e.salary = (SELECT MAX(salary) FROM Employee WHERE departmentId = e.departmentId );
+
+--  https://leetcode.com/problems/department-top-three-salaries/
+# Write your MySQL query statement below
+
+-- select  *  top 3 from Employee e inner join Department d on e.departmentId  = d.id order by e.salary desc;
+
+-- top_salary = employee[employee.groupby('departmentId').salary.rank(method='dense', ascending=False) <= 3]
+
+--correct attempt no 1
+-- SELECT d.name AS 'Department', e1.name AS 'Employee', e1.salary AS 'Salary' 
+-- FROM Employee e1 JOIN Department d ON e1.departmentId = d.id 
+-- WHERE 3 > (SELECT COUNT(DISTINCT e2.salary) FROM Employee e2
+--     WHERE e2.salary > e1.salary AND e1.departmentId = e2.departmentId);
+
+--correct attempt no 2
+WITH employee_department AS
+    (
+    SELECT d.id, 
+        d.name AS Department, 
+        salary AS Salary, 
+        e.name AS Employee, 
+        DENSE_RANK()OVER(PARTITION BY d.id ORDER BY salary DESC) AS rnk
+    FROM Department d
+    JOIN Employee e
+    ON d.id = e.departmentId
+    )
+SELECT Department, Employee, Salary
+FROM employee_department
+WHERE rnk <= 3
