@@ -1395,5 +1395,27 @@ def genie():
   
 gen = genie()
 print(next(gen))
+
+#x = "nilesh"
+x = "soumya"
+print(x[2:5])
+#---------------------
+a= [1,2,3]
+b = a[:]
+b.append(4)
+#print(b)
+print(a)
+
+#print("Try programiz.pro"[-5:])
+print("Python"[-5:])
+print("DataScience"[-5:])
+print("DataScience"[6:])
+
+a=5
+b=2
+c = 5*2+3
+a += 13-2
+print("answer is " , a)
+#answer is 16
 ```
 
