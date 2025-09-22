@@ -1,4 +1,7 @@
 <?php
+echo "This is the very first line.\nThis is the second line.";
+echo PHP_EOL."\nThis is the first line." . PHP_EOL . "This is the second line.";
+echo "\nTry programiz.pro";
 
 $message = "Try programiz.pro"; 
 // $lengthy = strlen($message);
