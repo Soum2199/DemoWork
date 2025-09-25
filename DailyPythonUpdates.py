@@ -1,3 +1,4 @@
+'''
 #Pythoons
 The time required to learn Python from a basic understanding to an advanced level varies significantly based on several factors, including: 
 
@@ -55,6 +56,7 @@ You're welcome! Here's a compact yet powerful **Python Cheatsheet** to help you 
 ## 🐍 Python Cheatsheet — **From Beginner to Expert**
 
 ---
+'''
 
 ### 🧱 **Basics**
 
@@ -1417,5 +1419,25 @@ c = 5*2+3
 a += 13-2
 print("answer is " , a)
 #answer is 16
+
+rows = int(input ('Enter the number '))
+#print(rows)
+for i in range(rows):
+    for j in range(i):
+        print(i, end=" ")
+        
+    print(' ')
+
+rows = int(input ('Enter the number '))
+b =0
+#print(rows)
+
+for i in range(rows, 0, -1):
+    b += 1
+    for j in range(1,i+1):
+        #print(i, end=" ")
+        print(b, end=" ")
+        
+    print('\r')
 ```
 
