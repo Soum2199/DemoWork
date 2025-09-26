@@ -195,3 +195,10 @@ WITH employee_department AS
 SELECT Department, Employee, Salary
 FROM employee_department
 WHERE rnk <= 3
+
+-- https://leetcode.com/problems/biggest-single-number/description/
+# Write your MySQL query statement below
+-- select max(num) as num from MyNumbers where num < (select max(num) from MyNumbers);
+
+SELECT MAX(num) AS num
+FROM ( SELECT num FROM MyNumbers GROUP BY num HAVING COUNT(num) = 1) AS unique_numbers;

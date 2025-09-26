@@ -1439,5 +1439,17 @@ for i in range(rows, 0, -1):
         print(b, end=" ")
         
     print('\r')
+
+#leetcode problem no 2351, link:  https://leetcode.com/problems/first-letter-to-appear-twice/
+class Solution:
+    def repeatedCharacter(self, s: str) -> str:
+        seel = []
+        for c in s:
+            # return c
+            if c in seel:
+                return c
+            else:
+                seel.append(c)
+
 ```
 
