@@ -1,4 +1,5 @@
 import package.util.*;
+import package.util.Scanner;
    
  public static int complementNumber(int x) {
         String numStr = String.valueOf(x);
