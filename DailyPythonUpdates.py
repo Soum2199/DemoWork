@@ -1460,5 +1460,23 @@ for i in range (5):
 print(count)
 # o/p : 6
 
+   # a = [1,2,3,4,5]
+# # a.push(6)
+# # a.add(6)
+# a.append(6)  #correct ones
+# print(a)
+# # print(a[0])
+# # print(a[1:4])
+# a.remove(2)
+# print(a)
+
+s = "my name is Sweety"
+print(s.upper())
+print(s.lower())
+print(s.replace("y", "i"))
+# print(s.replace("e", "o"))
+print(s.find("name"))
+print(s.find("se"))
+print(s.find("e"))
 ```
 
