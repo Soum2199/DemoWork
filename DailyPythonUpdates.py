@@ -1478,5 +1478,8 @@ print(s.replace("y", "i"))
 print(s.find("name"))
 print(s.find("se"))
 print(s.find("e"))
+
+leapy = 2025
+print("leap year" if leapy % 4 == 0 and leapy % 100 != 0 or leapy % 400 == 0  else "Common year")
 ```
 
