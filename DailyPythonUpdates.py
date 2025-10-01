@@ -1451,5 +1451,14 @@ class Solution:
             else:
                 seel.append(c)
 
+
+count = 0
+for i in range (5):
+    if i % 2 == 0:
+        count += i
+        
+print(count)
+# o/p : 6
+
 ```
 
