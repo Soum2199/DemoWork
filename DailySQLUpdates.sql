@@ -103,6 +103,11 @@ SELECT EMPLOYEE_ID, FIRST_NAME, EMAIL FROM HR.EMPLOYEES;
 --SELECT * FROM Customers where age < (SELECT max(age) FROM Customers) order by age;
 --SELECT * FROM Employees WHERE Salary = (SELECT MAX(Salary) FROM Employees WHERE Salary < (SELECT MAX(Salary) FROM Employees) );
 --select * from Customers where age = ( SELECT max(age) FROM Customers where age < (SELECT max(age) FROM Customers) );
+--SELECT * FROM Customers;
+--SELECT  max(age), country FROM Customers group by country;
+SELECT count(country), country FROM Customers group by country;
+SELECT * FROM Customers limit 2;
+SELECT max(age), country FROM Customers group by country order by age asc limit 1;
 
 // update user set names = "hey there" and salaar=35000 where id=123;
 // my sql update query

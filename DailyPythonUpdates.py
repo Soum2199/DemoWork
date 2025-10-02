@@ -1481,5 +1481,25 @@ print(s.find("e"))
 
 leapy = 2025
 print("leap year" if leapy % 4 == 0 and leapy % 100 != 0 or leapy % 400 == 0  else "Common year")
+
+def reversing(n):
+    re = 0
+    while n > 0:
+        digit = n%10
+        re = re*10 + digit
+        n //= 10
+        
+    return re
+    
+print(reversing(2025))
+
+a="HAppy"
+b=9
+c= 1+2j
+d=True
+print(type(a))
+print(type(b))
+print(type(c))
+print(type(d))
 ```
 
