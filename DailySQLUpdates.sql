@@ -108,6 +108,7 @@ SELECT EMPLOYEE_ID, FIRST_NAME, EMAIL FROM HR.EMPLOYEES;
 SELECT count(country), country FROM Customers group by country;
 SELECT * FROM Customers limit 2;
 SELECT max(age), country FROM Customers group by country order by age asc limit 1;
+select min(age) from Customers where age >= 25;
 
 // update user set names = "hey there" and salaar=35000 where id=123;
 // my sql update query
