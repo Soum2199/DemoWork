@@ -109,7 +109,56 @@ SELECT count(country), country FROM Customers group by country;
 SELECT * FROM Customers limit 2;
 SELECT max(age), country FROM Customers group by country order by age asc limit 1;
 select min(age) from Customers where age >= 25;
+-- select  job_id, MANAGER_ID from hr.EMPLOYEES group by MANAGER_ID;
 
+-- select * from hr.LOCATIONS;
+-- select * from hr.COUNTRIES;
+-- select * from hr.REGIONS;
+-- select * from hr.EMPLOYEES where SALARY > 10000;
+-- select * from hr.EMPLOYEES where COMMISSION_PCT is null;
+-- select * from hr.EMPLOYEES where JOB_ID like 'SA%';
+-- select * from hr.EMPLOYEES where mod(EMPLOYEE_ID , 2) = 0;
+
+-- select * from hr.EMPLOYEES where to_char(HIRE_DATE, 'yyyy') >= 2013 order by HIRE_DATE asc;
+-- SELECT * from hr.jobs order by JOB_TITLE asc;
+-- select * from hr.EMPLOYEES order by salary desc FETCH FIRST 5 ROWS ONLY;
+
+-- select * from hr.EMPLOYEES order by HIRE_DATE asc;
+--  select * from hr.EMPLOYEES where salary = (select min(salary) from hr.EMPLOYEES);
+
+-- select min(salary) from hr.EMPLOYEES
+
+-- select * from hr.EMPLOYEES where FIRST_NAME like '%n';
+-- select * from hr.EMPLOYEES where salary > 5000 and salary <10000;
+
+-- select * from hr.EMPLOYEES where to_char(HIRE_DATE, 'yyyy') = 2016;
+-- select * from hr.EMPLOYEES where FIRST_NAME like 'A%';
+
+-- select * from hr.EMPLOYEES where FIRST_NAME like 'S_______';
+
+-- select * from hr.EMPLOYEES where salary = (select max(salary) from hr.EMPLOYEES);
+
+-- select * from hr.EMPLOYEES;
+
+-- select * from hr.DEPARTMENTS;
+
+-- select * from hr.EMPLOYEES where LAST_NAME = '_____';
+-- select * from hr.EMPLOYEES where length(LAST_NAME) = 5;
+-- select * from hr.EMPLOYEES where len(LAST_NAME) = 5;
+
+-- select * from hr.EMPLOYEES where DEPARTMENT_ID not in(90);
+
+-- select * from hr.EMPLOYEES order by LAST_NAME asc fetch first 10 rows only;
+
+-- select * from hr.EMPLOYEES where MANAGER_ID <> EMPLOYEE_ID and DEPARTMENT_ID in(80);
+
+-- SELECT *  FROM hr.EMPLOYEES  WHERE employee_id NOT IN ( SELECT DISTINCT manager_id FROM hr.EMPLOYEES  WHERE manager_id IS NOT NULL )AND department_id = 80;
+
+-- SELECT *  FROM hr.EMPLOYEES  WHERE DEPARTMENT_ID IN(10, 20, 50);
+
+-- SELECT *  FROM hr.EMPLOYEES  WHERE DEPARTMENT_ID = 10 or DEPARTMENT_ID = 20 or DEPARTMENT_ID = 50;
+
+SELECT *  FROM hr.EMPLOYEES  WHERE salary BETWEEN 6000 and 9000 order by salary asc;
 // update user set names = "hey there" and salaar=35000 where id=123;
 // my sql update query
 //  ctrl + K ==> clear in mongo shell
