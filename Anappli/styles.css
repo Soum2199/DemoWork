@@ -1,0 +1,33 @@
+:root{
+--screen: white;
+--text: black;
+--title: #AC45c6;
+--title2: #d10170;
+--title3: hsl(22, 79%, 48%);
+}
+.dark{
+--screen: black;
+--text: white;
+--title: #80ed13;
+--title2:  #deec0e;
+--title3: aquamarine;
+}
+h4{
+  cursor: pointer;
+}
+body{
+padding: 5px;
+text-align: center;
+background-color: var(--screen);
+color: var(--text);
+}
+.title {
+color: var(--title);
+}
+.title:hover{
+color:  var(--title2);
+}
+.title:active{
+color: var(--title3);
+font-size: 36px;
+}
