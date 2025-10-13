@@ -159,6 +159,23 @@ select min(age) from Customers where age >= 25;
 -- SELECT *  FROM hr.EMPLOYEES  WHERE DEPARTMENT_ID = 10 or DEPARTMENT_ID = 20 or DEPARTMENT_ID = 50;
 
 SELECT *  FROM hr.EMPLOYEES  WHERE salary BETWEEN 6000 and 9000 order by salary asc;
+
+-- select * from hr.EMPLOYEES where DEPARTMENT_ID = (select DEPARTMENT_ID from hr.EMPLOYEES where FIRST_NAME = 'Lex' );
+
+-- select * from hr.EMPLOYEES where salary > (select avg(salary) from hr.EMPLOYEES);
+
+-- select avg(salary) from hr.EMPLOYEES;
+
+-- SELECT j.job_title, j.min_salary FROM hr.jobs j WHERE j.min_salary > (SELECT AVG(e.salary) FROM hr.employees e);
+
+-- select DEPARTMENT_ID, sum(salary) from hr.EMPLOYEES group by DEPARTMENT_ID having DEPARTMENT_ID = 90; 
+
+-- sum(salary)
+-- select DEPARTMENT_ID, sum(salary) from hr.EMPLOYEES group by DEPARTMENT_ID having sum(salary) > (select DEPARTMENT_ID, sum(salary) from hr.EMPLOYEES group by DEPARTMENT_ID having DEPARTMENT_ID = 90);
+
+-- select JOB_ID from hr.EMPLOYEES where FIRST_NAME = 'Neena';
+select * FROM hr.employees where JOB_ID = (select JOB_ID from hr.EMPLOYEES where FIRST_NAME = 'Neena');
+
 // update user set names = "hey there" and salaar=35000 where id=123;
 // my sql update query
 //  ctrl + K ==> clear in mongo shell
