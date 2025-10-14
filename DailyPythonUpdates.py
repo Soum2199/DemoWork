@@ -1501,5 +1501,23 @@ print(type(a))
 print(type(b))
 print(type(c))
 print(type(d))
+
+#  https://www.geeksforgeeks.org/problems/zero-converter-python/1?page=1&difficulty=Basic&status=unsolved&sortBy=submissions
+
+def pos(n):
+    ## Write the code
+    for i in range(n-1,-1,-1):
+        print (i, end=' ')
+        
+    
+def neg(n):
+    ##Write the code
+    for i in range(n,1):
+        print(i, end=' ')
+
+def zero(n):
+    if n==0:
+        print("already Zero")
+
 ```
 
