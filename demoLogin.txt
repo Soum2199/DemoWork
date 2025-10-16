@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Hello, World!</title>
+    <title>Hello World!</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="styles.css" />
   </head>
@@ -14,8 +14,8 @@
   <input type="password" name="password" id="password" /><br />
   <button id="submit">submit</button>
   <hr />
-  <mark>OR</mark><br />
-  <label for="">Sign in with</label>
+   <mark>OR</mark><br />
+   <label for="">Sign in with</label> <br/>
   <div class="icons">
     <i id="gogli" class="fa-brands fa-google"></i>
     <i id="linkedin" class="fa-brands fa-linkedin"></i>
