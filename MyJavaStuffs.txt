@@ -427,7 +427,31 @@ public class Happy {
     }
 }
 -----------------------------------------------------------------------------------------------------------------------------------------
-
+// https://www.geeksforgeeks.org/problems/reverse-a-linked-list/1?utm_medium=article&utm_campaign=bottom_sticky_on_article&utm_source=gfg
+/*
+class Node {
+    int data;  Node next;
+    Node(int x) {
+        data = x;
+        next = null;
+    }
+}
+*/
+class Solution {
+    Node reverseList(Node head) {
+        // code here
+        if(head == null) return head; 
+        Node curr = head;
+        Node prev = null;
+        while(curr != null){
+            Node temp = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = temp;
+        }
+        return prev;
+    }
+}
 -----------------------------------------------------------------------------------------------------------------------------------------
 
 -----------------------------------------------------------------------------------------------------------------------------------------
