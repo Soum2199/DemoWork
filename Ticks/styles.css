@@ -1,0 +1,151 @@
+
+:root{
+  --screen: #fefefe;
+  --text:  #010101;
+  --title: #AC45C6;
+  --lines: blue;
+  --boxHover: lemonchiffon;
+  --buttton: #089e0a;
+}
+.darky{
+   --screen:  #010101;
+   --text: #fefefe;
+  --title: #1aeb21;
+  --lines: yellow;
+  --boxHover: #280396;
+  --buttton: #f58ebb;
+}
+/* Theme part above  */
+body{
+  padding: 5px;
+  text-align: center;
+  background-color: var(--screen);
+  color: var(--text);
+}
+h6{
+  font-size: 21px;
+  cursor: pointer;
+  margin-top: 4px;
+}
+.title {
+	color: var(--title);
+	text-align: center;
+}
+h3{
+  text-align: center;
+}
+.contain{
+  display: flex;
+  flex-direction: column;
+   justify-items: center;
+  align-items: center;
+  justify-content: space-between;
+}
+
+main{
+  display: flex;
+  flex-wrap: wrap;
+  height: 310px;
+  width: 312px;
+  justify-content: space-evenly;
+  justify-items: center;
+  align-items: center;
+}
+
+.box{
+  cursor: pointer;
+  font-size: 63px;
+  color:  var(--text);
+  /*padding: 3px;*/
+  font-family: Sans-Serif;
+  text-align: center;
+  height: 98px;
+  width: 99px;
+  border: 1px solid var(--lines);
+  border-radius: 2px;
+  &:hover{
+    background-color: var(--boxHover);
+  }
+}
+
+button{
+  cursor: pointer;
+  font-size: 19px;
+  border:  2px dashed ivory;
+  margin: 5px;
+  padding: 2px 4px;
+  color:  var(--screen);
+background-color: var(--buttton);
+/*background: linear-gradient(83deg, rgba(245, 142, 187, 1) 0%, rgba(128, 126, 242, 1) 100%);*/
+/*background-color: #089e0a;*/
+/*background: linear-gradient(90deg, rgba(8, 158, 10, 1) 0%, rgba(242, 15, 15, 1) 88%);*/
+&:hover{
+  transform: scale(1.1);
+  transition: 0.5s;
+}
+
+}
+
+
+@media (max-width: 500px) {
+  main {
+    width: 270px;
+    height: 270px;
+  }
+
+  .box {
+    width: 88px;
+    height: 88px;
+    font-size: 48px;
+  }
+
+  .title {
+    font-size: 25px;
+  }
+
+  h3, #turns {
+    font-size: 17px;
+    text-align: center;
+  }
+
+  button {
+    font-size: 16px;
+    padding: 4px 8px;
+    &:active{
+  transform: scale(1.1);
+  transition: 0.5s;
+    }
+  }
+}
+
+
+@media (max-width: 250px) {
+  main {
+    width: 219px;
+    height: 221px;
+  }
+
+  .box {
+    width: 70px;
+    height: 71px;
+    font-size: 41px;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+
+  h3, #turns {
+    font-size: 14px;
+  }
+
+  button {
+    font-size: 15px;
+    padding: 2px 6px;
+      &:active{
+  transform: scale(1.1);
+  transition: 0.5s;
+    }
+  }
+}
+
