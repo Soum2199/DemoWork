@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Stopwatching</title>
+    <style type="text/css" media="all">
+      body{
+  padding: 5px;
+  text-align: center;
+  text-transform: capitalize;
+  background: linear-gradient(90deg, #fa80d2,rgb(252, 255, 97), aquamarine);
+}
+.title {
+	color: #46508d;
+	letter-spacing: 2px;
+	font-size: 39px;
+	animation: hie all 3s infinite;
+}
+h2{
+  color: #8a2d9e;
+  font-size: 42px;
+}
+
+button{
+  color: gold;
+    text-transform: capitalize;
+  background-color: lightseagreen;
+  &:hover{
+    color:  coral;
+    background-color: rgb(56, 212, 124) ;
+    transform: scale(1.1);
+    transition: 0.5s;
+  }
+}
+    </style>
+  </head>
+  <body>
+    <h2>Welcome to Stopwatch</h2>
+      <h1 class="title">00:00:00</h1>
+      <button id="start">start</button>
+      <button id="stop">stop</button>
+      <button id="reset">reset</button>
+      <script type="text/javascript" charset="utf-8">
+        // const title = document.getElementsByClassName('title')
+const title = document.querySelector('.title');
+
+const start = document.getElementById("start")
+const stop = document.getElementById("stop")
+const reset = document.getElementById("reset")
+let s = 0, m = 0, h = 0;
+
+let info = null;
+
+function showTimes() {
+s++;
+if (s > 59) {
+  s=0;
+  m++;
+  if(m > 59){
+    m=0;
+    h++
+    if (h > 23) {
+      s = 0
+m = 0 
+h = 0
+      title.innerHTML = "00:00:00"
+    }
+  }
+}
+// title.innerHTML = "00:00:00"
+let s2 = (s >= 10) ? s : `0${s}`
+  let m2 = (m >= 10) ? m : `0${m}`
+let h2 = (h >= 10) ? h : `0${h}`
+
+title.innerHTML = `${h2}:${m2}:${s2}`;
+// title.innerHTML = `${h2}`:`${m2}`:`${s2}`
+
+}
+
+start.addEventListener("click", function(){
+// info = setInterval(function () {showTime(), 1000});
+// if(!info)
+info = setInterval(showTimes, 1000)
+console.log(info)
+})
+
+stop.addEventListener("click", function(){
+  clearInterval(info)
+  info = null;
+})
+
+reset.addEventListener("click", function(){
+clearInterval(info);
+info = null;
+s = 0
+m = 0 
+h = 0
+title.innerHTML = "00:00:00"
+})
+
+      </script>
+  </body>
+</html>
