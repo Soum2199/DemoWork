@@ -15,7 +15,7 @@ function Seat({ seatnumber, onSelect, onDeselect, isSelected }) {
       onClick={handleClick}
       style={{
         border: "1px solid black", width: "30px",  height: "30px", textAlign: "center",
-        backgroundColor: isSelected ? "#aabeee" : "white",
+        backgroundColor: isSelected ? "#a8baee" : "white",
       }}>
       {seatnumber}
     </button>
