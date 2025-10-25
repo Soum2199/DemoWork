@@ -1519,5 +1519,13 @@ def zero(n):
     if n==0:
         print("already Zero")
 
+x = "light"
+x = x.capitalize()[::-1]
+print(x)
+
+y = "dark"
+y = y.capitalize()[::-1]
+print(y)
+
 ```
 
