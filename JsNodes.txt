@@ -59,3 +59,17 @@ setInterval(function () {
 //   const personDetails = await Person.find().skip((recievedPageno - 1)*2).limit(2);
 //   res.json({"details": personDetails})
 // })
+
+//Normal solely written code
+/**
+ * @param {number} n
+ * @returns {number}
+ */
+
+class Solution {
+    floorSqrt(n) {
+        // code here
+        // return Math.sqrt(Math.ceil(n));
+        return Math.floor(Math.sqrt(n))
+    }
+}
