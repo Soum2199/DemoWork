@@ -73,3 +73,13 @@ class Solution {
         return Math.floor(Math.sqrt(n))
     }
 }
+
+a = [1,2,3,4]
+// a.append(6)
+a.push(6)
+console.log(a)
+// a.remove()
+a.pop()
+console.log(a)
+a.shift()
+console.log(a)
