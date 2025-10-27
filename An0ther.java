@@ -22,3 +22,14 @@ import package.util.Scanner;
         }
         return count;
     }
+--------------------------------------------------------------------------------------------------------
+//java code no 2 -- print natural nos
+class Solution {
+    public void printNos(int N) {
+        // Code here
+        if(N == 0){return;}
+        printNos(N-1);
+        System.out.print(N+" ");
+
+    }
+}
