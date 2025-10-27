@@ -4,8 +4,6 @@ Got it 👍 I see what you’re trying to do — build a small React app with a 
 
 Let’s carefully fix this step by step:
 
----
-
 ### 🔑 Problems in your code:
 
 1. `const [cart, setCart] = useState('')`
