@@ -1173,8 +1173,38 @@ The `repeat` decorator wraps the `say_hi` function so that it gets called twice 
 
 If you want to take this further, I can show you how to make a decorator that repeats a function *n* times using arguments. Want to try that next?
 
--======================================-------------------=======================--------------------------------------===================---
+-----------
+### 💡 What is a lambda function?
+-> A lambda function is a single-line anonymous function defined by usnig lambda keyword.
 
+### 💡 What is args and kwargs?
+->The *args is used to pass variable arguments, whereas **kwargs passes keyword arguments.
+
+### 💡 What is the difference between @staticmethod and @classmethod?
+->static method does not take class or self references. Class method takes class reference. 
+
+### 💡 What is inheritence in Python?
+->A mechanism to reuse and extend the classes.
+
+### 💡 What is method overriding?
+->When a subclass provides a new implementation for a parent class method.
+
+### 💡 What is a Python generator?
+->A function that yields values one at a time using yield.
+
+### 💡 What are decorators in python?
+->The functions modifying the behaviour of other functions.
+
+### 💡 What is GIL in Python?
+->It stands for Global Interpreter Lock which allows only one thread to execute at a time in CPython.
+
+### 💡 What is the difference between deep copy and shallow copy?
+-> Deep copy is used to copy the actual objects, whereas shallow copy is used to copy the references only.
+
+### 💡 What is pickling in Python?
+-> The serialization process of converting the objects into byte streams.
+
+-======================================-------------------=======================--------------------------------------===================---
 
 ## 🌱 Want to try one tiny Python example right now?
 
