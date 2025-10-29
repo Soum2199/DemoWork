@@ -1527,5 +1527,12 @@ y = "dark"
 y = y.capitalize()[::-1]
 print(y)
 
+a = 127
+b = 257
+# b = a
+# a = b
+a,b = b,a
+print(a)
+print("the exchanged value of b is ",b)
 ```
 

@@ -32,6 +32,8 @@ select * from Customers;
 --update Customers set first_name = 'Pioneer' where customer_id=7;
 --alter table Customers rename customer_id to cust_id;
 --update Customers set first_name = 'Peony' where cust_id = 7;
+--select * from customers where country = 'USA' or age > 30;
+select * from customers where country = 'USA' and age > 30;
 
   SELECT * FROM Customers;
 --update Customers set first_name = 'Anarthick' where first_name = 'Johnny';
