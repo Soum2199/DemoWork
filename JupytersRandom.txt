@@ -1,0 +1,17 @@
+//my jupyter notebook random codes Netflix
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+#displays 1st few records.
+df['Genre'].head()
+#not just genre, but any column
+
+#for displaying the duplicate records
+df.duplicated().sum() #shows number of duplicated records
+df.duplicated() #shows it in Booleans
+
+#it shows all the counts of all entered elements
+df.describe()
