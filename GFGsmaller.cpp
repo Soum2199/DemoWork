@@ -11,3 +11,4 @@ class Solution {
         
     }
 };
+//TC = o(n); SC = o(1)
