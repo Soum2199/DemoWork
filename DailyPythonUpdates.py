@@ -46,6 +46,62 @@ Estimated Timelines:
 
 In summary, while the basics of Python can be grasped in a few months, achieving advanced proficiency and applying it effectively in complex domains is an ongoing process that can take a year or more of dedicated learning and practice.
 
+# About Python Lists
+In Python, the built-in `list` object has a number of **attributes and methods** — though strictly speaking, *attributes* are its data fields (and `list` doesn’t have many public ones), while *methods* are the functions you can call on it.
+
+You can see them yourself in any Python interpreter with:
+
+```python
+dir(list)
+```
+Here’s what you’ll find (Python 3.11+ as of 2024):
+---
+### 🔹 Common special (dunder) attributes and methods
+
+These are used internally but can sometimes be helpful:
+
+```python
+'__add__', '__class__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__iadd__', '__imul__', '__init__',
+'__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mul__',
+'__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__',
+'__rmul__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__'
+```
+---
+
+### 🔹 Public list methods
+
+These are what you’ll use most often in real code:
+
+| Method                             | Description                                                 |
+| ---------------------------------- | ----------------------------------------------------------- |
+| `append(x)`                        | Add an item to the end of the list                          |
+| `extend(iterable)`                 | Extend list by appending all items from iterable            |
+| `insert(i, x)`                     | Insert item `x` at position `i`                             |
+| `remove(x)`                        | Remove first item equal to `x`                              |
+| `pop([i])`                         | Remove and return item at position `i` (default: last item) |
+| `clear()`                          | Remove all items from list                                  |
+| `index(x[, start[, end]])`         | Return first index of value `x`                             |
+| `count(x)`                         | Return number of times `x` appears                          |
+| `sort(*, key=None, reverse=False)` | Sort the list in place                                      |
+| `reverse()`                        | Reverse the list in place                                   |
+| `copy()`                           | Return a shallow copy of the list                           |
+
+---
+### Example: viewing them programmatically
+
+```python
+attrs = dir(list)
+methods = [m for m in attrs if not m.startswith('__')]
+print(methods)
+```
+Output:
+
+```python
+['append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']
+```
+
+Would you like me to include *inherited attributes/methods* from the base `object` class as well (like `__class__`, `__getattribute__`, etc.) with short descriptions?
+
 -------------------------------------------------------- my part --------------------------------------------------------------------
 
 
@@ -1564,5 +1620,37 @@ b = 257
 a,b = b,a
 print(a)
 print("the exchanged value of b is ",b)
+
+a = [1,2,3,4]
+# a.push()
+# a.add(7)
+print(a)
+a.append(5)
+a.append(8)
+print(a)
+a.pop()
+print(a)
+a.remove(1)
+print(a)
+
+# a.indexAt(2)
+print(a.index(4))
+print(a)
+
+# a.extend(3)
+a.extend([12,24,35,48, 42])
+print(a)
+
+a.sort()
+print(a)
+# a.count(6)
+# print(a)
+a.reverse()
+print(a)
+a.clear()
+print(a)
+b = dir([])
+print(b)
+
 ```
 
