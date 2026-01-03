@@ -104,6 +104,37 @@ Would you like me to include *inherited attributes/methods* from the base `objec
 
 -------------------------------------------------------- my part --------------------------------------------------------------------
 
+#from google
+
+The main differences between a Python list, tuple, and dictionary lie in their mutability, ordering, and how elements are accessed and stored. [1, 2]  
+
+| Parameter [1, 2, 3, 4, 5] | List | Tuple | Dictionary  |
+| --- | --- | --- | --- |
+| Syntax | (square brackets) | (parentheses) | (curly braces, key-value pairs)  |
+| Mutability | Mutable (changeable) | Immutable (unchangeable) | Mutable (values can be changed/added/removed, but keys must be immutable)  |
+| Order | Ordered (insertion order is preserved) | Ordered (insertion order is preserved) | Ordered (insertion order is preserved as of Python 3.7+)  |
+| Access | By integer index (e.g., ) | By integer index (e.g., ) | By key (e.g., )  |
+| Duplicates | Allowed | Allowed | Keys must be unique; values can be duplicated  |
+| Use Case | General-purpose collection where order and modification are needed | Fixed collections of data (like coordinates or constants) that should not change | Storing data that needs efficient retrieval via a unique key, like user profiles or settings  |
+
+Summary of Key Differences 
+
+• Mutability: The most critical difference is that lists and dictionaries are mutable, meaning you can add, remove, or change items after creation. Tuples are immutable; their contents cannot be changed once created. 
+• Access Method: Lists and tuples use zero-based integer indexing to access elements. Dictionaries use unique, immutable keys (like strings or numbers) to access their associated values. 
+• Structure: Lists and tuples are sequences of elements. Dictionaries are a mapping of unique keys to values (key-value pairs). [1, 2, 4, 6, 7]  
+
+Choosing the right data structure depends on the specific needs of your program, such as whether the data needs to be fixed, requires fast lookups by a label, or needs to maintain a specific order. [5]  
+
+AI responses may include mistakes.
+
+[1] https://www.naukri.com/code360/library/difference-between-list-tuple-set-and-dictionary-in-python
+[2] https://www.lenovo.com/us/en/glossary/tuple/
+[3] https://medium.com/@sankhasubhra.das.uemk.cse.2023/list-tuple-set-dictionary-in-python-53056d2a1ad0
+[4] https://www.tutorialspoint.com/list-vs-tuple-vs-dictionary-in-python
+[5] https://www.interserver.net/tips/kb/python-data-structures-comparison/
+[6] https://docs.python.org/3/tutorial/datastructures.html
+[7] https://runestone.academy/ns/books/published/py4e-int/tuples/usingtuplesaskeys.html
+===========================================================================================================================================
 
 You're welcome! Here's a compact yet powerful **Python Cheatsheet** to help you become proficient in **1–2 weeks** if you're consistent.
 
