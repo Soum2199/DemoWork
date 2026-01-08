@@ -1,0 +1,141 @@
+//tic tac toe revise
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+      <h1 class="title">Tic Tac Toe </h1> 
+      <br/>
+      <h3 id="status">hi</h3>
+      <div class="contain">
+        
+        <main>
+        <div class="box" id="0"></div>
+        <div class="box" id="1"></div>
+        <div class="box" id="2"></div>
+        <div class="box" id="3"></div>
+        <div class="box" id="4"></div>
+        <div class="box" id="5"></div>
+        <div class="box" id="6"></div>
+        <div class="box" id="7"></div>
+        <div class="box" id="8"></div>
+       </main>
+       <br />
+       <button type="reset" id="reseti">Restart game</button>
+      </div>
+      <p id="turns"></p>
+      <script src="script.js"></script>
+      <script type="text/javascript" charset="utf-8">
+        
+      </script>
+  </body>
+</html>
+
+
+/*:root{*/
+  
+/*}*/
+
+body{
+  padding: 25px;
+  background-color: #fefefe;
+}
+.title {
+	color: #AC45C6;
+	text-align: center;
+}
+h3{
+  text-align: center;
+}
+.contain{
+  display: flex;
+  flex-direction: column;
+   justify-items: center;
+  align-items: center;
+  justify-content: space-between;
+}
+
+main{
+  display: flex;
+  flex-wrap: wrap;
+  height: 310px;
+  width: 312px;
+  justify-content: space-evenly;
+  justify-items: center;
+  align-items: center;
+}
+
+.box{
+  cursor: pointer;
+  font-size: 63px;
+  color:  rgb(36, 32, 1);
+  /*padding: 3px;*/
+  font-family: Sans-Serif;
+  text-align: center;
+  height: 98px;
+  width: 99px;
+  border: 1px solid blue;
+  border-radius: 2px;
+  &:hover{
+    background-color: lemonchiffon;
+  }
+}
+
+
+
+const turns = document.getElementById('turns')
+const box = document.querySelectorAll(".box")
+let currentPlayer = "X";
+// const h3 = document.querySelector("h3")
+const status = document.getElementById("status")
+const reseti = document.getElementById('reseti')
+
+function TicTacs() {
+    
+    swapPlayers()
+    
+}
+
+function swapPlayers(){
+  currentPlayer = currentPlayer === "X" ? "O" : "X";
+}
+
+
+reseti.addEventListener("click", function () {
+  
+  currentPlayer = "X"
+  turns.innerHTML = `${currentPlayer}'s turn`
+  status.innerHTML = ''
+  
+})
+
+
+
+@media (max-width: 250px) {
+  main {
+    width: 219px;
+    height: 221px;
+  }
+
+  .box {
+    width: 74px;
+    height: 75px;
+    font-size: 37px;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+
+  h3, #turns {
+    font-size: 13px;
+  }
+
+  button {
+    font-size: 15px;
+    padding: 2px 6px;
+  }
+}
