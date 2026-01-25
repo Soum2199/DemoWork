@@ -1,0 +1,81 @@
+const data = [
+    {
+        title: "What is the use of HTML?",
+        A: "To develop frontend",
+        B: "To clean utensils",
+        C: "Both A and B",
+        D: "None of the above"
+    },
+    {
+        title: "What is the use of CSS?",
+        A: "To develop games",
+        B: "To clean utensils",
+        C: "To style the website",
+        D: "None of the above"
+    },
+    {
+        title: "What is 10 + 20?",
+        A: 30,
+        B: -20,
+        C: 50,
+        D: 90
+    }
+]
+
+const myH1 = document.querySelector("h1")//<h1 id="title"></h1>
+const btn1 = document.querySelector("#first")
+const btn2 = document.querySelector("#second")
+const btn3 = document.querySelector("#third")
+const btn4 = document.querySelector("#fourth")
+
+const nextButton = document.querySelector("#next")
+const submitButton = document.querySelector("#submit")
+
+let index = 0
+
+function loadQuestion(dataa)
+{
+    if(index < data.length - 1)
+    {
+        // Questions are still available
+        // Logic to hide submit button
+        submitButton.hidden = true
+        nextButton.hidden = false
+    }
+    else
+    {
+        // Last question
+        // Logic to hide next button
+        // and make submit button visible
+
+        nextButton.hidden = true
+        submitButton.hidden = false
+    }
+
+    myH1.textContent = dataa.title
+    btn1.textContent = dataa.A
+    btn2.textContent = dataa.B
+    btn3.textContent = dataa.C
+    btn4.textContent = dataa.D
+}
+
+loadQuestion(data[index])
+
+
+
+
+nextButton.addEventListener("click", function()
+{
+    // Logic to verify the answer
+    
+
+    // Go to the next questions one by one
+    index++
+    loadQuestion(data[index])
+
+    // if index = 2, we can conclude that last
+    // question is reached
+})
+
+// Once we reach the last question we have to display
+//submit button
