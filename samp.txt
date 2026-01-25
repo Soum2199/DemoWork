@@ -1,0 +1,82 @@
+<!DOCTYPE html >
+<html>
+  <head>
+    <title>Bootstrap demo.!.</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    
+    <div class="row text-center">
+      <div class="col border border-primary m-1" id="prima"></div>
+      <div class="col border border-secondary m-1">Good</div>
+      <div class="col border border-danger m-1">Good</div>
+      <div class="col border border-success m-1">Good</div>
+    </div>
+
+<br /> <br /> <hr class="border border-info" /> <br /> <br />
+
+<nav class="navbar navbar-expand-lg bg-warning">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+        <button class="btn btn-primary" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+<br />
+
+<p>The interval walking training emphasizes the quality and intensity of movement rather than just the number of steps taken. This form of walking exercise alternates between periods of fast (or brisk) walking and slow walking. Developed in Japan, this technique has recently gained global attention for being time-efficient and highly effective.</p>
+<p> <q> Alternate 3 minutes of slow walking with three minutes of brisk walking like you are rushing to an important meeting. Do this daily for 30 minutes, and the results are impressive,</q> Dr. Sethis mentioned.</p>
+<dl>
+  <dt>blood pressure</dt>
+  <dd>Maintaining a healthy blood pressure is crucial for overall heart health. Interval walking can help us regulate blood pressure, reducing the risk of hypertension and other illnesses.</dd>
+  <dt>Boost immunity</dt>
+  <dd>Regular physical activity, including interval walking, can strengthen the immune system, enhancing your body&#39;s ability to remove all the illnesses and infections.</dd>
+  <dt>Improved cardiovascular health</dt>
+  <dd>Interval <span> walking </span> is an excellent aerobic activity. Brisk walking elevates your heart rate significantly. Studies show that this method can improve cardiovascular health and fitness significantly.</dd>
+</dl>
+
+<br /> <hr /> <br />
+
+<h5>Some steps to follow while doing Brisk walk.</h5>
+
+<ul>
+  <li>Prep your muscles with a 5-10 minute warm-up.</li>
+  <li>Walk briskly for 2-3 minutes. This should be at a speed increasing your heart rate significantly. Then, walk at a slower pace for 2-3 minutes to allow your heart rate to decrease also.</li>
+  <li>Conclude it with some cool-down exercises or stretches for 5-10 minutes to bring your heart rate back to normal.</li>
+</ul>
+<footer class="text-center">
+  &copy; 2025 copyrights.
+</footer>
+      <script src="script.js"></script>
+  </body>
+</html>
