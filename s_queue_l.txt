@@ -1,0 +1,526 @@
+-- select  job_id, MANAGER_ID from hr.EMPLOYEES group by MANAGER_ID;
+
+-- select * from hr.LOCATIONS;
+-- select * from hr.COUNTRIES;
+-- select * from hr.REGIONS;
+-- select * from hr.EMPLOYEES where SALARY > 10000;
+-- select * from hr.EMPLOYEES where COMMISSION_PCT is null;
+-- select * from hr.EMPLOYEES where JOB_ID like 'SA%';
+-- select * from hr.EMPLOYEES where mod(EMPLOYEE_ID , 2) = 0;
+
+-- select * from hr.EMPLOYEES where to_char(HIRE_DATE, 'yyyy') >= 2013 order by HIRE_DATE asc;
+-- SELECT * from hr.jobs order by JOB_TITLE asc;
+-- select * from hr.EMPLOYEES order by salary desc FETCH FIRST 5 ROWS ONLY;
+
+-- select * from hr.EMPLOYEES order by HIRE_DATE asc;
+--  select * from hr.EMPLOYEES where salary = (select min(salary) from hr.EMPLOYEES);
+
+-- select min(salary) from hr.EMPLOYEES
+
+-- select * from hr.EMPLOYEES where FIRST_NAME like '%n';
+-- select * from hr.EMPLOYEES where salary > 5000 and salary <10000;
+
+-- select * from hr.EMPLOYEES where to_char(HIRE_DATE, 'yyyy') = 2016;
+-- select * from hr.EMPLOYEES where FIRST_NAME like 'A%';
+
+-- select * from hr.EMPLOYEES where FIRST_NAME like 'S_______';
+
+-- select * from hr.EMPLOYEES where salary = (select max(salary) from hr.EMPLOYEES);
+
+-- select * from hr.EMPLOYEES;
+
+-- select * from hr.DEPARTMENTS;
+
+-- select * from hr.EMPLOYEES where LAST_NAME = '_____';
+-- select * from hr.EMPLOYEES where length(LAST_NAME) = 5;
+-- select * from hr.EMPLOYEES where len(LAST_NAME) = 5;
+
+-- select * from hr.EMPLOYEES where DEPARTMENT_ID not in(90);
+
+-- select * from hr.EMPLOYEES order by LAST_NAME asc fetch first 10 rows only;
+
+-- select * from hr.EMPLOYEES where MANAGER_ID <> EMPLOYEE_ID and DEPARTMENT_ID in(80);
+
+-- SELECT *  FROM hr.EMPLOYEES  WHERE employee_id NOT IN ( SELECT DISTINCT manager_id FROM hr.EMPLOYEES  WHERE manager_id IS NOT NULL )AND department_id = 80;
+
+-- SELECT *  FROM hr.EMPLOYEES  WHERE DEPARTMENT_ID IN(10, 20, 50);
+
+-- SELECT *  FROM hr.EMPLOYEES  WHERE DEPARTMENT_ID = 10 or DEPARTMENT_ID = 20 or DEPARTMENT_ID = 50;
+
+SELECT *  FROM hr.EMPLOYEES  WHERE salary BETWEEN 6000 and 9000 order by salary asc;
+
+-- select * from hr.EMPLOYEES where LAST_NAME like 'S%';
+
+select * from hr.EMPLOYEES where FIRST_NAME like '%n';
+
+-- select * from hr.EMPLOYEES where FIRST_NAME = 'Nancy' or FIRST_NAME = 'Steven' or FIRST_NAME = 'John'; 
+-- or FIRST_NAME = "Nancy"
+
+-- select * from hr.EMPLOYEES where FIRST_NAME IN('Nancy', 'Steven', 'John');
+
+-- select * from hr.EMPLOYEES where LAST_NAME like '_a%';
+
+-- select * from hr.DEPARTMENTS d inner join hr.LOCATIONS l on d.LOCATION_ID = l.LOCATION_ID; 
+
+-- SELECT * FROM hr.DEPARTMENTS;
+
+-- select * from HR.LOCATIONS;
+-- SELECT * FROM hr.LOCATIONS;
+
+SELECT * from hr.COUNTRIES where COUNTRY_NAME = 'Canada';
+
+-- select * from hr.LOCATIONS;
+
+-- SELECT d.DEPARTMENT_ID,
+--     d.DEPARTMENT_NAME, l.CITY, l.STATE_PROVINCE, l.COUNTRY_ID
+-- FROM hr.DEPARTMENTS d JOIN hr.LOCATIONS l
+-- ON d.LOCATION_ID = l.LOCATION_ID where l.CITY like '%o%';
+
+-- SELECT * from hr.EMPLOYEES where JOB_ID = 'SA_MAN' or JOB_ID = 'IT_PROG';
+
+-- select * from hr.EMPLOYEES where JOB_ID in('IT_PROG', 'SA_MAN', 'FI_ACCOUNT');
+
+-- SELECT * from hr.EMPLOYEES where to_char(HIRE_DATE, 'mm') = 06;
+
+-- select e.FIRST_NAME, d.department_name from hr.EMPLOYEES e inner join hr.DEPARTMENTS d on e.DEPARTMENT_ID = d.DEPARTMENT_ID;
+
+-- select e.FIRST_NAME, d.department_name from hr.EMPLOYEES e inner join hr.DEPARTMENTS d on e.MANAGER_ID = d.MANAGER_ID;
+
+-- select e.FIRST_NAME, d.department_name, l.city from hr.EMPLOYEES e inner join hr.DEPARTMENTS d on e.DEPARTMENT_ID = d.DEPARTMENT_ID inner join hr.LOCATIONS l on d.LOCATION_ID = l.LOCATION_ID;
+
+-- select e.FIRST_NAME, e.DEPARTMENT_ID, d.DEPARTMENT_ID, d.department_name from hr.EMPLOYEES e inner join hr.DEPARTMENTS d on e.DEPARTMENT_ID = d.DEPARTMENT_ID;
+
+-- SELECT count(DEPARTMENT_ID) as nose, DEPARTMENT_ID from hr.EMPLOYEES group by DEPARTMENT_ID having nose > 5;
+
+ case when 'High Salary' if salary > 10000, 'Medium Salary' if 5000–10000, otherwise 'Low Salary';
+
+-- select * from hr.DEPARTMENTS;
+-- SELECT * from hr.JOBS;
+
+-- select FIRST_NAME, LAST_NAME, HIRE_DATE from hr.EMPLOYEES;
+
+-- select EMPLOYEE_ID, PHONE_NUMBER, HIRE_DATE, SALARY, DEPARTMENT_ID from hr.EMPLOYEES;
+
+-- select EMPLOYEE_ID, DEPARTMENT_ID from hr.EMPLOYEES;
+
+-- select * from hr.EMPLOYEES where MANAGER_ID is null;
+
+-- SELECT * from hr.LOCATIONS;
+
+-- select DISTINCT JOB_ID from hr.EMPLOYEEs;
+
+-- select EMPLOYEE_ID, FIRST_NAME, email from hr.EMPLOYEES;
+
+-- select DEPARTMENT_ID, DEPARTMENT_NAME from hr.DEPARTMENTS;
+-- select COUNTRY_NAME, REGION_ID from hr.COUNTRIES;
+
+-- SELECT min(salary) from hr.EMPLOYEES where SALARY > 5000;
+
+-- SELECT * from hr.EMPLOYEES where SALARY > 5000;
+
+-- SELECT count(*) from hr.EMPLOYEES;
+
+-- select * from hr.EMPLOYEES where to_char(HIRE_DATE, 'yyyy') = 2016;
+
+-- select e.EMPLOYEE_ID, e.FIRST_NAME, e.email, d.DEPARTMENT_NAME from hr.EMPLOYEES e inner join hr.DEPARTMENTS d on e.DEPARTMENT_ID = d.DEPARTMENT_ID;
+
+-- SELECT * from hr.LOCATIONS;
+
+-- select d.DEPARTMENT_NAME, l.city, l.street_address from hr.DEPARTMENTS d inner join hr.LOCATIONS l on d.LOCATION_ID = l.LOCATION_ID;
+
+-- SELECT * from hr.jobs;
+select e.EMPLOYEE_ID, e.FIRST_NAME, j.job_title from hr.EMPLOYEES e inner join hr.jobs j on e.JOB_ID = j.JOB_ID;
+
+select d.DEPARTMENT_NAME, e.FIRST_NAME,l.city, l.state_province  from hr.employees e inner join hr.departments d
+on e.department_id=d.department_id inner join hr.locations l on d.location_id=l.location_id;
+
+----
+select d.DEPARTMENT_NAME, e.FIRST_NAME,l.city, l.state_province  from hr.employees e inner join hr.departments d
+on e.MANAGER_ID = d.MANAGER_ID inner join hr.locations l on d.location_id=l.location_id;
+
+-- SELECT * from hr.jobs;
+-- select e.EMPLOYEE_ID, e.FIRST_NAME, j.job_title from hr.EMPLOYEES e inner join hr.jobs j on e.JOB_ID = j.JOB_ID;
+
+-- select * from hr.LOCATIONS;  -- l.street_address , l.city, l.state_province
+-- select * from hr.COUNTRIES;
+  -- c.country_name
+-- select l.street_address , l.city, l.state_province, c.country_name from hr.LOCATIONS l inner join hr.COUNTRIES c on l.COUNTRY_ID = c.COUNTRY_ID;
+
+-- SELECT * from hr.REGIONS; 
+-- SELECT * from hr.COUNTRIES c inner join hr.REGIONS r on c.REGION_ID = r.REGION_ID;
+-- SELECT c.country_name, r.REGION_name from hr.COUNTRIES c inner join hr.REGIONS r on c.REGION_ID = r.REGION_ID;
+
+-- select * from hr.EMPLOYEES e1 self join hr.EMPLOYEES e2 on e1.manager_id = e2.manager_id;
+-- select e1.EMPLOYEE_ID, e1.FIRST_NAME, e1.MANAGER_ID, e2.FIRST_NAME from hr.EMPLOYEES e1 left join hr.EMPLOYEES e2 on e1.manager_id = e2.manager_id;
+
+-- select e1.EMPLOYEE_ID, e1.FIRST_NAME, e1.MANAGER_ID, e2.FIRST_NAME from hr.EMPLOYEES e1 inner join hr.EMPLOYEES e2 on e1.manager_id = e2.EMPLOYEE_ID;
+
+-- select e1.EMPLOYEE_ID, e1.FIRST_NAME, e1.MANAGER_ID, e2.FIRST_NAME from hr.EMPLOYEES e1 left join hr.EMPLOYEES e2 on e1.EMPLOYEE_ID = e2.manager_id;
+
+-- SELECT DISTINCT MANAGER_ID FROM hr.EMPLOYEES WHERE MANAGER_ID IS NOT NULL;
+-- SELECT EMPLOYEE_ID, FIRST_NAME, MANAGER_ID FROM hr.EMPLOYEES WHERE MANAGER_ID IS NOT NULL;
+
+-- SELECT 
+--   e1.EMPLOYEE_ID, 
+--   e1.FIRST_NAME AS EMPLOYEE_NAME, 
+--   e1.MANAGER_ID, 
+--   e2.FIRST_NAME AS MANAGER_NAME
+-- FROM hr.EMPLOYEES e1
+-- JOIN hr.EMPLOYEES e2 
+--   ON e1.MANAGER_ID = e2.EMPLOYEE_ID;
+
+-- SELECT * FROM hr.DEPARTMENTS where DEPARTMENT_NAME = 'IT';
+
+-- SELECT  e.EMPLOYEE_ID, e.FIRST_NAME, e.DEPARTMENT_ID, d.DEPARTMENT_NAME from hr.DEPARTMENTS d  LEFT join hr.EMPLOYEES e on d.DEPARTMENT_ID  = e.DEPARTMENT_ID
+-- where e.EMPLOYEE_ID is null;
+
+-- select * from hr.DEPARTMENTS d, hr.EMPLOYEES e, hr.LOCATIONS l where e.DEPARTMENT_ID = d.DEPARTMENT_ID and d.LOCATION_ID = l.LOCATION_ID; 
+-- select * from hr.DEPARTMENTS d, hr.EMPLOYEES e, hr.LOCATIONS l where e.MANAGER_ID = d.MANAGER_ID and d.LOCATION_ID = l.LOCATION_ID;
+-- select d.DEPARTMENT_NAME from hr.DEPARTMENTS d, hr.EMPLOYEES e, hr.LOCATIONS l where e.MANAGER_ID = d.MANAGER_ID and d.LOCATION_ID = l.LOCATION_ID;
+-- select d.DEPARTMENT_NAME, e.FIRST_NAME,l.city, l.state_province  from hr.employees e inner join hr.departments d
+-- on e.department_id=d.department_id inner join hr.locations l on d.location_id=l.location_id;
+-- select d.DEPARTMENT_NAME, e.FIRST_NAME,l.city, l.state_province  from hr.employees e inner join hr.departments d
+-- on e.MANAGER_ID = d.MANAGER_ID inner join hr.locations l on d.location_id=l.location_id;
+
+-- select e1.EMPLOYEE_ID, e1.FIRST_NAME, e1.MANAGER_ID, e2.FIRST_NAME, e2.DEPARTMENT_ID from hr.EMPLOYEES e1 join hr.EMPLOYEES e2 on e1.MANAGER_ID = e2.EMPLOYEE_ID;
+
+-- SELECT * FROM all_tables WHERE table_name = 'EMPLOYEES';
+SELECT e1.EMPLOYEE_ID, e1.FIRST_NAME, e1.MANAGER_ID, e2.FIRST_NAME as managers, e2.DEPARTMENT_ID from hr.EMPLOYEES e1 join HR.EMPLOYEES e2 on e1.MANAGER_ID = e2.EMPLOYEE_ID;
+
+-- select * from hr.DEPARTMENTS d, hr.EMPLOYEES e, hr.LOCATIONS l where e.DEPARTMENT_ID = d.DEPARTMENT_ID and d.LOCATION_ID = l.LOCATION_ID; 
+-- select * from hr.DEPARTMENTS d, hr.EMPLOYEES e, hr.LOCATIONS l where e.MANAGER_ID = d.MANAGER_ID and d.LOCATION_ID = l.LOCATION_ID;
+-- select d.DEPARTMENT_NAME from hr.DEPARTMENTS d, hr.EMPLOYEES e, hr.LOCATIONS l where e.MANAGER_ID = d.MANAGER_ID and d.LOCATION_ID = l.LOCATION_ID;
+-- select d.DEPARTMENT_NAME, e.FIRST_NAME,l.city, l.state_province  from hr.employees e inner join hr.departments d
+-- on e.department_id=d.department_id inner join hr.locations l on d.location_id=l.location_id;
+-- select d.DEPARTMENT_NAME, e.FIRST_NAME,l.city, l.state_province  from hr.employees e inner join hr.departments d
+-- on e.MANAGER_ID = d.MANAGER_ID inner join hr.locations l on d.location_id=l.location_id;
+
+-- select e1.EMPLOYEE_ID, e1.FIRST_NAME, e1.MANAGER_ID, e2.FIRST_NAME, e2.DEPARTMENT_ID from hr.EMPLOYEES e1 join hr.EMPLOYEES e2 on e1.MANAGER_ID = e2.EMPLOYEE_ID;
+
+-- SELECT * FROM all_tables WHERE table_name = 'EMPLOYEES';
+
+-- SELECT e1.EMPLOYEE_ID, e1.FIRST_NAME, e1.MANAGER_ID, e2.FIRST_NAME as managers, e2.DEPARTMENT_ID from hr.EMPLOYEES e1 join HR.EMPLOYEES e2 on e1.MANAGER_ID = e2.EMPLOYEE_ID;
+
+-- SELECT concat(FIRST_NAME, concat(' ', last_name)) as fullname, DEPARTMENT_ID from hr.EMPLOYEES;
+
+-- SELECT  e.EMPLOYEE_ID, e.FIRST_NAME, e.DEPARTMENT_ID, d.DEPARTMENT_NAME from hr.EMPLOYEES e right join hr.DEPARTMENTS d on d.DEPARTMENT_ID  = e.DEPARTMENT_ID;
+-- where e.EMPLOYEE_ID is null;
+
+-- select e.EMPLOYEE_ID, e.FIRST_NAME, j.job_title from hr.EMPLOYEES e FULL OUTER join hr.JOBS j on e.JOB_ID = j.JOB_ID;
+
+
+-- select EMPLOYEE_ID, FIRST_NAME, Department_id, job_id from hr.EMPLOYEES;
+
+-- SELECT job_title, MIN_SALARY, MAX_SALARY from hr.JOBS;
+-- select e1.EMPLOYEE_ID, e1.FIRST_NAME, e1.Department_id, e2.MANAGER_ID, e2.FIRST_NAME as managers from hr.EMPLOYEES e1 join hr.EMPLOYEES e2 on e1.MANAGER_ID = e2.EMPLOYEE_ID;
+
+-- SELECT * from hr.EMPLOYEES where mod(EMPLOYEE_ID, 2) = 0; 
+
+-- select * from hr.LOCATIONS;
+-- select * from hr.DEPARTMENTS;
+-- SELECT * from hr.COUNTRIES;
+
+-- select l.STREET_ADDRESS, l.CITY, c.COUNTRY_NAME from hr.LOCATIONS l inner join hr.COUNTRIES c on l.country_id = c.country_id;
+
+-- select * from HR.DEPARTMENTS d inner join hr.LOCATIONS l on d.location_id = l.location_id inner join hr.COUNTRIES c on l.country_id = c.country_id;
+
+-- select d.DEPARTMENT_NAME, l.STREET_ADDRESS, l.CITY, c.COUNTRY_NAME  from HR.DEPARTMENTS d inner join hr.LOCATIONS l on d.location_id = l.location_id inner join hr.COUNTRIES c on l.country_id = c.country_id;
+
+-- select * from  hr.EMPLOYEES;
+
+-- SELECT * from  hr.EMPLOYEES e left join HR.DEPARTMENTS d on e.DEPARTMENT_ID = d.DEPARTMENT_ID;
+-- SELECT e.EMPLOYEE_ID, e.first_name, e.DEPARTMENT_ID, d.DEPARTMENT_NAME from  hr.EMPLOYEES e left join HR.DEPARTMENTS d on e.DEPARTMENT_ID = d.DEPARTMENT_ID;
+-- SELECT e.EMPLOYEE_ID, e.first_name, e.DEPARTMENT_ID, d.DEPARTMENT_NAME from  hr.EMPLOYEES e right join HR.DEPARTMENTS d on e.DEPARTMENT_ID = d.DEPARTMENT_ID;
+
+-- select l.STREET_ADDRESS, l.CITY, c.COUNTRY_NAME from hr.LOCATIONS l inner join hr.COUNTRIES c on l.country_id = c.country_id;
+-- select l.STREET_ADDRESS, l.CITY, c.COUNTRY_NAME from hr.LOCATIONS l left join hr.COUNTRIES c on l.country_id = c.country_id;
+-- select l.STREET_ADDRESS, l.CITY, c.COUNTRY_NAME from hr.LOCATIONS l right join hr.COUNTRIES c on l.country_id = c.country_id;
+-- select l.STREET_ADDRESS, l.CITY, c.COUNTRY_NAME from hr.LOCATIONS l full OUTER join hr.COUNTRIES c on l.country_id = c.country_id;
+
+-- SELECT e.EMPLOYEE_ID, e.first_name, e.DEPARTMENT_ID, d.DEPARTMENT_NAME from  hr.EMPLOYEES e left join HR.DEPARTMENTS d on e.DEPARTMENT_ID = d.DEPARTMENT_ID;
+
+-- select  from hr.EMPLOYEES e1 join hr.EMPLOYEES e2 on e1.manager_id = e2.manager_id;
+-- select e1.EMPLOYEE_ID, e1.first_name, e1.manager_id, e2.first_name as manages from hr.EMPLOYEES e1 join hr.EMPLOYEES e2 on e1.manager_id = e2.EMPLOYEE_ID order by e1.EMPLOYEE_ID asc;
+
+-- select e1.EMPLOYEE_ID, e1.first_name, e1.manager_id, e2.first_name as manages from hr.EMPLOYEES e1 join hr.EMPLOYEES e2 on e1.manager_id = e2.EMPLOYEE_ID;
+
+-- select e1.EMPLOYEE_ID, e1.first_name, e1.manager_id, e2.first_name as manages, j.job_title from hr.EMPLOYEES e1 join hr.EMPLOYEES e2 on e1.manager_id = e2.EMPLOYEE_ID inner join hr.jobs j on e2.JOB_ID = j.JOB_ID;
+
+-- select l.STREET_ADDRESS, l.CITY, c.COUNTRY_NAME from hr.LOCATIONS l right join hr.COUNTRIES c on l.country_id = c.country_id;
+
+-- SELECT e.EMPLOYEE_ID, e.first_name, e.DEPARTMENT_ID, d.DEPARTMENT_NAME from  hr.EMPLOYEES e full OUTER join HR.DEPARTMENTS d on e.DEPARTMENT_ID = d.DEPARTMENT_ID;
+-- SELECT e.EMPLOYEE_ID, e.first_name, e.DEPARTMENT_ID, e.DEPARTMENT_ID as respective_dept, d.DEPARTMENT_NAME from  HR.DEPARTMENTS d  full OUTER join  hr.EMPLOYEES e on d.DEPARTMENT_ID = e.DEPARTMENT_ID;
+---almost same output
+
+SELECT e.EMPLOYEE_ID, e.first_name, e.DEPARTMENT_ID, e.DEPARTMENT_ID as respective_dept, d.DEPARTMENT_NAME from  HR.DEPARTMENTS d  full OUTER join  hr.EMPLOYEES e on d.DEPARTMENT_ID = e.DEPARTMENT_ID;
+
+
+---- select * from   toys, bricks;
+-- SELECT e.EMPLOYEE_ID, e.first_name, e.DEPARTMENT_ID, d.DEPARTMENT_NAME from  hr.EMPLOYEES e full OUTER join HR.DEPARTMENTS d on e.DEPARTMENT_ID = d.DEPARTMENT_ID;
+-- SELECT e.EMPLOYEE_ID, e.first_name, e.DEPARTMENT_ID, e.DEPARTMENT_ID as respective_dept, d.DEPARTMENT_NAME from  HR.DEPARTMENTS d  full OUTER join  hr.EMPLOYEES e on d.DEPARTMENT_ID = e.DEPARTMENT_ID;
+---almost same output
+
+-- SELECT e.EMPLOYEE_ID, e.first_name, e.DEPARTMENT_ID, e.DEPARTMENT_ID as respective_dept, d.DEPARTMENT_NAME from  HR.DEPARTMENTS d  full OUTER join  hr.EMPLOYEES e on d.DEPARTMENT_ID = e.DEPARTMENT_ID;
+
+-- select l.city, l.STREET_ADDRESS, d.DEPARTMENT_NAME from hr.LOCATIONS l inner join HR.DEPARTMENTS d on l.LOCATION_ID = d.LOCATION_ID;
+
+-- select l.city, l.STREET_ADDRESS, d.DEPARTMENT_NAME from hr.LOCATIONS l full OUTER join HR.DEPARTMENTS d on l.LOCATION_ID = d.LOCATION_ID;
+
+-- select count(*), DEPARTMENT_ID from hr.EMPLOYEES group by DEPARTMENT_ID;
+-- select count(*), DEPARTMENT_ID from hr.EMPLOYEES group by DEPARTMENT_ID where count(*) > 5;
+-- select count(*), DEPARTMENT_ID from hr.EMPLOYEES group by DEPARTMENT_ID having count(*) > 5;
+
+-- select count(*), JOB_ID from hr.EMPLOYEES group by JOB_ID;
+
+-- cross join
+
+-- select * from  hr.EMPLOYEES e cross join hr.DEPARTMENTS d where e.DEPARTMENT_ID = d.DEPARTMENT_ID;
+
+SELECT e.EMPLOYEE_ID, 
+  e.FIRST_NAME AS EMPLOYEE_NAME, 
+  e.SALARY AS EMPLOYEE_SALARY,
+  j.JOB_ID, j.JOB_TITLE, 
+  j.MIN_SALARY, j.MAX_SALARY
+FROM hr.EMPLOYEES e CROSS JOIN hr.JOBS j
+WHERE e.SALARY BETWEEN j.MIN_SALARY AND j.MAX_SALARY;
+
+
+-- List each employee along with their department, city, and country.
+-- (Chain JOINs from EMPLOYEES → DEPARTMENTS → LOCATIONS → COUNTRIES)
+
+
+-- select * from hr.EMPLOYEES;
+
+-- select e.EMPLOYEE_ID, e.first_name, d.DEPARTMENT_NAME, l.city, c.COUNTRY_NAME from hr.EMPLOYEES e INNER join hr.DEPARTMENTS d on e.DEPARTMENT_ID = d.DEPARTMENT_ID inner join hr.LOCATIONS l on d.location_id = l.location_id inner join hr.COUNTRIES c on l.country_id = c.country_id;
+
+-- select e.EMPLOYEE_ID, e.first_name, d.DEPARTMENT_NAME, l.city, c.COUNTRY_NAME from hr.EMPLOYEES e INNER join hr.DEPARTMENTS d on e.DEPARTMENT_ID = d.DEPARTMENT_ID inner join hr.LOCATIONS l on d.location_id = l.location_id inner join hr.COUNTRIES c on l.country_id = c.country_id where c.COUNTRY_NAME = 'Canada';
+
+-- SELECT * FROM hr.EMPLOYEES WHERE JOB_ID IS NULL;
+
+-- SELECT *  FROM hr.EMPLOYEES WHERE JOB_ID NOT IN (
+--   SELECT JOB_ID FROM hr.JOBS );
+
+-- SELECT e.JOB_ID, e.EMPLOYEE_ID, e.FIRST_NAME, j.JOB_TITLE
+-- FROM hr.EMPLOYEES e
+-- LEFT JOIN hr.JOBS j ON e.JOB_ID = j.JOB_ID;
+-- WHERE j.JOB_ID IS NULL;
+
+-- select e1.EMPLOYEE_ID, e1.FIRST_NAME, e1.MANAGER_ID, e2.first_name as maanager from hr.EMPLOYEES e1 join hr.EMPLOYEES e2 on e1.MANAGER_ID = e2.employee_id;
+
+-- select e1.EMPLOYEE_ID, e1.FIRST_NAME, e1.MANAGER_ID, e2.first_name as maanager from hr.EMPLOYEES e1 join hr.EMPLOYEES e2 on e1.MANAGER_ID = e2.MANAGER_ID;
+
+-- select e1.EMPLOYEE_ID, e1.FIRST_NAME, e1.MANAGER_ID, e2.first_name as maanager, e2.employee_id as Empl_id from hr.EMPLOYEES e1 join hr.EMPLOYEES e2 on e1.MANAGER_ID = e2.MANAGER_ID where e1.employee_id < e2.employee_id;
+
+-- select e1.EMPLOYEE_ID, e1.FIRST_NAME, e1.DEPARTMENT_ID as empl_dept, e1.MANAGER_ID, e2.first_name as maanager, e2.employee_id as Empl_id, e2.DEPARTMENT_ID as manag_dept from hr.EMPLOYEES e1 join hr.EMPLOYEES e2 on e1.MANAGER_ID = e2.employee_id where e1.DEPARTMENT_ID = e2.DEPARTMENT_ID;
+
+-- select e1.EMPLOYEE_ID, e1.FIRST_NAME, e1.hire_date as empl_day, e1.MANAGER_ID, e2.first_name as maanager, e2.hire_date as manag_day from hr.EMPLOYEES e1 join hr.EMPLOYEES e2 on e1.MANAGER_ID = e2.employee_id where e2.HIRE_DATE < e1.HIRE_DATE; 
+-- where e1.DEPARTMENT_ID = e2.DEPARTMENT_ID;
+
+-- select e1.EMPLOYEE_ID, e1.FIRST_NAME, e1.job_id as empl_job, e1.MANAGER_ID, e2.first_name as maanager, e2.job_id as manag_job from hr.EMPLOYEES e1 join hr.EMPLOYEES e2 on e1.MANAGER_ID = e2.employee_id where e1.job_id = e2.job_id;
+
+
+-- SELECT j.JOB_ID,  j.JOB_TITLE,  d.DEPARTMENT_ID, 
+--   d.DEPARTMENT_NAME FROM hr.JOBS j CROSS JOIN hr.DEPARTMENTS d;
+
+-- select avg(salary) from hr.EMPLOYEES;
+
+-- select min(salary), max(salary) from hr.EMPLOYEES;
+
+-- select avg(salary), JOB_ID from hr.EMPLOYEES group by JOB_ID;
+
+-- select count(*), department_id from hr.EMPLOYEES group by DEPARTMENT_ID;
+
+-- select sum(salary), DEPARTMENT_ID from hr.EMPLOYEES group  by DEPARTMENT_ID;
+
+-- select count(*), department_id from hr.EMPLOYEES group by DEPARTMENT_ID HAVING count(*) > 5;
+
+
+-- select avg(salary), DEPARTMENT_ID from hr.EMPLOYEES group  by DEPARTMENT_ID ;
+
+-- SELECT DEPARTMENT_ID, AVG(SALARY) AS AVG_SALARY FROM hr.EMPLOYEES GROUP BY DEPARTMENT_ID
+-- HAVING AVG(SALARY) = ( SELECT MAX(AVG_SALARY) FROM ( SELECT DEPARTMENT_ID, AVG(SALARY) AS AVG_SALARY
+--  FROM hr.EMPLOYEES GROUP BY DEPARTMENT_ID ) );
+
+-- select job_id, JOB_TITLE, MAX_SALARY from hr.JOBS;
+
+-- SELECT JOB_ID, SUM(SALARY) AS TOTAL_PAYOUT
+-- FROM hr.EMPLOYEES GROUP BY JOB_ID HAVING SUM(SALARY) = MAX(SUM(SALARY)) OVER ();
+
+-- SELECT JOB_ID, SUM(SALARY) AS TOTAL_PAYOUT FROM hr.EMPLOYEES GROUP BY JOB_ID
+-- HAVING SUM(SALARY) = (SELECT MAX(TOTAL_SALARY)
+--   FROM (SELECT JOB_ID, SUM(SALARY) AS TOTAL_SALARY FROM hr.EMPLOYEES GROUP BY JOB_ID  ) );
+
+-- select count(*), manager_id from hr.employees group by manager_id;
+
+-- select distinct job_id from hr.EMPLOYEES;
+-- select unique count(*),  distinct job_id from hr.EMPLOYEES;
+-- select count(distinct job_id) from hr.EMPLOYEES;
+
+-- select distinct JOB_TITLE from hr.jobs;
+
+-- select avg(salary), DEPARTMENT_ID from hr.EMPLOYEES group by DEPARTMENT_ID;
+
+select avg(salary), DEPARTMENT_ID from hr.EMPLOYEES group by DEPARTMENT_ID having avg(salary) > 10000;
+
+-- List all jobs whose minimum salary is greater than the average salary of all employees.
+
+-- select * from hr.EMPLOYEES where salary > (select avg(salary) from hr.EMPLOYEES);
+
+-- select avg(salary) from hr.EMPLOYEES;
+
+-- select sum(salary), department_id from hr.EMPLOYEES group by department_id order by sum(salary) asc;
+
+-- select sum(salary), department_id from hr.EMPLOYEES group by department_id HAVING DEPARTMENT_ID = 90;
+
+-- select sum(salary), department_id from hr.EMPLOYEES group by department_id HAVING min(salary) > ( select sum(salary), department_id from hr.EMPLOYEES group by department_id HAVING DEPARTMENT_ID = 90 ) ;
+
+SELECT DEPARTMENT_ID, SUM(SALARY) AS TOTAL_SALARY
+FROM hr.EMPLOYEES
+GROUP BY DEPARTMENT_ID
+HAVING SUM(SALARY) > (
+  SELECT SUM(SALARY)
+  FROM hr.EMPLOYEES
+  WHERE DEPARTMENT_ID = 90
+);
+
+-- select * from hr.EMPLOYEES where DEPARTMENT_ID = (select DEPARTMENT_ID from hr.EMPLOYEES where FIRST_NAME = 'Lex' );
+
+-- select * from hr.EMPLOYEES where salary > (select avg(salary) from hr.EMPLOYEES);
+
+-- select avg(salary) from hr.EMPLOYEES;
+
+-- SELECT j.job_title, j.min_salary FROM hr.jobs j WHERE j.min_salary > (SELECT AVG(e.salary) FROM hr.employees e);
+
+-- select DEPARTMENT_ID, sum(salary) from hr.EMPLOYEES group by DEPARTMENT_ID having DEPARTMENT_ID = 90; 
+
+-- sum(salary)
+-- select DEPARTMENT_ID, sum(salary) from hr.EMPLOYEES group by DEPARTMENT_ID having sum(salary) > (select DEPARTMENT_ID, sum(salary) from hr.EMPLOYEES group by DEPARTMENT_ID having DEPARTMENT_ID = 90);
+
+-- select JOB_ID from hr.EMPLOYEES where FIRST_NAME = 'Neena';
+select * FROM hr.employees where JOB_ID = (select JOB_ID from hr.EMPLOYEES where FIRST_NAME = 'Neena');
+
+-- SELECT * from hr.EMPLOYEES;
+
+-- select * from hr.DEPARTMENTS;
+
+-- SELECT FIRST_NAME, salary, DENSE_RANK() over(group by DEPARTMENT_ID) as ranking from hr.EMPLOYEES;
+SELECT EMPLOYEE_ID, FIRST_NAME, DEPARTMENT_ID, salary, DENSE_RANK() over(order by DEPARTMENT_ID) as ranking from hr.EMPLOYEES;
+
+SELECT * FROM hr.employees
+-- WHERE employee_id % 2 = 0;
+where mod(EMPLOYEE_ID, 2) = 0;
+
+-- SELECT *
+-- FROM hr.employees
+-- -- WHERE employee_id % 2 = 0; --Even records but wrong syntax
+-- where mod(EMPLOYEE_ID, 2) != 0;
+
+-- select * from hr.EMPLOYEES where job_id like 'SA%';
+
+-- select * from hr.EMPLOYEES;
+-- select employee_id, First_name,  hire_date, to_char(hire_date,'Month') from hr.EMPLOYEES;
+
+-- select * from hr.EMPLOYEES where salary > 8000;
+-- select EMPLOYEE_ID, FIRST_NAME, TRUNC(hire_date, 'month') from hr.employees;
+
+-- select FIRST_NAME, last_name from hr.employees;
+
+-- select * from hr.employees order by salary desc fetch first 7 rows only;
+
+-- select EMPLOYEE_ID, FIRST_NAME, TRUNC(hire_date, 'month'), salary , rank() OVER(order by salary desc) from hr.employees group by DEPARTMENT_ID;
+
+-- select  department_id, salary , rank() OVER(order by salary desc) from hr.employees;
+--  group by DEPARTMENT_ID;
+
+-- select FIRST_NAME, department_id, salary , dense_rank() OVER(order by salary desc) as ranking from hr.employees fetch first 7 rows only;
+
+-- select * from hr.EMPLOYEES where FIRST_NAME like 'A%';
+
+select * from hr.employees order by hire_date asc;
+
+-- select * from hr.employees;
+
+-- select * from hr.employees order by hire_date asc;
+
+-- select * from hr.employees where department_id in(10, 20, 50);
+
+-- select * from hr.employees where salary between 6000 and 9000;
+-- between (6000, 9000);
+
+-- select * from hr.EMPLOYEES where DEPARTMENT_ID in(10 , 20, 50);
+
+-- select count(*), HIRE_DATE from hr.EMPLOYEES group by HIRE_DATE; --a wrogn approach
+-- select count(*) , EXTRACT(YEAR FROM HIRE_DATE) from hr.EMPLOYEES group by EXTRACT(YEAR FROM HIRE_DATE);
+
+-- select * from hr.EMPLOYEES where COMMISSION_PCT is null;
+
+-- select * from hr.EMPLOYEES where MANAGER_ID is null;
+
+-- select * from hr.EMPLOYEES where MANAGER_ID = 100;
+
+-- select * from hr.EMPLOYEES where EXTRACT(MONTH FROM hire_date) = 6;
+
+-- select * from hr.EMPLOYEES where salary not between 5000 and 10000;
+-- select * from hr.EMPLOYEES where salary not between 5000 and 10000 ORDER by SALARY;
+
+-- select * FROM hr.EMPLOYEES where FIRST_NAME like '_a%';
+select * from hr.LOCATIONS where city like '%o%';
+
+  -------------------HNY26------------------
+--SELECT * FROM Customers;
+
+-- select * from hr.EMPLOYEES where FIRST_NAME like 'S%'; 
+
+-- select * from hr.employees where department_id between (60, 90);
+
+-- SELECT * FROM hr.employees WHERE department_id IN (10, 20, 50);
+
+--select first_name, last_name from hr.employees where salary > 8000 order by salary asc;
+
+select first_name, last_name, DEPARTMENT_ID, salary from hr.employees where salary > 8000 order by salary asc;
+
+---select * from Customers c inner join Orders o on c.customer_id = o.customer_id;
+
+---select * from Customers c left join Orders o on c.customer_id = o.customer_id;
+
+select * from Customers c right join Orders o on c.customer_id = o.customer_id;
+
+--create table Hello(
+  --id int auto_increament primary key,
+--message varchar(26) );
+
+---insert into Hello values (1,'Good Morning');
+--insert into Hello values (2,'How are you?');
+--insert into Hello values (3,'I am fine'),(4,'Doing well');
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+//data analystic SQL required
+
+A solid intermediate level of SQL knowledge is generally required for a data analyst. Data analysts often use SQL daily to extract, clean, manipulate, and analyze data from relational databases. [1, 2, 3]  
+While basic skills might suffice for entry-level roles, a competitive candidate should be proficient in core to advanced concepts. [2, 4]  
+Essential SQL Skills for Data Analysts | Skill Category [2, 5, 6, 7, 8, 9, 10] | Specific Concepts | Importance  |
+| --- | --- | --- |
+| Core Querying | , , , , , , | Crucial for basic data retrieval, filtering, sorting, and aggregation.  |
+| Combining Data | , , , , | Essential for combining data from multiple tables, which is a very frequent task.  |
+| Data Manipulation | , ,  (DML) | Useful for managing data, though primarily used for data extraction and analysis in an analyst role.  |
+| Data Cleaning | statements,  (for handling  values), string/date manipulation functions | Important for transforming messy real-world data into a usable format.  |
+| Advanced Techniques | Subqueries, Common Table Expressions (CTEs), Window Functions (e.g., , ,  over a window) | Key differentiator between beginners and job-ready analysts, enabling complex analysis like running totals and moving averages.  |
+| Performance | Basic understanding of indexes and query optimization | Helpful for writing efficient queries when dealing with very large datasets.  |
+
+Summary In essence, a data analyst "lives and breathes" SQL. The goal is to move beyond basic syntax to a point where you can confidently and efficiently retrieve and structure data to answer complex business questions. Pay close attention to the job description for specific requirements, as the exact skill set can vary slightly by company and industry. [2, 11, 12]  
+
+AI responses may include mistakes.
+
+[1] https://www.quora.com/How-much-level-of-SQL-knowledge-is-required-for-data-analytics
+[2] https://www.reddit.com/r/datascience/comments/15ih6lk/how_much_sql_should_a_data_analyst_know/
+[3] https://www.quora.com/How-often-do-you-use-SQL-as-a-data-scientist-daily-weekly-monthly-or-never
+[4] https://www.linkedin.com/posts/elijahbutler_how-much-sql-do-you-need-to-learn-to-land-activity-7265033308487524352-jguP
+[5] https://www.quora.com/If-I-want-to-be-a-data-analyst-what-part-of-SQL-do-I-need-to-have-expertise-Do-I-have-to-learn-store-procedures-triggers-functions-to-be-a-data-analyst
+[6] https://www.linkedin.com/posts/data-dawn_how-much-sql-do-you-need-to-land-your-first-activity-7272602703740956672-s6g_
+[7] https://www.reddit.com/r/datascience/comments/15ih6lk/how_much_sql_should_a_data_analyst_know/
+[8] https://www.geeksforgeeks.org/blogs/top-data-analyst-skills-you-need-to-get-hired/
+[9] https://uniathena.com/top-sql-concepts-data-analysts-should-know
+[10] https://www.freecodecamp.org/news/sql-concepts-for-data-analysts/
+[11] https://www.youtube.com/watch?v=xy-PW7HjHU0
+[12] https://www.linkedin.com/pulse/top-courses-resources-data-analysts-beginner-karthik-pandiyan-7f1qc
+
