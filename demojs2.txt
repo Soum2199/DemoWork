@@ -1,0 +1,252 @@
+// complete javascript
+
+
+function outerFunc() {
+  let count = 1;
+  function innerFunc() {
+    count++;  
+    console.log(count);
+    }
+    return innerFunc();
+}
+let randomly = outerFunc()
+
+randomly;
+randomly;
+randomly;
+
+//tried doing them
+randomly();
+randomly();
+randomly();
+
+
+//JS Codes by North American Sir
+
+function je1(callback){
+    //call
+    setTimeout(()=>{
+        console.log("my j1 outputs.");
+        callback();
+    }, 1500)
+}
+
+function je2(){
+    console.log("j2 outputs")
+}
+je1(je2);
+
+// let a = "1234.56ab"
+// let numA = parseInt(a)
+// console.log(numA)
+// let numB = parseFloat(a)
+// console.log(numB)
+
+// let b = "abc1234.567"
+// let numC = parseInt(b)
+// console.log(numC, typeof numC) //NaN
+// let numD = parseFloat(b)
+// console.log(numD) // NaN
+
+// console.log("is Nan of number A: ",isNaN(numA));
+// console.log(isFinite(numA))
+// console.log("number B is a finite number, so its ", isFinite(numB))
+// console.log("number C is not a number, hence ", isFinite(numC))
+// console.log("numb D not a number, so ", isFinite(numD))
+
+// console.log(1/0) //infinite
+
+// let hi = 1+2*3/4;
+// console.log(eval(hi))
+// let hey = 2+5*6-1
+// console.log(eval(hey))
+
+
+// function greet(){
+//     console.log("Hello")
+// }
+// // let times = setTimeout(()=> greet(), 2000);
+// // console.log(numA)
+// // let times2 = setInterval(()=> greet(), 1500);
+
+
+// let age = 101
+
+// if(age >= 18){
+//     console.log("You can vote")
+// } else if(age >=13 && age < 18){
+//     console.log("You're a teenager, still young")
+// }
+// else if(age > 99){
+//     console.log("too old to vote")
+// }
+// else{
+//     console.log("too young to vote")
+// }
+
+let a = "Suraiyya"
+console.log(typeof a)
+let b = 45
+console.log(typeof b)
+let c = true
+console.log(typeof c)
+let d = 34.56
+console.log(typeof d)
+let e = {mid: 1, naam: "Dena", citi: "Goa"}
+console.log(e)
+console.log(typeof e)
+let f = null
+console.log(f,typeof f)
+let g
+console.log(g, typeof g)
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+// function tester(){
+//     alert("Hello I am an alert box");
+// }
+
+// tester();  window.confirm()
+
+function tester(){
+    var message;
+    // if(confirm("you pressed a button")){
+    if(window.confirm("you pressed a button")){
+        message = "You pressed OK";
+    }
+    else{
+        message = "You pressed cancel";
+    }
+    console.log(message)
+}
+
+tester();
+-----------------------------------------------------------------------------------------------------------------------------
+
+//my html codes
+
+<!DOCTYPE html>   
+<!--this will tell the webpage that we are using the latest version of html.-->
+<html>
+  <head>
+    <title>Hello, World!</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      h1{
+        z-index: 50;
+      }
+    </style>
+  </head>
+  <body>
+<div>
+  <h1 style="color:blue; background-color:cyan;">hello</h1>
+  <h1 style="color:red; background-color:yellow;">hello</h1>
+  <h1 style="color:green; background-color:pink;">hello</h1>
+  <form action="/server" method="get" accept-charset="utf-8">
+    <label for="names">Enter Name:</label> <input type="text" name="names" id="names" required />
+    <label for="mail">Enter Email:</label> <input type="email" name="mail" id="mail" required />
+  </form>
+</div>
+<h2>List of fruits</h2>
+<ul>
+  <li>Apple <a href="https://images.unsplash.com/photo-1630563451961-ac2ff27616ab?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">see an apple</a></li>
+  <li>Orange <a href="https://images.unsplash.com/photo-1576181177940-cb8592693079?q=80&w=1175&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">see an orange</a></li>
+  <li>Mango <a href="https://images.unsplash.com/photo-1673010960635-d0d1ad81b90a?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">see a mango</a></li>
+</ul>
+
+<p title="hie">formula for glucose is C<sub>6</sub>H<sub>12</sub>O<sub>6</sub></p>
+
+      <script src="script.js"></script>
+  </body>
+</html>
+
+
+  <!-- <!DOCTYPE html>   it is used to tell the webpage that we are using the latest
+  version of html. rel="stylesheet" where rel is an attribute and 
+  stylesheet is my value. Now in a tag, href is abberviated as hypertext reference. -->
+
+mongodb+srv://<db_username>:<db_password>@myproj.ibr22y8.mongodb.net/?appName=MyProj
+mongodb+srv://sweat2:VTYQ5pWS0F7pZYrl@myproj.ibr22y8.mongodb.net/Person?appName=MyProj
+npm install -D tailwindcss@3
+
+
+fetch() .then .catch
+//one method
+
+const any_variable = await something_func()
+//second method, remember that the function should be async function 
+http://localhost:3456/hi
+
+for(char ch: s.toCharArray()){
+if()
+}
+select * from hr.EMPLOYEES where FIRST_NAME like 'S%'; 
+
+-----------------------------------------------------------------------------------------------
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+      <h1 class="title">Hello World!</h1>
+      <p id="currentTime"></p>
+      <a href="https://www.facebook.com">facebook me</a>
+      <a href="https://www.google.com">google me</a>
+       <br />
+      <video src="https://www.youtube.com/live/ctoz-rNrNJg?si=PPSN4KaDccr-oROL" controls></video>
+      
+      <table border="1">
+        <thead>
+  <tr>
+    <th>hey</th>
+    <th colspan="2">there</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>Hello</td>
+    <td>World</td>
+    <td>here</td>
+  </tr>
+  <tr>
+    <td>Happy</td>
+    <td>Sunday</td>
+    <td>to all</td>
+  </tr>
+</tbody>
+      </table>
+      <script src="script.js"></script>
+  </body>
+</html>
+
+
+-----------------------------------------------------------------------------------------------------------------------
+# Summary of Key Differences
+
+    Mutability: The most critical difference is that lists and dictionaries are mutable, meaning you can add, remove, or change items after creation. Tuples are immutable; their contents cannot be changed once created.
+    Access Method: Lists and tuples use zero-based integer indexing to access elements. Dictionaries use unique, immutable keys (like strings or numbers) to access their associated values.
+    Structure: Lists and tuples are sequences of elements. Dictionaries are a mapping of unique keys to values (key-value pairs). 
+
+Choosing the right data structure depends on the specific needs of your program, such as whether the data needs to be fixed, requires fast lookups by a label, or needs to maintain a specific order. 
+
+# s = input("Enter something: ")
+# print(s)
+# print("On reversing the string\n" + s[::-1] + "\n") #reversing the string
+# print(s[1:2:3])
+
+a = [1,2,3,4]
+print(a)
+print(type(a))
+print("Its a List data type.\n\n")
+b = {1,2,3,4}
+print(b)
+print(type(b))
+print("\n")
+
+# c = [1 2 3 4]
+# print(c)
+# print(type(c))
+

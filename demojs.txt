@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Practice.</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+      <h1>Hello World! </h1>
+      <h2>Hello World! </h2>
+            <h3>Hello World! </h3>
+      <h4>Hello World! </h4>
+            <h5>Hello World! </h5>
+      <h6>Hello World! </h6>
+      <p>my i d is in current times.</p>
+      <span>My id is here with me.</span>
+      <em>Hola amigos.</em>
+      <input type="text" name="hi" id="hi" value="" />
+      <br />
+      <hr />
+      <pre>
+    hello World!.    
+      </pre>
+      <strong>Hello World!</strong>
+      <ul>
+        Whom to love?
+        <li>Mother</li>
+        <li>Father</li>
+        <li>Yourself</li>
+      </ul>
+      <button type="submit">Submit.</button>
+      <!--<script src="script.js"></script>-->
+  </body>
+</html>
+
+--------------------------------------------------------------------------------------------------------------------
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+      <!--<h1 class="title">Hello World! </h1>-->
+      <!--<pre id="currentTime"></pre>-->
+      <h3>Hello &pi;</h3>
+      <p>Hello &lsquo; hi &rsquo;</p>
+      <hr />
+      <h1>Our Office</h1>
+<h2>Our Office</h2>
+<h4>Our Office</h4>
+<h5>Our Office</h5>
+<h6>Our Office</h6>
+<p>PLease contact our customer care number at  1800-202-365 or write to us at care@wayfares.com</p>
+<p> <u> Business timings</u>: Monday through Saturday 9.30 AM to 6.30 PM. <SPAN style="color: red;">Closed on Sundays and National Holidays</SPAN></p>
+<hr />
+<h1>List of Area formulas:</h1>
+<ol>
+  <li>Area of a square: a<sup>2</sup>.</li>
+  <li>Area of rectangle:  lb.</li>
+  <li>Area of a circle: &pi;r<sup>2</sup>.</li>
+  <li>Syrface Area of a sphere: 4&pi;r<sup>2</sup>.</li>
+</ol>
+<hr />
+<h3>Our Office</h3>
+<p>Please contact our customer care center at <strong>1800-202-365</strong> or write to us at <b><i>care@wayfares.com</i></b>. <br /> <strong><u> Business timings</u>:</strong> Monday through Saturday 9.30 AM to 6.30 PM. Closed on Sundays and National Holidays.</p>
+<div>
+  <strong>Wayfare ltd. </strong><br /> <em> Electronics City, <br />Hosur Road, <br /> Bangalore - 560 100. </em>
+  <br /> <br /> <b> Coorporate Office: </b><br /> <i> Travel Towers, <br /> 1st Floor, &quot;B&quot; Wing, <br />Navi Mumbai, <br />Mumbai - 400 018. </i>
+</div>
+      <script src="script.js"></script>
+  </body>
+</html>
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello World.</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h3>Our Offices</h3>
+    </header>
+    <br />
+    <p>Please contact our customer care center at <strong><mark>1800-202-366</mark></strong> or write to us at <strong><em>care@wayfare.in</em></strong> <br /> <br />
+    <strong><u> <del>Business</del> <ins>Office</ins> timings:</u></strong> Monday through Saturday 9.30 AM to 6.30 PM. Closed on Sundays and National Holidays.
+    </p>
+    <hr />
+        <blockquote cite="https://www.example.com/source-document.html">
+        <p>This is a longer quotation that spans multiple lines and is set apart from the main text.</p>
+        <p>It can include multiple paragraphs within the blockquote.</p>
+    </blockquote>
+    
+    <br />
+    <p>As Shakespeare wrote, <q>All the world's a stage.</q></p>
+	<br />
+        <p>HTML stands for <abbr title="Hyper Text Markup Language.">HTML</abbr>.</p>
+<br />
+        <p>As Shakespeare wrote, <q>All the world's a stage.</q></p>
+    <br />
+        <p>HTML stands for <abbr title="Hyper Text Markup Language.">HTML</abbr>.</p>
+     <fieldset>
+       <legend>Hello world</legend>
+       <a href="mailto:joe@example.com?subject=feedback">email me here</a>
+       <caption>Hey there</caption>
+     </fieldset>
+  
+      <script src="script.js"></script>
+  </body>
+</html>
+
+<!--<cite>hello there</cite>-->
+<!--SweetyPani@#21999-->
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+
+console.log("Try programiz.pro");
+
+function leaps(year) {
+    // let yk = ((year %4 === 0) || (year %100 != 0) || (year %400 ===0));
+    let yk = (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
+    return yk;
+}
+console.log(leaps(1976))
+console.log(leaps(1966))
+console.log(leaps(1999))
+console.log(leaps(2004))
+console.log("----------------\n" + leaps(2025))
+console.log(leaps(2026))
+

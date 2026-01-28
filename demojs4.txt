@@ -1,0 +1,79 @@
+// javaScript from senior
+
+
+
+let animals = [
+    {
+        id:1,
+        name: "dog"
+    },
+    {
+        id:2,
+        name: "cat"
+    },
+    {
+        id:3,
+        name: "mouse"
+    }];
+
+let anim = animals.find((ite)=>{
+    return ite.id ==2;
+});
+
+console.log(anim);
+// ------------------------------------------------------------
+const arrg = [3,4,4,5,8,8,10,11,30];
+const results = arrg.filter((val, idx)=>{
+    return arrg.indexOf(val) === idx;
+});
+console.log(results);
+// ------------------------------------------------------------
+let fruits = ["apple", "mango", "apple", "orange", "mango", "mango"];
+let uniqueArr = [...new Set(fruits)];
+// let uniqueArr = new Set(...fruits);
+console.log(uniqueArr);
+// ------------------------------------------------------------
+let arrr = [1,2,2,3,4,5,5,6];
+let unique = [];
+for(let i=0; i<arrr.length; i++){
+    if(unique.indexOf(arrr[i]) === -1){
+        unique.push(arrr[i]);
+    }
+}
+console.log(unique)
+// ------------------------------------------------------------
+const arr = [1,2,3,2,3,4,3,4];
+const user = arr.reduce((acc, curr)=>{
+    if(!acc.includes(curr)){
+        acc.push(curr);
+    }
+    return acc;
+}, []);
+console.log(user)
+// ------------------------------------------------------------
+
+// let arrr = [1,2,2,3,4,5,5,6];
+// let unique = [];
+// for(let i=0; i<arrr.length; i++){
+//     if(unique.indexOf(arrr[i]) === -1){
+//         unique.push(arrr[i]);
+//     }
+// }
+// console.log(unique)
+
+// const arr = [1,2,3,2,3,4,3,4];
+// const user = arr.reduce((acc, curr)=>{
+//     if(!acc.includes(curr)){
+//         acc.push(curr);
+//     }
+//     return acc;
+// }, []);
+// console.log(user)
+
+let ar = [1,2, 3,3, 4, 5,5, 6];
+let duplicate = [];
+for(let i=0; i<ar.length; i++){
+    if(duplicate.includes(i)){
+        duplicate.push(i)
+    }
+}

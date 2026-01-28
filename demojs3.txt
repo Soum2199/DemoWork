@@ -1,0 +1,127 @@
+// today dated 10th jan 2k26
+
+
+// console.log("Try programiz.pro");
+// let 
+// export const ListDemo = () =>{
+//     const names = ["hii", "hey"]
+//     return (
+//         <h1 class="title">Hello World!</h1>
+//         ul
+//     names.map (nam => li key {nam} /li)    li 
+        
+//         );
+// }
+////----------------------------------------------------------------------
+let reg = /^[0-9]/gim;
+console.log(reg.test(5))
+console.log(reg.test("tysm"))
+console.log(reg.test("5"))
+
+//  find longest string from the array
+let arr = ["w", "we", "wear"];
+let longest = "";
+
+for (let s of arr){
+    if(s.length > longest.length){
+        longest = s;
+    }
+} 
+console.log("-------------------\n" + longest);
+
+///----------------------------------------------------------
+
+// console.log("hello World")
+
+// let a = "1234.56ab"
+// let numA = parseInt(a)
+// console.log(numA)
+// let numB = parseFloat(a)
+// console.log(numB)
+
+// let b = "abc1234.567"
+// let numC = parseInt(b)
+// console.log(numC, typeof numC) //NaN
+// let numD = parseFloat(b)
+// console.log(numD) // NaN
+
+// console.log("is Nan of number A: ",isNaN(numA));
+// console.log(isFinite(numA))
+// console.log("number B is a finite number, so its ", isFinite(numB))
+// console.log("number C is not a number, hence ", isFinite(numC))
+// console.log("numb D not a number, so ", isFinite(numD))
+
+// console.log(1/0) //infinite
+
+// let hi = 1+2*3/4;
+// console.log(eval(hi))
+// let hey = 2+5*6-1
+// console.log(eval(hey))
+
+
+// function greet(){
+//     console.log("Hello")
+// }
+// // let times = setTimeout(()=> greet(), 2000);
+// // console.log(numA)
+// // let times2 = setInterval(()=> greet(), 1500);
+
+
+// let age = 101
+
+// if(age >= 18){
+//     console.log("You can vote")
+// } else if(age >=13 && age < 18){
+//     console.log("You're a teenager, still young")
+// }
+// else if(age > 99){
+//     console.log("too old to vote")
+// }
+// else{
+//     console.log("too young to vote")
+// }
+
+let a = "Suraiyya"
+console.log(typeof a)
+let b = 45
+console.log(typeof b)
+let c = true
+console.log(typeof c)
+let d = 34.56
+console.log(typeof d)
+let e = {mid: 1, naam: "Dena", citi: "Goa"}
+console.log(e)
+console.log(typeof e)
+let f = null
+console.log(f,typeof f)
+let g
+console.log(g, typeof g)
+//-----------------------------------------------------------------------------------------------------------------------
+
+// let ra = ["Ranu", "Gitu", "Sai", "Sweety", "Muffins", "Cupcake", "Pizza"];
+let ra = [1,2,4,8, 16, 32]
+let n = ra.length
+for (let i=0; i<n/2; i++){
+    let temp = ra[n-i-1]
+    ra[n-i-1] = ra[i]
+    ra[i] = temp;
+}
+
+console.log(ra);
+// output:  [ 32, 2, 4, 8, 16, 1 ]
+-------------------------------------------------------------------------------------------
+
+let arr1 = [1,2,3,4]
+let arr2 = [6,7,8,9]
+
+arr2.reverse()
+console.log(arr2)
+console.log("--===------===--===-------===--")
+
+const user = []
+
+for(let i=0; i<arr2.length; i++){
+    user.push([arr2[i], arr1[i]])
+}
+console.log(user)
+console.log(user.flat(4))
