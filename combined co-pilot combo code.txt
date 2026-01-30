@@ -1,0 +1,259 @@
+//combined co-pilot combo code
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1 class="title">Tic Tac Toe</h1>
+    <h6 id="themeToggle" title="Toggle theme">Toggle theme</h6>
+
+    <h3 id="status" aria-live="polite"></h3>
+
+    <div class="contain">
+      <main id="board" role="grid" aria-label="Tic Tac Toe board">
+        <div class="box" id="0" role="gridcell" tabindex="0" aria-label="Cell 1"></div>
+        <div class="box" id="1" role="gridcell" tabindex="0" aria-label="Cell 2"></div>
+        <div class="box" id="2" role="gridcell" tabindex="0" aria-label="Cell 3"></div>
+        <div class="box" id="3" role="gridcell" tabindex="0" aria-label="Cell 4"></div>
+        <div class="box" id="4" role="gridcell" tabindex="0" aria-label="Cell 5"></div>
+        <div class="box" id="5" role="gridcell" tabindex="0" aria-label="Cell 6"></div>
+        <div class="box" id="6" role="gridcell" tabindex="0" aria-label="Cell 7"></div>
+        <div class="box" id="7" role="gridcell" tabindex="0" aria-label="Cell 8"></div>
+        <div class="box" id="8" role="gridcell" tabindex="0" aria-label="Cell 9"></div>
+      </main>
+
+      <div class="controls">
+        <button type="button" id="reseti">Restart game</button>
+        <p id="turns" aria-live="polite"></p>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
+
+:root{
+  --screen: #fefefe;
+  --text:  #010101;
+  --title: #AC45C6;
+  --lines: blue;
+  --boxHover: lemonchiffon;
+  --button: #089e0a;
+  --win-bg: #ffd54d;
+}
+
+body{
+  padding: 12px;
+  text-align: center;
+  background-color: var(--screen);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.title {
+  color: var(--title);
+  margin: 6px 0;
+}
+
+h6{
+  font-size: 14px;
+  cursor: pointer;
+  margin: 6px 0 12px;
+  display: inline-block;
+  color: #666;
+}
+
+.contain{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+main{
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 0;
+  width: 312px;
+  height: 310px;
+  align-items: center;
+  justify-items: center;
+}
+
+.box{
+  cursor: pointer;
+  font-size: 64px;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 98px;
+  width: 99px;
+  border: 1px solid var(--lines);
+  border-radius: 2px;
+  user-select: none;
+  background-color: transparent;
+  transition: background-color 0.18s ease, transform 0.08s ease;
+}
+
+.box:hover{
+  background-color: var(--boxHover);
+  transform: translateY(-1px);
+}
+
+.box.win {
+  background-color: var(--win-bg);
+}
+
+.controls{
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+button{
+  cursor: pointer;
+  font-size: 16px;
+  border: 2px dashed ivory;
+  margin: 5px;
+  padding: 6px 12px;
+  color: var(--screen);
+  background-color: var(--button);
+  border-radius: 4px;
+}
+
+.darky{
+  --screen: #010101;
+  --text: #fefefe;
+  --title: #1aeb21;
+  --lines: yellow;
+  --boxHover: #280396;
+  --button: #f58ebb;
+  --win-bg: #8b2be2;
+}
+
+
+const turns = document.getElementById('turns');
+const boxes = Array.from(document.querySelectorAll(".box"));
+const status = document.getElementById("status");
+const reseti = document.getElementById('reseti');
+const themeToggle = document.getElementById('themeToggle');
+
+let currentPlayer = "X";
+let arr = Array(9).fill(null);
+let winnerStatus = false;
+let winningLine = null;
+
+// initial UI
+updateTurnText();
+status.textContent = '';
+
+function updateTurnText() {
+  turns.textContent = winnerStatus ? '' : `${currentPlayer}'s turn`;
+}
+
+function checkWin() {
+  const combos = [
+    [0,1,2],
+    [3,4,5],
+    [6,7,8],
+    [0,3,6],
+    [1,4,7],
+    [2,5,8],
+    [0,4,8],
+    [2,4,6]
+  ];
+
+  for (let combo of combos) {
+    const [a,b,c] = combo;
+    if (arr[a] && arr[a] === arr[b] && arr[b] === arr[c]) {
+      winnerStatus = true;
+      winningLine = combo;
+      status.textContent = `${arr[a]} is the winner!`;
+      highlightWinning(combo);
+      return;
+    }
+  }
+
+  // Check draw
+  if (arr.every(cell => cell !== null)) {
+    status.textContent = "Game is a draw";
+    winnerStatus = true; // disable further moves
+  }
+}
+
+function highlightWinning(combo) {
+  combo.forEach(i => {
+    const el = document.getElementById(String(i));
+    if (el) el.classList.add('win');
+  });
+}
+
+function swapPlayers() {
+  currentPlayer = currentPlayer === "X" ? "O" : "X";
+  updateTurnText();
+}
+
+function handleBoxClick(e) {
+  const idx = Number(this.id);
+  if (winnerStatus) return; // stop if game over
+  if (arr[idx] !== null) return; // already filled
+
+  arr[idx] = currentPlayer;
+  this.textContent = currentPlayer;
+
+  checkWin();
+
+  if (!winnerStatus) {
+    swapPlayers();
+  }
+}
+
+// keyboard accessibility: press Enter or Space to play when box focused
+function handleBoxKeydown(e) {
+  if (e.key === 'Enter' || e.key === ' ') {
+    e.preventDefault();
+    this.click();
+  }
+}
+
+// attach events
+boxes.forEach(box => {
+  box.addEventListener('click', handleBoxClick);
+  box.addEventListener('keydown', handleBoxKeydown);
+});
+
+reseti.addEventListener("click", function () {
+  currentPlayer = "X";
+  arr = Array(9).fill(null);
+  winnerStatus = false;
+  winningLine = null;
+  boxes.forEach(b => {
+    b.textContent = "";
+    b.classList.remove('win');
+  });
+  status.textContent = '';
+  updateTurnText();
+});
+
+// theme toggle (guarded)
+if (themeToggle) {
+  themeToggle.addEventListener("click", function () {
+    document.body.classList.toggle("darky");
+    themeToggle.classList.toggle("darky");
+  });
+}
+
+Sweat2
+wcJDf4JtxTFcNPHc
+mongodb+srv://<db_username>:<db_password>@myproj.ibr22y8.mongodb.net/?appName=MyProj
+mongodb+srv://Sweat2:wcJDf4JtxTFcNPHc@myproj.ibr22y8.mongodb.net/yourfile?appName=MyProj
