@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="styles.css" />
+    
+  </head>
+  <body>
+    <h1>tic tac toe</h1>
+    <div class="container">
+      <main>
+      <div class="box" id="0"></div>
+      <div class="box" id="1"></div>
+<div class="box" id="2"></div>
+<div class="box" id="3"></div>
+<div class="box" id="4"></div>
+<div class="box" id="5"></div>
+<div class="box" id="6"></div>
+<div class="box" id="7"></div>
+<div class="box" id="8"></div>
+</main>
+<button type="reset" id="reset">restart game.</button>
+    </div>
+      <script src="script.js"></script>
+  </body>
+</html>
+
+
+
+body{
+  padding: 2px;
+  text-align: center;
+  background-color:  #cceeff;
+}
+
+h1 {
+	color: var(--title);
+	text-shadow: -1px 2px 26px var(--text);
+}
+
+button{
+  padding: 4px 6px;
+  border: 1px solid hotpink;
+}
+
+.box{
+  border: 1px solid  red;
+  height: 100px;
+  width: 102px;
+}
+
+main{
+  height: 305px;
+  width:  307px;
+  border: 1px solid  green;
+}
+
+
+
+
+// const inputs = document.getElementById("pass")
+// const button = document.querySelector("button")
+
+// button.addEventListener("click", function(){
+//   if(inputs.type == "text"){
+//     button.innerText = "Show"
+//     inputs.type = "password"
+//   }
+//   else {
+//     button.innerText = "Hide"
+//     inputs.type = "text"
+//   }
+// })
+
+let currentPlayer = "X"
+let isWinner = false
+
+const reset = document.getElementById("reset")
+
+const boxes = document.querySelectorAll(".box")
+
+let arrays = boxes.Array(fill(9).null)
+
+boxes.addEventListener("click", function(i){
+  // i.
+})
+
+function TicTacToeGame(i) {
+  // i
+  i.addEventListener(){}
+}
+
+function swapPlayers(){
+  currentPlayer = currentPlayer == "X" ? "O" : "X";
+}
+
+function 
+
+reset.addEventListener("click", function() {
+  currentPlayer = "X";
+  
+})
