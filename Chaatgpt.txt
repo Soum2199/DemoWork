@@ -1,0 +1,650 @@
+Perfect! If your folder is named **`Demoes`** and it contains your `index.html`, `styles.css`, and `script.js` directly inside it — then you're **already set up correctly** for deployment on Render.
+
+---
+
+## ✅ Folder Structure
+
+```
+Demoes/
+├── index.html
+├── styles.css
+└── script.js
+```
+
+✅ This means the **root directory is `Demoes/`**, and your **`index.html` is in the root** — exactly what Render needs.
+
+---
+
+## 🚀 Deployment Steps on Render (for your `Demoes` folder)
+
+Assuming you’ve pushed this folder as a GitHub repository:
+
+### 🔧 Render Configuration
+
+When creating a **Static Site** on [https://render.com](https://render.com):
+
+| Field                 | Value                                       |
+| --------------------- | ------------------------------------------- |
+| **Repository**        | `Demoes` (or whatever you named the repo)   |
+| **Branch**            | `main` or `master`                          |
+| **Build Command**     | *(leave blank)*                             |
+| **Publish Directory** | `.` *(this points to the root = `Demoes/`)* |
+
+Then click **“Create Static Site”**.
+
+Render will fetch your files and deploy them to a live link like:
+
+```
+https://demoes.onrender.com
+```
+
+(or something similar — you can rename it later if you want).
+
+---
+
+## 🧪 Test Before Deploying (Optional)
+
+To double-check before deploying:
+
+1. Open your folder
+2. Double-click `index.html`
+3. It should launch and play fine in your browser
+
+If it works locally, it’ll work on Render — as long as your folder structure stays like this:
+
+```
+Demoes/
+├── index.html
+├── styles.css
+└── script.js
+```
+
+---
+
+Let me know if you want help pushing your folder to GitHub or deploying directly — I can walk you through that step too.
+
+
+let s = "Try programiz.pro"
+console.log(s.length);
+
+console.log("------------------------------------")
+
+function add(a,b){
+    console.log(a+b)
+}
+add(5,7)
+
+console.log("------------------------------------")
+
+function addy(a,b){
+    return a+b
+}
+console.log(addy(3,7))
+
+console.log("------------------------------------")
+
+
+https://tictactoesgame.onrender.com
+
+https://justdemoexno.onrender.com
+
+https://reactive-tsvite-assignment.onrender.com
+
+https://simpletheme.onrender.com
+
+https://mystopwatchinghtm.onrender.com
+
+
+I can help you absolutely crush it in DSA (data structures & algorithms) so you become visibly excellent, earn respect, and leave people impressed — but done the mature way: by getting better, faster, and demonstrating real skill.
+
+Below is a practical, no‑BS plan to become outstanding in DSA and stand out at school or work — while keeping your integrity intact.
+
+# 12‑Week DSA roadmap to become outstanding
+
+(Adjust pace to your current level — faster if you already know basics.)
+
+## Week 0 — setup & baseline
+
+* Create accounts: LeetCode, Codeforces, AtCoder, HackerRank.
+* Install tools: VS Code, Node/Python, Git.
+* Take a 1–2 hour baseline: solve 3 problems (easy/medium/hard) to see where you stand.
+* Goal: know current strengths/weaknesses.
+
+## Weeks 1–4 — fundamentals & implementation
+
+Daily: 60–90 minutes (longer on weekends).
+
+Core topics:
+
+* Arrays & strings — two pointers, sliding window
+* Linked lists — reversal, merge, detect cycle
+* Stacks & queues
+* Recursion & backtracking basics
+* Hash maps/sets
+
+Practice:
+
+* Solve 10–15 problems/week (mix easy & medium).
+* Implement each data structure from scratch at least once.
+* For each solved problem, write a short explanation: idea, complexity, edge cases.
+
+Resources:
+
+* “Grokking the Coding Interview” patterns
+* LeetCode Explore sections
+* Easy/Medium tagged problems
+
+## Weeks 5–8 — intermediate topics & problem patterns
+
+Daily: 90–120 minutes.
+
+Core topics:
+
+* Trees (BSTs), traversals, lowest common ancestor
+* Heaps / priority queues
+* Graph fundamentals: BFS/DFS, shortest path (BFS-weighted, Dijkstra)
+* Dynamic Programming (1D/2D DP, memoization vs tabulation)
+* Greedy algorithms
+
+Practice:
+
+* 15–20 problems/week (mix medium and start medium-hard).
+* Begin contest practice: 1 short contest/week on Codeforces/AtCoder.
+* Analyze solutions thoroughly — if stuck, read editorial and reimplement.
+
+Resources:
+
+* “Cracking the Coding Interview” (selected chapters)
+* CLRS (for theory), but focus on problem practice
+* YouTube: William Fiset (graphs), Errichto/Neal for contest thinking
+
+## Weeks 9–12 — advanced topics & polish
+
+Daily: 120+ minutes (include timed practice).
+
+Core topics:
+
+* Advanced graphs: SCC, topological sort, union-find
+* Advanced DP (bitmask, DP on trees)
+* Segment trees / Fenwick trees (BIT)
+* String algorithms basics (KMP, rolling hash)
+* Complexity trade-offs and memory optimization
+
+Practice:
+
+* 1–2 contests/week (increase speed).
+* Solve 5–10 medium-hard problems/week and 2 hard problems.
+* Start mock interviews: 2–3 sessions with peers or platforms.
+
+Resources:
+
+* “Competitive Programming 3” (Halim) for contest algorithms
+* LeetCode Hard problems list (pick staple ones)
+* CP-algorithms.com for templates
+
+---
+
+# Daily micro-routine (example)
+
+* 10 min: review notes / read one pattern
+* 40–60 min: solve 1–2 new problems (timed for 30–45 min on one)
+* 15–30 min: read editorial/optimize solution
+* 10 min: write a short explanation and commit code to a repo
+
+---
+
+# How to practice effectively (not just grind)
+
+* **Quality over quantity.** Spend as much time understanding *why* a solution works as coding it.
+* **Re-implement** each solution without looking after 2–3 days.
+* **Master patterns** (sliding window, two pointers, binary search on answer, DP state design).
+* **Learn templates** for common structures (segment tree, DSU).
+* **Participate in contests** even if you get 0 solves at first — the exposure is gold.
+* **Keep a notebook** (digital) with concise writeups for each problem you learn.
+
+---
+
+# Concrete problem targets (examples)
+
+* Arrays/Strings: Two Sum, Longest Substring Without Repeating Characters
+* Linked List: Reverse Linked List, Merge Two Sorted Lists
+* Trees: Binary Tree Inorder, Lowest Common Ancestor
+* Graphs: Number of Islands, Dijkstra examples
+* DP: Climbing Stairs → Knapsack → Longest Increasing Subsequence
+* Advanced: Range Sum Query (Fenwick/Segment Tree), Word Ladder, KMP examples
+
+(You’ll find these as classic LeetCode problems — search tags.)
+
+---
+
+# How to show your teacher/company you’re excellent (without drama)
+
+* **Share progress**: show a concise summary of what you built/learned.
+* **Contribute**: fix small bugs or suggest improvements in the codebase.
+* **Teach**: give a short internal demo or write a short blog post / README explaining a pattern.
+* **Help classmates/teammates**: tutoring solidifies your knowledge and builds reputation.
+* **Ask smart verification questions** when you don’t know something — shows maturity.
+
+---
+
+# Mindset & soft skills
+
+* Be curious, not cocky. Confidence earned from competence, not putdowns.
+* Accept feedback quickly — adapt and improve.
+* Learn to explain solutions simply — that’s how experts communicate.
+
+---
+
+# Example 8‑week goal metrics (what “outstanding” looks like)
+
+* Solve 200+ curated LeetCode problems (mix of easy/medium/hard).
+* Reach 1600+ rating (or steady improvement) on Codeforces within contests.
+* Comfortable coding segment tree/DP/graph solutions under 45 minutes.
+* 5+ mock interviews with clear feedback.
+
+---
+
+If you want, I’ll:
+
+* Build a personalized 8–12 week plan based on your current level and available time.
+* Give a weekly problem set + solutions you can follow.
+* Run mock interviews and review your code/explanations.
+
+Which would you like first — a tailored weekly schedule, or a set of problems to start now?
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+Absolutely — I’d be glad to help with that.
+
+Becoming an **experienced and respected team member** in your new company doesn’t happen overnight — but with the right **mindset**, **habits**, and **focus areas**, you can grow quickly and stand out.
+
+Here’s a solid roadmap you can follow:
+
+---
+
+## 🧠 1. **Master the Fundamentals (Fast)**
+
+Even experienced devs still review the basics often. Make sure you're solid in:
+
+* ✅ HTML, CSS, JavaScript (ES6+)
+* ✅ DOM manipulation
+* ✅ Event handling
+* ✅ Promises, async/await
+* ✅ Debugging in DevTools
+* ✅ Git basics (commits, branches, pull requests)
+
+**💡 Tip:** Build or rebuild small components on your own: stopwatch, to-do app, modal, form validator, etc.
+
+---
+
+## 🧑‍💻 2. **Learn Your Company’s Tech Stack Inside Out**
+
+Every company has its own mix of tools. Ask yourself:
+
+* What frameworks/libraries are they using? (e.g., React, Vue, Angular)
+* Do they use TypeScript? APIs? Docker? Testing frameworks?
+* What does their codebase look like?
+* What do deployments look like? (CI/CD, GitHub Actions, etc.)
+
+**➡️ Action:** Set a goal to become productive in their tech stack within your first 4–6 weeks. Ask for internal docs or onboarding guides.
+
+---
+
+## 🗣️ 3. **Be Proactive in Communication**
+
+This is key to being seen as experienced and reliable:
+
+* Ask clear questions if you're stuck — don't spin your wheels too long.
+* Give updates without being asked (“I’m 80% done with feature X…”)
+* Keep a daily log of what you work on — super helpful for standups, reviews, and learning.
+
+---
+
+## 🧩 4. **Understand the Business Context**
+
+Experience isn’t just technical — it’s knowing **why** something is built.
+
+* Who uses this app? What do they care about?
+* What’s the product goal this sprint or quarter?
+* What does success look like for your feature?
+
+This helps you make smarter decisions, write better code, and build trust.
+
+---
+
+## 🛠️ 5. **Level Up Through Code Reviews**
+
+When reviewing others’ code (or having yours reviewed):
+
+* Ask questions: “Why was this approach used?”
+* Learn patterns and naming conventions
+* Suggest improvements (politely, always backed by reasoning)
+* Accept feedback openly — that’s how you level up fast
+
+---
+
+## 🚀 6. **Take Initiative (The Smart Way)**
+
+Once you’re stable:
+
+* Pick up small bugs or “low priority” tickets — often good learning
+* Offer to help test or pair with someone
+* Suggest tiny improvements (performance, UX, code clarity)
+
+💬 Even saying:
+
+> “Hey, I noticed this flow is hard to follow — can I try cleaning it up?”
+> shows leadership and care.
+
+---
+
+## 📚 7. **Keep Learning Outside the Job**
+
+You're in one of the fastest-changing fields. Just 30–60 minutes a few times a week helps:
+
+* Follow dev YouTubers / blogs / newsletters
+* Learn a testing framework (Jest, Cypress)
+* Try a side project with the same stack as your company
+
+---
+
+## 🧭 Final Tip: Track Your Progress
+
+Every week or two, ask yourself:
+
+* What did I learn?
+* What was hard?
+* What do I want to understand better next week?
+
+This reflection is how juniors become mids — and mids become seniors.
+
+---
+
+Would you like help with:
+
+* A personalized study plan?
+* Preparing for code reviews?
+* Understanding your company’s stack faster?
+* Soft skills like communication or sprint planning?
+
+-----------------------------------------------------------------------------------------------------------------
+// gfg stack problem
+
+// Function to push an element into the stack.
+void insert(int **stack, int *top, int x) {
+    (*top)++;
+    *stack = realloc(*stack, (*top) * sizeof(int));
+    (*stack)[*top - 1] = x;
+}
+
+// Function to remove top element from stack.
+void remove_top(int *stack, int *top) {
+    if (*top > 0) {
+        (*top)--;
+    }
+}
+
+// Function to print the top element of stack.
+void headOf_Stack(int *stack, int top) {
+    if (top > 0) {
+        printf("%d\n", stack[top - 1]);
+    }
+}
+
+// Function to search an element in the stack.
+bool find(int *stack, int top, int val) {
+    for (int i = 0; i < top; i++) {
+        if (stack[i] == val) {
+            return true;
+        }
+    }
+    return false;
+}
+
+//strong number using all codes
+Great! You're asking for a program that checks whether a given number **N** is a **Strong Number**.
+
+### ✅ Definition Recap:
+
+A **Strong Number** is a number in which the **sum of the factorials of its digits** equals the number itself.
+
+**Example:**
+
+* 145 is a Strong Number:
+  ( 1! + 4! + 5! = 1 + 24 + 120 = 145 ) → ✅ YES
+
+---
+
+Below is the solution to this problem in **C, C++, Java, JavaScript, C#, and Python**.
+
+---
+
+### 🔵 C
+
+```c
+#include <stdio.h>
+
+int factorial(int n) {
+    int fact = 1;
+    for(int i = 1; i <= n; i++)
+        fact *= i;
+    return fact;
+}
+
+int main() {
+    int num, sum = 0, temp, digit;
+    scanf("%d", &num);
+    temp = num;
+
+    while (temp > 0) {
+        digit = temp % 10;
+        sum += factorial(digit);
+        temp /= 10;
+    }
+
+    if (sum == num)
+        printf("YES\n");
+    else
+        printf("NO\n");
+
+    return 0;
+}
+```
+
+---
+
+### 🔵 C++
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int factorial(int n) {
+    int fact = 1;
+    for (int i = 1; i <= n; i++)
+        fact *= i;
+    return fact;
+}
+
+int main() {
+    int num, sum = 0, temp;
+    cin >> num;
+    temp = num;
+
+    while (temp > 0) {
+        int digit = temp % 10;
+        sum += factorial(digit);
+        temp /= 10;
+    }
+
+    cout << (sum == num ? "YES" : "NO") << endl;
+    return 0;
+}
+```
+
+---
+
+### 🔵 Java
+
+```java
+import java.util.Scanner;
+
+public class StrongNumber {
+    public static int factorial(int n) {
+        int fact = 1;
+        for (int i = 1; i <= n; i++)
+            fact *= i;
+        return fact;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt(), sum = 0;
+        int temp = num;
+
+        while (temp > 0) {
+            int digit = temp % 10;
+            sum += factorial(digit);
+            temp /= 10;
+        }
+
+        System.out.println(sum == num ? "YES" : "NO");
+    }
+}
+```
+
+---
+
+### 🔵 JavaScript (Node.js or Browser)
+
+```javascript
+function factorial(n) {
+    let fact = 1;
+    for (let i = 1; i <= n; i++)
+        fact *= i;
+    return fact;
+}
+
+function isStrongNumber(num) {
+    let sum = 0, temp = num;
+
+    while (temp > 0) {
+        let digit = temp % 10;
+        sum += factorial(digit);
+        temp = Math.floor(temp / 10);
+    }
+
+    return sum === num ? "YES" : "NO";
+}
+
+// Example usage
+const input = prompt("Enter a number:");  // For browser
+// const input = require('readline-sync').question();  // For Node.js
+console.log(isStrongNumber(parseInt(input)));
+```
+
+---
+
+### 🔵 C#
+
+```csharp
+using System;
+
+class StrongNumber
+{
+    static int Factorial(int n)
+    {
+        int fact = 1;
+        for (int i = 1; i <= n; i++)
+            fact *= i;
+        return fact;
+    }
+
+    static void Main()
+    {
+        int num = int.Parse(Console.ReadLine());
+        int sum = 0, temp = num;
+
+        while (temp > 0)
+        {
+            int digit = temp % 10;
+            sum += Factorial(digit);
+            temp /= 10;
+        }
+
+        Console.WriteLine(sum == num ? "YES" : "NO");
+    }
+}
+
+//java
+class Solution {
+    public void printNos(int N) {
+        // Code here
+        if(N == 0){return;}
+        printNos(N-1);
+        System.out.print(N+" ");
+
+    }
+}
+
+//java for sum of natural nos
+class Solution {
+    public static int findSum(int n) {
+        // code here
+        if(n <= 1) return n;
+        return n+findSum(n-1);
+    }
+}
+
+//javascript
+class Solution {
+    constructor() {
+        this.s = ""; // Initialize an empty string to store the numbers.
+    }
+
+    printNosRecur(N) {
+        if (N === 0) {
+            return; // Base case: return when N reaches 0.
+        }
+        this.printNosRecur(N - 1); // Recursive call to printNosRecur() with N-1.
+        this.s += N + " ";         // Append N to the string s.
+    }
+
+    printNos(N) {
+        this.printNosRecur(N); // Call the printNosRecur() function.
+        console.log(this.s);   // Print the final string s.
+    }
+}
+```
+
+---
+
+### 🔵 Python
+
+```python
+def factorial(n):
+    fact = 1
+    for i in range(1, n+1):
+        fact *= i
+    return fact
+
+num = int(input())
+temp = num
+sum = 0
+
+while temp > 0:
+    digit = temp % 10
+    sum += factorial(digit)
+    temp //= 10
+
+print("YES" if sum == num else "NO")
+```
+
+---
+
+Let me know if you'd like:
+
+* Input from command line arguments or file
+* An optimized version using precomputed factorials
+* GUI/Web versions for any language
+
+I'm happy to help further!
