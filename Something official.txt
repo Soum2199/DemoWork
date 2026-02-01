@@ -1,0 +1,183 @@
+Perfect — that detail helps a lot. 👀
+
+So, your system (or app) is looking for a local JavaScript file at this path:
+
+```
+C:\Users\SUBRAT_PANIGRAHI\PDFEditor\resources\app\w-electron\bin\release
+```
+
+This **strongly suggests** the following:
+You had an **Electron-based PDF editing app** (likely built using JavaScript and Node), and when you deleted *PDF Suite Pro*, it left a reference behind to a *PDFEditor.js* runtime file that no longer exists.
+
+Here’s how to **fix or recreate** it safely 👇
+
+---
+
+## 🧩 Option 1 — Rebuild or restore the missing file
+
+If the app is still installed but just broken:
+
+1. **Check the folder path manually:**
+
+   * Open File Explorer → navigate to
+     `C:\Users\SUBRAT_PANIGRAHI\PDFEditor\resources\app\w-electron\bin\release`
+   * See if there’s a file like `PDFEditor.js`, `main.js`, or similar.
+
+2. **If it’s missing:**
+   It means the executable can’t find its main script. You can:
+
+   * Reinstall the program that created this folder (it might’ve been PDFEditor or PDF Suite).
+   * If you can’t reinstall it, you can create a **dummy placeholder** file to stop errors (temporary fix):
+
+     Open Notepad → paste:
+
+     ```js
+     console.log("Placeholder PDFEditor.js loaded — original file missing.");
+     ```
+
+     Save as:
+     `C:\Users\SUBRAT_PANIGRAHI\PDFEditor\resources\app\w-electron\bin\release\PDFEditor.js`
+
+     This won’t make the editor work, but it will stop “missing file” errors in some Electron launchers.
+
+---
+
+## 🛠️ Option 2 — Rebuild the environment with a modern PDF library
+
+If you want to actually make the app run again using JavaScript:
+
+1. Open **Command Prompt** or **PowerShell**.
+2. Go to that folder:
+
+   ```bash
+   cd "C:\Users\SUBRAT_PANIGRAHI\PDFEditor\resources\app\w-electron\bin\release"
+   ```
+3. Initialize npm (to make it a Node project):
+
+   ```bash
+   npm init -y
+   ```
+4. Install a PDF library:
+
+   ```bash
+   npm install pdf-lib
+   ```
+5. Create a new `PDFEditor.js` file:
+
+   ```js
+   const { PDFDocument } = require('pdf-lib');
+   const fs = require('fs');
+
+   async function modifyPDF(input, output) {
+     const existingPdfBytes = fs.readFileSync(input);
+     const pdfDoc = await PDFDocument.load(existingPdfBytes);
+     const pages = pdfDoc.getPages();
+     pages[0].drawText('Edited via custom PDFEditor.js', { x: 50, y: 750 });
+     const pdfBytes = await pdfDoc.save();
+     fs.writeFileSync(output, pdfBytes);
+   }
+
+   modifyPDF('input.pdf', 'output.pdf');
+   console.log('PDF modified successfully!');
+   ```
+6. Now the missing `PDFEditor.js` exists, and it actually works.
+
+---
+
+## 🧹 Option 3 — Clean up broken app references
+
+If you **don’t need the PDFEditor app anymore** and just want to stop system errors:
+
+1. Press **Win + R**, type `shell:startup`, and remove any shortcut related to “PDFEditor” or “Electron.”
+2. Search for **Startup Apps** in Settings and disable anything PDF-related.
+3. Optionally delete the entire folder:
+
+   ```
+   C:\Users\SUBRAT_PANIGRAHI\PDFEditor
+   ```
+
+---
+
+Would you like me to give you the exact contents of a **working PDFEditor.js** file (so you can place it in that folder to restore function)?
+I can generate one using a small Node-based PDF editing script.
+
+
+Account no: 32755474918
+SBIN0011673
+
+key id :  rzp_test_RYZYa0nNh4O3mn
+key secret:  o1aI466ZkGi2GJ4AJtYjeXkx
+
+Sweety@#1999
+
+NSR's new password: Sweety@1999
+Your nsr Acknowledgement No. 136662811Z is
+successfully generated.
+Continue your registration on next page
+
+director@boat-srp.com
+
+director@boat-srp.com
+
+Please reach out for any banking queries or account openings.
+ 
+Name: John Edwin
+ 
+Phone: 8495892429
+ 
+Email: john.edwind@axisbank .com
+ 
+Shivaraya from Axis Bank
+ 
+Mob: 9886432426
+ 
+Email id:- shivaraya.begar@axisbank .com
+Please reach out for any banking queries or account openings.
+ 
+Name: John Edwin
+ 
+Phone: 8495892429
+ 
+Email: john.edwind@axisbank .com
+ 
+Shivaraya from Axis Bank
+ 
+Mob: 9886432426
+ 
+Email id:- shivaraya.begar@axisbank .com
+ 
+Please reach out for any banking queries or account openings.
+ 
+Name: John Edwin
+ 
+Phone: 8495892429
+ 
+Email: john.edwind@axisbank .com
+ 
+Shivaraya from Axis Bank
+ 
+Mob: 9886432426
+ 
+Email id:- shivaraya.begar@axisbank .com
+ 
+
+6	Account No. (PF/EPS  Number)	:	925010050201526
+6	Account No. (PF/EPS  Number)	:	N/A
+
+outlook's pswd :  Sweety@#21999
+emails:  soumya.panigrahi01@infosys.com
+     soumya.panigrahi01@ad.infosys.com
+
+Sweety@#21999
+
+Soumya@#21999
+
+SoumyaPani@#21999
+
+
++91 800
+K$EHMH8
+SweetyPani@#21999
+
+
+git restore --staged .
