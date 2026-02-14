@@ -40,3 +40,10 @@ for i in range(0,101,2):
 
 When a function is defined inside a class then it is called Method.
  The method is accessible to data that is contained within the class.
+---------------------------------------------------------------------------------------------------------------------------------
+
+-- select * from hr.EMPLOYEES where FIRST_NAME like 'A%' order by FIRST_NAME asc;
+-- select * from hr.EMPLOYEES where FIRST_NAME like 'A%' order by EMAIL asc;
+
+select * from hr.EMPLOYEES where FIRST_NAME like 'A%' order by EMPLOYEE_ID asc;
+select * from hr.EMPLOYEES where FIRST_NAME like 'A%' order by EMPLOYEE_ID desc;
