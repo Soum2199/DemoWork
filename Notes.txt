@@ -47,3 +47,9 @@ When a function is defined inside a class then it is called Method.
 
 select * from hr.EMPLOYEES where FIRST_NAME like 'A%' order by EMPLOYEE_ID asc;
 select * from hr.EMPLOYEES where FIRST_NAME like 'A%' order by EMPLOYEE_ID desc;
+-- select * from hr.EMPLOYEES where FIRST_NAME like 'A%' order by EMPLOYEE_ID desc;
+
+select * from hr.employees where FIRST_NAME = 'Steven' and DEPARTMENT_ID >= 90;
+select * from hr.employees where FIRST_NAME = 'Steven' and DEPARTMENT_ID <= 60;
+
+select * from hr.employees where FIRST_NAME = 'Steven';
